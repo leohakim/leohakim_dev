@@ -1,0 +1,10 @@
+{# Props: logos (list of strings or {name, url}) #}
+<div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-zinc-500">
+  {% for item in logos %}
+    {% if item.url %}
+      <a href="{{ item.url }}" class="opacity-70 hover:opacity-100 underline decoration-dotted">{{ item.name }}</a>
+    {% else %}
+      <span class="opacity-70">{{ item }}</span>
+    {% endif %}
+  {% endfor %}
+</div>

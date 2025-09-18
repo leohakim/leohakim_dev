@@ -1,0 +1,19 @@
+{
+  "name": "leohakim-dev-site",
+  "private": true,
+  "scripts": {
+    "tailwind:build": "tailwindcss -c tailwind.config.js -i leohakim_dev/static/css/app.css -o leohakim_dev/static/css/app.build.css --minify",
+    "tailwind:watch": "tailwindcss -c tailwind.config.js -i leohakim_dev/static/css/app.css -o leohakim_dev/static/css/app.build.css --watch",
+    "size:report": "node -e \"const fs=require('fs'); const z=require('zlib'); const p='leohakim_dev/static/css/app.build.css'; if(fs.existsSync(p)){const s=fs.readFileSync(p); console.log('CSS bytes:', s.length); z.gzip(s, (e,r)=>{if(!e) console.log('CSS gzip bytes:', r.length);});}\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  },
+  "browserslist": [
+    ">0.5%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

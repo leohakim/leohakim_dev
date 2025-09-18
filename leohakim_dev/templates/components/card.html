@@ -1,0 +1,17 @@
+{# Props: title, body (safe HTML), href (optional), chips (optional list) #}
+<article class="rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 bg-white dark:bg-zinc-900 shadow-sm">
+  {% if title %}<h3 class="font-medium tracking-tight">{{ title }}</h3>{% endif %}
+  {% if chips %}
+    <div class="mt-2 flex flex-wrap gap-2">
+      {% for c in chips %}
+        {% include "components/chip.html" with label=c %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if body %}
+    <div class="prose prose-sm dark:prose-invert mt-3">{{ body|safe }}</div>
+  {% endif %}
+  {% if href %}
+    <a class="mt-3 inline-flex items-center text-sm underline decoration-dotted hover:decoration-solid" href="{{ href }}">Read more →</a>
+  {% endif %}
+</article>
