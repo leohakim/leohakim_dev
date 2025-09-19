@@ -6,8 +6,20 @@ from django.urls import path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
+
+class HomeView(TemplateView):
+    template_name = "pages/home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["skills"] = (
+            "Django,DRF,K8s,Terraform,AWS,GCP,Prometheus,OpenTelemetry".split(",")
+        )
+        return context
+
+
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", HomeView.as_view(), name="home"),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
