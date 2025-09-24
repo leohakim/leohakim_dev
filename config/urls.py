@@ -12,9 +12,16 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["skills"] = (
-            "Django,DRF,K8s,Terraform,AWS,GCP,Prometheus,OpenTelemetry".split(",")
-        )
+        context["skills"] = [
+            "Django",
+            "DRF",
+            "K8s",
+            "Terraform",
+            "AWS",
+            "GCP",
+            "Prometheus",
+            "OpenTelemetry",
+        ]
         return context
 
 

@@ -1,13 +1,23 @@
 export COMPOSE_FILE := "docker-compose.local.yml"
 
 ## Just does not yet manage signals for subprocesses reliably, which can lead to unexpected behavior.
-## Exercise caution before expanding its usage in production environments. 
+## Exercise caution before expanding its usage in production environments.
 ## For more information, see https://github.com/casey/just/issues/2473 .
 
 
 # Default command to list all available commands.
 default:
     @just --list
+
+# dev: Start development environment.
+dev:
+    @echo "Starting development environment..."
+    @python manage.py runserver_plus 0.0.0.0:8020 --settings=config.settings.local
+
+# migrate: Apply migrations.
+migrate:
+    @echo "Applying migrations..."
+    @python manage.py migrate
 
 # build: Build python image.
 build:

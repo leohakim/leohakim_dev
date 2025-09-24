@@ -1,61 +1,166 @@
 # leohakim_dev
 
-My personal website
+My personal website.
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-## Settings
+## Overview
 
-Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
+`leohakim_dev` powers Leo Hakim’s personal site. It is a Django 5 application structured with Cookiecutter Django, Tailwind CSS for styling, and `uv` for Python dependency management.
 
-## Basic Commands
+## Project tour
 
-### Setting Up Your Users
+- `leohakim_dev/`: Django apps, templates, and static assets.
+- `config/settings/`: Environment-specific Django settings.
+- `compose/`: Docker configurations for local and production setups.
+- `docs/`: Sphinx documentation sources.
+- `.envs/.local/`: Local environment variable files consumed by Docker compose services.
 
-- To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
+## Prerequisites
 
-- To create a **superuser account**, use this command:
+### Python & uv
+- Install the `uv` tool (installs its own Python builds):
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- Ensure Python 3.12 is available (automatically handled by `uv python install 3.12`).
 
-      uv run python manage.py createsuperuser
+### Node.js
+- Node.js 20+ is required for Tailwind builds. Install via [Node Version Manager](https://github.com/nvm-sh/nvm) or your package manager.
 
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+### Docker (optional)
+- Docker Desktop (or compatible engine) is only required if you want to run Mailpit via container.
 
-### Type checks
+## Initial setup
 
-Running type checks with mypy:
+1. Clone the repository and enter the project directory.
+2. Sync Python dependencies (creates `.venv/` automatically):
+   ```bash
+   uv sync --dev
+   ```
+3. (Optional) Activate the virtual environment if you prefer the classic workflow:
+   ```bash
+   source .venv/bin/activate
+   ```
+4. Install Node dependencies for Tailwind:
+   ```bash
+   npm ci
+   ```
 
-    uv run mypy leohakim_dev
+## Environment variables
 
-### Test coverage
+Local settings live in `.envs/.local/`:
 
-To run the tests, check your test coverage, and generate an HTML coverage report:
+- `.envs/.local/.django` – Feature flags and local overrides.
+- `leohakim_dev.db` – SQLite database tracked in the repo (safe for local development; back up before deleting).
 
-    uv run coverage run -m pytest
-    uv run coverage html
-    uv run open htmlcov/index.html
+Adjust these files as needed. Do **not** commit secrets; add new variables to the same files and keep them under version control only if they are safe.
 
-#### Running tests with pytest
+## Running the stack locally
 
-    uv run pytest
+### 1. (Optional) Start Mailpit
+```bash
+docker compose -f docker-compose.local.yml up -d
+```
 
-### Live reloading and Sass CSS compilation
+Available helper:
+- `just up` (if you have [just](https://github.com/casey/just) installed).
 
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/2-local-development/developing-locally.html#using-webpack-or-gulp).
+### 2. Apply database migrations (updates `leohakim_dev.db`)
+```bash
+uv run python manage.py migrate
+```
 
-### Email Server
+### 3. Run the Django development server
+```bash
+uv run python manage.py runserver_plus 0.0.0.0:8000
+```
 
-In development, it is often nice to be able to see emails that are being sent from your application. For that reason local SMTP server [Mailpit](https://github.com/axllent/mailpit) with a web interface is available as docker container.
+Visit `http://127.0.0.1:8000`. Mailpit is exposed at `http://127.0.0.1:8045` when the container is running.
 
-Container mailpit will start automatically when you will run all docker containers.
-Please check [cookiecutter-django Docker documentation](https://cookiecutter-django.readthedocs.io/en/latest/2-local-development/developing-locally-docker.html) for more details how to start all containers.
+### 4. Compile Tailwind assets
 
-With Mailpit running, to view messages that are sent by your application, open your browser and go to `http://127.0.0.1:8025`
+- Development (watch mode):
+  ```bash
+  npm run tailwind:watch
+  ```
+- Production build:
+  ```bash
+  npm run tailwind:build
+  ```
 
-## Deployment
+## Managing Python dependencies with uv
 
-The following details how to deploy this application.
+- Add a runtime dependency:
+  ```bash
+  uv add <package-name>
+  ```
+- Add a development-only dependency:
+  ```bash
+  uv add --group dev <package-name>
+  ```
+- Remove a dependency:
+  ```bash
+  uv remove <package-name>
+  ```
+- Re-sync the lockfile and virtual environment:
+  ```bash
+  uv sync
+  ```
+- Upgrade specific packages:
+  ```bash
+  uv lock --upgrade <package-name>
+  ```
 
-### Docker
+All commands run in the project folder. `uv` automatically updates `pyproject.toml` and `uv.lock`.
 
-See detailed [cookiecutter-django Docker documentation](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-with-docker.html).
+## Common Django commands
+
+- Create a superuser:
+  ```bash
+  uv run python manage.py createsuperuser
+  ```
+- Load the Django shell with tab completion:
+  ```bash
+  uv run python manage.py shell_plus
+  ```
+
+## Quality gates
+
+- Ruff lint & format:
+  ```bash
+  uv run ruff check .
+  uv run ruff format .
+  ```
+- Type checking:
+  ```bash
+  uv run mypy leohakim_dev
+  ```
+- Tests and coverage:
+  ```bash
+  uv run pytest
+  uv run coverage run -m pytest
+  uv run coverage html
+  ```
+- Pre-commit hooks:
+  ```bash
+  uv run pre-commit install
+  uv run pre-commit run --all-files
+  ```
+
+## Docker-first workflow (optional)
+
+If you prefer to let Docker run the Django app as well, build and start the stack:
+
+```bash
+make build-local  # or: docker compose -f docker-compose.local.yml up --build
+```
+
+The Django container mounts the project directory, applies migrations against `leohakim_dev.db`, and runs `runserver_plus`. Logs can be tailed with `docker compose logs -f`.
+
+## Additional resources
+
+- Cookiecutter Django docs: <https://cookiecutter-django.readthedocs.io/>
+- uv documentation: <https://docs.astral.sh/uv/>
+- Tailwind CSS docs: <https://tailwindcss.com/docs>

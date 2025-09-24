@@ -11,9 +11,7 @@ WORKDIR ${APP_HOME}
 # Install apt packages
 RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
-  build-essential \
-  # psycopg dependencies
-  libpq-dev
+  build-essential
 
 
 # Requirements are installed here to ensure they will be cached.
@@ -41,12 +39,8 @@ RUN addgroup --system django \
 
 # Install required system dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
-  # psycopg dependencies
-  libpq-dev \
   # Translations dependencies
   gettext \
-  # entrypoint
-  wait-for-it \
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
