@@ -26,15 +26,7 @@ def _update_or_create_site_with_sequence(site_model, connection, domain, name):
         max_id = site_model.objects.order_by('-id').first().id
 
         with connection.cursor() as cursor:
-            if connection.vendor == "postgresql":
-                cursor.execute("SELECT last_value from django_site_id_seq")
-                (current_id,) = cursor.fetchone()
-                if current_id <= max_id:
-                    cursor.execute(
-                        "ALTER SEQUENCE django_site_id_seq RESTART WITH %s",
-                        [max_id + 1],
-                    )
-            elif connection.vendor == "sqlite":
+            if connection.vendor == "sqlite":
                 cursor.execute("SELECT MAX(id) FROM django_site")
                 current_id = cursor.fetchone()[0] or 0
                 if current_id <= max_id:
