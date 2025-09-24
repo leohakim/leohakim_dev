@@ -12,17 +12,17 @@ Enfoque: priorizar código limpio, escalable, seguro y moderno, con UI limpia y 
 
 1) Alcance del proyecto
 
-Estructura de contenidos: respetar el sitemap y wireframes (Home, Case Studies, Services, About, Writing, Contact, y opcional Speaking). No agregar secciones fuera de alcance sin justificar. 
+Estructura de contenidos: respetar el sitemap y wireframes (Home, Case Studies, Services, About, Writing, Contact, y opcional Speaking). No agregar secciones fuera de alcance sin justificar.
 
 Wireframes
 
-Componentes reutilizables: chips, badges, cards, KPI/stats, CTAs, trust bar, code blocks estilizados. Diseñar como un design system básico. 
+Componentes reutilizables: chips, badges, cards, KPI/stats, CTAs, trust bar, code blocks estilizados. Diseñar como un design system básico.
 
 Wireframes
 
 2) Tecnología y arquitectura front
 
-Stack por defecto: Django templates, HTMX + AlpineJS sin dependencias pesadas. 
+Stack por defecto: Django templates, HTMX + AlpineJS sin dependencias pesadas.
 
 Estilos: Tailwind CSS (sin Bootstrap). Permitir dark mode mediante class y tokens (CSS variables).
 
@@ -82,7 +82,7 @@ On-page SEO: meta-title/description por página; schema.org (Person, BlogPosting
 
 URLs limpias y sitemap.xml + robots.txt.
 
-Blog/Writing: títulos útiles, fechas limpias, sin clickbait; canonical correcto. 
+Blog/Writing: títulos útiles, fechas limpias, sin clickbait; canonical correcto.
 
 Wireframes
 
@@ -90,27 +90,27 @@ Sin trackers intrusivos; analítica ligera (p. ej., Plausible/Umami).
 
 7) UI/UX
 
-HERO Home: valor claro + CTAs (“Work with me / Ver casos”). Trust bar de logos en gris. 
+HERO Home: valor claro + CTAs (“Work with me / Ver casos”). Trust bar de logos en gris.
 
 Wireframes
 
-Case Studies: plantilla con KPIs (p95, uptime, coste), problema → solución → impacto, diagrama de arquitectura y resultados. CTA final a contacto. 
+Case Studies: plantilla con KPIs (p95, uptime, coste), problema → solución → impacto, diagrama de arquitectura y resultados. CTA final a contacto.
 
 Wireframes
 
-Services: 3 tarjetas (SRE/DevOps, Cloud Architecture, Cost Optimization) con entregables claros y paquetes (Audit / Implementation / Ongoing SRE). 
+Services: 3 tarjetas (SRE/DevOps, Cloud Architecture, Cost Optimization) con entregables claros y paquetes (Audit / Implementation / Ongoing SRE).
 
 Wireframes
 
-About: bio corta orientada a impacto, highlights y foto humana. 
+About: bio corta orientada a impacto, highlights y foto humana.
 
 Wireframes
 
-Contact: formulario + alternativa Calendly/email; mini GDPR. 
+Contact: formulario + alternativa Calendly/email; mini GDPR.
 
 Wireframes
 
-Microcopy: “problema → solución → impacto”, siempre que se pueda con métricas. 
+Microcopy: “problema → solución → impacto”, siempre que se pueda con métricas.
 
 Wireframes
 
@@ -132,7 +132,7 @@ Al crear una página o componente nuevo: incluir ejemplo de uso + variaciones (e
 
 Do:
 
-Tailwind; SVG inline; imágenes AVIF/WebP; a11y AA; Lighthouse ≥95; CSP estricta; contenido del wireframe. 
+Tailwind; SVG inline; imágenes AVIF/WebP; a11y AA; Lighthouse ≥95; CSP estricta; contenido del wireframe.
 
 Wireframes
 
@@ -148,7 +148,7 @@ No tracking agresivo ni popups invasivos.
 
 10) Definition of Done (DoD)
 
-Página/feature compila, pasa lint/tests, cumple presupuesto de rendimiento, sin errores a11y obvios, cumple SEO básico, y respeta sitemap + wireframes y design system. 
+Página/feature compila, pasa lint/tests, cumple presupuesto de rendimiento, sin errores a11y obvios, cumple SEO básico, y respeta sitemap + wireframes y design system.
 
 Wireframes
 

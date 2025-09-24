@@ -1,5 +1,6 @@
+{% load static i18n %}
 
-{% load static i18n %}<!DOCTYPE html>
+<!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
@@ -7,81 +8,87 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
       {% block title %}
-      leohakim_dev
-    {% endblock title %}
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-        content="My personal website" />
-  <meta name="author"
-        content="Leonardo Hakim" />
-  <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
-  {% block css %}
-    <!-- CSS del proyecto (Tailwind se agregará luego en app.css) -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet" />
-    {# Tailwind compilado #}
-    <link href="{% static 'css/app.build.css' %}" rel="stylesheet" />
-  {% endblock css %}
- {# JS ligero y no bloqueante #}
-  {% block javascript %}
- <script defer src="https://unpkg.com/htmx.org@1.9.12"></script>
- <script defer src="https://unpkg.com/alpinejs@3.x.x" crossorigin="anonymous"></script>
- <!-- JS del proyecto -->
- <script defer src="{% static 'js/project.js' %}"></script>
-  {% endblock javascript %}
-</head>
- <body class="min-h-screen bg-white text-gray-900 antialiased dark:bg-zinc-950 dark:text-zinc-100 {% block bodyclass %}{% endblock bodyclass %}">
-  {% block body %}
-  <header class="border-b border-zinc-200/60 dark:border-zinc-800/60">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary">
-      <div class="flex h-14 items-center justify-between">
-        <a class="font-semibold tracking-tight" href="{% url 'home' %}">leohakim.dev</a>
-        <ul class="flex gap-6 text-sm">
-          <li><a class="hover:underline" href="{% url 'home' %}">Home</a></li>
-          <li><a class="hover:underline" href="{% url 'case-studies' %}">Case Studies</a></li>
-          <li><a class="hover:underline" href="{% url 'services' %}">Services</a></li>
-          <li><a class="hover:underline" href="{% url 'writing' %}">Writing</a></li>
-          <li><a class="hover:underline" href="{% url 'about' %}">About</a></li>
-          <li><a class="hover:underline" href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main id="main" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-    {% if messages %}
-      <div role="status" aria-live="polite" class="space-y-2">
-        {% for message in messages %}
-          <div class="rounded-md border px-4 py-3 text-sm">
-            {{ message }}
+        leohakim_dev
+      {% endblock title %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My personal website" />
+    <meta name="author" content="Leonardo Hakim" />
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    {% block css %}
+      <!-- CSS del proyecto (Tailwind se agregará luego en app.css) -->
+      <link href="{% static 'css/project.css' %}" rel="stylesheet" />
+      {# Tailwind compilado #}
+      <link href="{% static 'css/app.build.css' %}" rel="stylesheet" />
+    {% endblock css %}
+    {# JS ligero y no bloqueante #}
+    {% block javascript %}
+      <script defer src="https://unpkg.com/htmx.org@1.9.12"></script>
+      <script defer src="https://unpkg.com/alpinejs@3.x.x" crossorigin="anonymous"></script>
+      <!-- JS del proyecto -->
+      <script defer src="{% static 'js/project.js' %}"></script>
+    {% endblock javascript %}
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 antialiased dark:bg-zinc-950 dark:text-zinc-100 {% block bodyclass %}{% endblock bodyclass %}">
+    {% block body %}
+      <header class="border-b border-zinc-200/60 dark:border-zinc-800/60">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary">
+          <div class="flex h-14 items-center justify-between">
+            <a class="font-semibold tracking-tight" href="{% url 'home' %}">leohakim.dev</a>
+            <ul class="flex gap-6 text-sm">
+              <li>
+                <a class="hover:underline" href="{% url 'home' %}">Home</a>
+              </li>
+              <li>
+                <a class="hover:underline" href="{% url 'case-studies' %}">Case Studies</a>
+              </li>
+              <li>
+                <a class="hover:underline" href="{% url 'services' %}">Services</a>
+              </li>
+              <li>
+                <a class="hover:underline" href="{% url 'writing' %}">Writing</a>
+              </li>
+              <li>
+                <a class="hover:underline" href="{% url 'about' %}">About</a>
+              </li>
+              <li>
+                <a class="hover:underline" href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
           </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-    {% block main %}
-      {% block content %}
-        <p class="text-sm text-zinc-600 dark:text-zinc-400">Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
-    {% endblock main %}
-  </main>
-  <footer class="mt-8 border-t border-zinc-200/60 dark:border-zinc-800/60">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-zinc-600 dark:text-zinc-400">
-      <nav aria-label="Footer" class="flex flex-wrap gap-4">
-        <a class="hover:underline" href="{% url 'home' %}">Home</a>
-        <a class="hover:underline" href="{% url 'case-studies' %}">Case Studies</a>
-        <a class="hover:underline" href="{% url 'services' %}">Services</a>
-        <a class="hover:underline" href="{% url 'writing' %}">Writing</a>
-        <a class="hover:underline" href="{% url 'about' %}">About</a>
-        <a class="hover:underline" href="{% url 'contact' %}">Contact</a>
-      </nav>
-      <p class="mt-2">© {{ now|date:"Y" }} Leonardo Hakim</p>
-    </div>
-  </footer>
-  {% endblock body %}
-  <!-- /container -->
-  {% block modal %}
-  {% endblock modal %}
-  {% block inline_javascript %}
-    {% comment %}
+        </nav>
+      </header>
+      <main id="main" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+        {% if messages %}
+          <div role="status" aria-live="polite" class="space-y-2">
+            {% for message in messages %}<div class="rounded-md border px-4 py-3 text-sm">{{ message }}</div>{% endfor %}
+          </div>
+        {% endif %}
+        {% block main %}
+          {% block content %}
+            <p class="text-sm text-zinc-600 dark:text-zinc-400">Use this document as a way to quick start any new project.</p>
+          {% endblock content %}
+        {% endblock main %}
+      </main>
+      <footer class="mt-8 border-t border-zinc-200/60 dark:border-zinc-800/60">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-zinc-600 dark:text-zinc-400">
+          <nav aria-label="Footer" class="flex flex-wrap gap-4">
+            <a class="hover:underline" href="{% url 'home' %}">Home</a>
+            <a class="hover:underline" href="{% url 'case-studies' %}">Case Studies</a>
+            <a class="hover:underline" href="{% url 'services' %}">Services</a>
+            <a class="hover:underline" href="{% url 'writing' %}">Writing</a>
+            <a class="hover:underline" href="{% url 'about' %}">About</a>
+            <a class="hover:underline" href="{% url 'contact' %}">Contact</a>
+          </nav>
+          <p class="mt-2">© {{ now|date:"Y" }} Leonardo Hakim</p>
+        </div>
+      </footer>
+    {% endblock body %}
+    <!-- /container -->
+    {% block modal %}
+    {% endblock modal %}
+    {% block inline_javascript %}
+      {% comment %}
     Script tags with only code, no src (defer by default). To run
     with a "defer" so that you run inline code:
     <script>
@@ -89,7 +96,7 @@
         /* Run whatever you want */
       });
     </script>
-    {% endcomment %}
-  {% endblock inline_javascript %}
-</body>
+      {% endcomment %}
+    {% endblock inline_javascript %}
+  </body>
 </html>

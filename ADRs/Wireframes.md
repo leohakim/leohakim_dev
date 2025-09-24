@@ -1,19 +1,19 @@
 # Sitemap (v1)
 
 - Home
-    
+
 - Case Studies (Aire · ENACT · Atempora)
-    
+
 - Services (SRE/DevOps · Cloud Architecture · Cost Optimization)
-    
+
 - About (bio corta, valores, stack, certificaciones)
-    
+
 - Writing (blog / notas técnicas / talks)
-    
+
 - Contact (CTA + calendly/mail)
-    
+
 - [Optional] Speaking (charlas, workshops)
-    
+
 
 ---
 
@@ -59,7 +59,7 @@
 [CTA FINAL]
   — “Tell me about your system”
   — [Contact]  [Download CV]
-  
+
 [FOOTER]  Links + socials
 
 ```

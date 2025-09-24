@@ -1,32 +1,35 @@
 {% extends "base.html" %}
-{% block title %}Services | leohakim.dev{% endblock title %}
+
+{% block title %}
+  Services | leohakim.dev
+{% endblock title %}
 {% block content %}
-<section aria-labelledby="page-title">
-  <h1 id="page-title" class="text-2xl font-semibold tracking-tight">Services</h1>
-  <p class="mt-2 text-zinc-600 dark:text-zinc-400">Services for reliable & cost-efficient systems.</p>
-  <div class="mt-6 grid gap-6 md:grid-cols-3">
-    <article class="rounded-md border p-4">
-      <h2 class="font-medium">SRE / DevOps</h2>
-      <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
-        <li>SLOs, incident response, HA/DR</li>
-        <li>Observability: Prometheus, Grafana, Loki, OpenTelemetry</li>
-        <li>Deliverables: playbook + dashboards + alerts</li>
-      </ul>
-    </article>
-    <article class="rounded-md border p-4">
-      <h2 class="font-medium">Cloud Architecture</h2>
-      <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
-        <li>K8s (EKS/GKE), Terraform/Helm, networking, IAM</li>
-        <li>CI/CD: blue/green, canary, rollbacks</li>
-      </ul>
-    </article>
-    <article class="rounded-md border p-4">
-      <h2 class="font-medium">Cost Optimization</h2>
-      <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
-        <li>Profiling, cache & CDN strategy, autoscaling</li>
-        <li>Reports with 10–30% savings targets</li>
-      </ul>
-    </article>
-  </div>
-</section>
+  <section aria-labelledby="page-title">
+    <h1 id="page-title" class="text-2xl font-semibold tracking-tight">Services</h1>
+    <p class="mt-2 text-zinc-600 dark:text-zinc-400">Services for reliable & cost-efficient systems.</p>
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      <article class="rounded-md border p-4">
+        <h2 class="font-medium">SRE / DevOps</h2>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>SLOs, incident response, HA/DR</li>
+          <li>Observability: Prometheus, Grafana, Loki, OpenTelemetry</li>
+          <li>Deliverables: playbook + dashboards + alerts</li>
+        </ul>
+      </article>
+      <article class="rounded-md border p-4">
+        <h2 class="font-medium">Cloud Architecture</h2>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>K8s (EKS/GKE), Terraform/Helm, networking, IAM</li>
+          <li>CI/CD: blue/green, canary, rollbacks</li>
+        </ul>
+      </article>
+      <article class="rounded-md border p-4">
+        <h2 class="font-medium">Cost Optimization</h2>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>Profiling, cache & CDN strategy, autoscaling</li>
+          <li>Reports with 10–30% savings targets</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 {% endblock content %}
