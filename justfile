@@ -14,6 +14,11 @@ dev:
     @echo "Starting development environment..."
     @python manage.py runserver_plus 0.0.0.0:8020 --settings=config.settings.local
 
+# test: Run tests.
+test:
+    @echo "Running tests..."
+    @pytest
+
 # migrate: Apply migrations.
 migrate:
     @echo "Applying migrations..."
