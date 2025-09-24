@@ -1,98 +1,128 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load static i18n %}
 
 {% block title %}
   Home | leohakim.dev
 {% endblock title %}
 {% block content %}
   <!-- HERO -->
-  <section class="py-10 sm:py-14">
-    <div class="max-w-3xl">
-      {% include "components/badge.html" with text="SRE / Cloud Architect" %}
-      <h1 class="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight">
-        Reliable systems, lower latency, smarter costs.
-      </h1>
-      <p class="mt-3 text-zinc-600 dark:text-zinc-400">
-        SRE & Cloud Architect. I help teams ship resilient backends on AWS/GCP with Kubernetes, Terraform, and solid observability.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        {% include "components/cta.html" with href="/contact/" text="Start a project" variant="primary" %}
-        {% include "components/cta.html" with href="/case-studies/" text="See case studies" variant="secondary" %}
-      </div>
-      <div class="mt-8">{% include "components/trust_bar.html" with logos="Aire,Osoigo,ENACT" %}</div>
-    </div>
-  </section>
-  <!-- VALUE PROPS: 3 cards -->
-  <section class="py-8">
-    <div class="grid gap-6 md:grid-cols-3">
-      {% include "components/card.html" with title="Reliability" body="<ul><li>SLOs, error budgets</li><li>HA/DR</li><li>Runbooks</li></ul>" %}
-      {% include "components/card.html" with title="Performance" body="<ul><li>Latency reduction</li><li>Smart caching + CDN</li><li>Query profiling</li></ul>" %}
-      {% include "components/card.html" with title="Cost" body="<ul><li>Right-sizing</li><li>Autoscaling</li><li>FinOps simple</li></ul>" %}
-    </div>
-  </section>
-  <!-- FEATURED CASE STUDY -->
-  <section class="py-8">
-    <div class="grid gap-6 md:grid-cols-2 md:items-start">
-      <div class="aspect-video rounded-lg border border-dashed"></div>
-      <div>
-        <h2 class="text-xl font-semibold tracking-tight">Featured: Aire</h2>
-        <p class="mt-2 text-zinc-600 dark:text-zinc-400">Problem → Approach → Result (p95 ↓, uptime ↑, coste ↓)</p>
-        <div class="mt-4 grid grid-cols-3 gap-3">
-          {% include "components/kpi.html" with value="-42%" label="p95 latency" %}
-          {% include "components/kpi.html" with value="99.95%" label="Uptime" %}
-          {% include "components/kpi.html" with value="-28%" label="Cost" %}
+  <section class="relative overflow-hidden rounded-3xl bg-white px-8 py-12 ring-1 ring-inset ring-zinc-200 sm:px-12 lg:px-16">
+    <div class="relative grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+      <div class="space-y-8">
+        {% include "components/badge.html" with text=_("SRE / Cloud Architect") %}
+        <div class="space-y-5">
+          <h1 class="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            {% translate "Designing systems that stay fast, resilient, and affordable." %}
+          </h1>
+          <p class="max-w-xl text-lg text-slate-600">
+            {% translate "I partner with engineering teams to reduce latency, prevent incidents, and keep cloud bills under control across AWS and GCP." %}
+          </p>
         </div>
-        <div class="mt-5">
-          {% include "components/cta.html" with href="/case-studies/" text="Read case study" variant="primary" %}
+        <div class="flex flex-wrap gap-3">
+          {% include "components/cta.html" with href="/contact/" text=_("Start a project") variant="primary" %}
+          {% include "components/cta.html" with href="/case-studies/" text=_("See case studies") variant="secondary" %}
+        </div>
+        <div class="pt-6">{% include "components/trust_bar.html" with logos=trust_logos %}</div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          {% for kpi in hero_kpis %}
+            {% include "components/kpi.html" with value=kpi.value label=kpi.label %}
+          {% endfor %}
         </div>
       </div>
+      <aside class="mx-auto w-full max-w-sm lg:max-w-md">
+        <div class="relative overflow-hidden rounded-2xl bg-white p-3 ring-1 ring-inset ring-zinc-200">
+          <div class="rounded-xl bg-white ring-1 ring-inset ring-zinc-200">
+            <img src="{% static 'images/home_photo.png' %}"
+                 alt="{% translate 'Portrait of Leonardo Hakim' %}"
+                 class="h-auto w-full rounded-t-xl object-cover" />
+            <div class="space-y-3 px-6 pb-6 pt-5 text-sm text-zinc-600">
+              <p class="text-xs uppercase tracking-[0.28em] text-brand-600">{% translate "Meet Leonardo" %}</p>
+              <p class="text-base font-semibold text-zinc-900">{% translate "SRE & Cloud Architect" %}</p>
+              <p>{% translate "Helping startups and scaleups with production readiness, SLOs and cost governance." %}</p>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
   </section>
   <!-- SERVICES SNAPSHOT -->
-  <section class="py-8">
-    <h2 class="text-xl font-semibold tracking-tight">Services</h2>
-    <div class="mt-4 grid gap-6 md:grid-cols-3">
-      {% include "components/card.html" with title="SRE/DevOps" body="<ul><li>SLOs, incident response</li><li>Observability</li><li>HA/DR</li></ul>" %}
-      {% include "components/card.html" with title="Cloud Architecture" body="<ul><li>K8s (EKS/GKE), Terraform</li><li>CI/CD</li><li>Security & IAM</li></ul>" %}
-      {% include "components/card.html" with title="Cost Optimization" body="<ul><li>Profiling</li><li>Autoscaling</li><li>Storage tiers</li></ul>" %}
+  <section class="mt-16 space-y-10">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div class="space-y-3">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">{% translate "What I deliver" %}</h2>
+        <p class="max-w-2xl text-slate-600">
+          {% translate "Engagements designed to give you immediate reliability wins and a clear path to sustainable operations." %}
+        </p>
+      </div>
+      {% include "components/cta.html" with href="/services/" text=_("See all services") variant="secondary" %}
     </div>
-    <div class="mt-5">
-      {% include "components/cta.html" with href="/services/" text="See all services" variant="secondary" %}
+    <div class="grid gap-6 md:grid-cols-3">
+      {% for offering in service_offerings %}
+        {% include "components/card.html" with title=offering.title items=offering.items %}
+      {% endfor %}
     </div>
   </section>
-  <!-- BLOG HIGHLIGHTS (placeholder) -->
-  <section class="py-8">
-    <h2 class="text-xl font-semibold tracking-tight">Writing</h2>
-    <div class="mt-4 grid gap-6 md:grid-cols-3">
-      {% include "components/card.html" with title="Coming soon" body="<p>Blog posts and technical notes.</p>" %}
-      {% include "components/card.html" with title="Coming soon" body="<p>Observability practices that work.</p>" %}
-      {% include "components/card.html" with title="Coming soon" body="<p>From ad-hoc to safe canary releases.</p>" %}
+  <!-- FEATURED CASE STUDY -->
+  <section class="mt-20 overflow-hidden rounded-3xl bg-white px-8 py-12 ring-1 ring-inset ring-zinc-200 sm:px-12 lg:px-16">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-[0.32em] text-brand-600">{% translate "Case Study" %}</p>
+        <h2 class="mt-2 text-3xl font-semibold tracking-tight text-zinc-900">
+          {% translate "Aire — From fragile releases to resilient pipelines" %}
+        </h2>
+      </div>
+      {% include "components/cta.html" with href="/case-studies/" text=_("Read case study") variant="primary" %}
+    </div>
+    <div class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+      <div class="rounded-2xl bg-white p-6 text-zinc-600 ring-1 ring-inset ring-zinc-200">
+        <p>
+          {% translate "Migrated legacy workloads to Kubernetes with Terraform, introduced SLO-driven on-call, and removed single points of failure." %}
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% for metric in case_study_metrics %}
+          {% include "components/kpi.html" with value=metric.value label=metric.label %}
+        {% endfor %}
+      </div>
     </div>
   </section>
   <!-- ABOUT MINI -->
-  <section class="py-8">
-    <div class="grid gap-6 md:grid-cols-12 md:items-center">
-      <div class="md:col-span-3 aspect-square rounded-lg border border-dashed"></div>
-      <div class="md:col-span-9">
-        <h2 class="text-xl font-semibold tracking-tight">About</h2>
-        <p class="mt-2 text-zinc-600 dark:text-zinc-400">
-          20+ años software · Django/DRF · K8s · Terraform · AWS/GCP · Liderazgo técnico.
-        </p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          {% for c in skills %}
-            {% include "components/chip.html" with label=c %}
-          {% endfor %}
-        </div>
+  <section class="mt-20 grid gap-12 rounded-3xl bg-white px-8 py-12 ring-1 ring-inset ring-zinc-200 sm:px-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-16">
+    <div class="relative overflow-hidden rounded-[28px]">
+      <img src="{% static 'images/home_photo.png' %}"
+           alt="{% translate 'Portrait of Leonardo Hakim' %}"
+           class="relative h-full w-full rounded-[28px] object-cover ring-1 ring-inset ring-zinc-200" />
+    </div>
+    <div class="space-y-6">
+      <p class="text-xs uppercase tracking-[0.32em] text-brand-600">{% translate "About" %}</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-zinc-900">
+        {% translate "20+ years building and scaling platforms" %}
+      </h2>
+      <p class="text-zinc-600">
+        {% translate "From seed-stage teams to enterprise rollouts, I bring a production-first mindset, empathy for engineers, and a bias toward measurable outcomes." %}
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {% for c in skills %}
+          {% include "components/chip.html" with label=c %}
+        {% endfor %}
       </div>
     </div>
   </section>
   <!-- CTA FINAL -->
-  <section class="py-10">
-    <div class="rounded-lg border bg-zinc-50 dark:bg-zinc-900 p-6">
-      <h2 class="text-xl font-semibold tracking-tight">Tell me about your system</h2>
-      <p class="mt-2 text-zinc-600 dark:text-zinc-400">Let’s make it reliable, fast and cost-efficient.</p>
-      <div class="mt-4">{% include "components/cta.html" with href="/contact/" text="Contact" variant="primary" %}</div>
+  <section class="mt-20 overflow-hidden rounded-3xl bg-gradient-to-r from-brand-600 to-brand-500 px-8 py-12 text-white sm:px-12 lg:px-16">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.32em] text-white/80">{% translate "Let's collaborate" %}</p>
+        <h2 class="text-3xl font-semibold tracking-tight">{% translate "Tell me about your system" %}</h2>
+        <p class="max-w-xl text-sm text-white/85">
+          {% translate "We will define SLOs, streamline deployments, and unlock cost savings without compromising velocity." %}
+        </p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+        {% include "components/cta.html" with href="/contact/" text=_("Book a call") variant="primary" %}
+        {% include "components/cta.html" with href="/services/" text=_("Explore services") variant="secondary" %}
+      </div>
     </div>
   </section>
 {% endblock content %}

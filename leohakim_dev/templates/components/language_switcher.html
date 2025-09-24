@@ -1,0 +1,29 @@
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as language_info_list %}
+<form action="{% url 'set_language' %}"
+      method="post"
+      class="relative inline-flex items-center gap-2 text-sm"
+      aria-label="{% translate 'Change language' %}">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+  <span class="sr-only">{% translate "Language" %}</span>
+  <div class="flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-zinc-700 ring-1 ring-inset ring-zinc-200 backdrop-blur-sm dark:bg-zinc-900 dark:text-zinc-200 dark:ring-zinc-700">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         aria-hidden="true"
+         class="h-4 w-4 text-zinc-500 dark:text-zinc-400">
+      <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20a10 10 0 0 0 0-20m0 1.5c.99 0 1.932.194 2.8.548c-.21.296-.407.603-.59.92H9.79c-.183-.317-.38-.624-.59-.92A8.47 8.47 0 0 1 12 3.5M7.82 5.05c.266.39.506.8.72 1.23H5.21a8.48 8.48 0 0 1 2.61-1.23m8.36 0A8.48 8.48 0 0 1 19.79 6.28h-3.33c.214-.43.454-.84.721-1.23M4.06 7.78h3.95c.13.46.234.927.31 1.4H3.6a8.44 8.44 0 0 1 .46-1.4m6.14 0h3.6c.126.46.228.928.307 1.4H9.893a16.4 16.4 0 0 0 .394-1.4m5.2 0h3.95c.197.448.35.918.46 1.4h-4.72c.08-.473.18-.94.31-1.4M3.52 10.6h4.76c-.03.46-.046.925-.046 1.4s.016.94.046 1.4H3.52a8.5 8.5 0 0 1 0-2.8m6.3 0h4.36c.03.46.046.925.046 1.4s-.016.94-.046 1.4H9.82a16.9 16.9 0 0 1-.046-1.4c0-.475.017-.94.046-1.4m6.92 0h4.76a8.5 8.5 0 0 1 0 2.8h-4.76c.03-.46.046-.925.046-1.4s-.016-.94-.046-1.4M3.6 13.4h4.72c-.078.473-.18.94-.307 1.4H4.06a8.44 8.44 0 0 1-.46-1.4m6.29 0h3.6c-.126.46-.228.928-.307 1.4H9.894c.096-.468.21-.935.394-1.4m5.14 0h3.95a8.48 8.48 0 0 1-2.61 1.23a12.6 12.6 0 0 0-.72-1.23M7.82 16.95a12.6 12.6 0 0 0 .72-1.23h3.43c-.183.317-.38.624-.59.92a8.47 8.47 0 0 1-2.8.548a8.47 8.47 0 0 1-2.76-.238m8.36 0c-.266.39-.506.8-.72 1.23A8.47 8.47 0 0 1 12 20.5c-.99 0-1.932-.194-2.8-.548c.21-.296.407-.603.59-.92z" />
+    </svg>
+    <select name="language"
+            class="bg-transparent text-sm font-medium focus:outline-none"
+            onchange="this.form.submit()">
+      {% for language in language_info_list %}
+        <option value="{{ language.code }}"
+                {% if language.code == LANGUAGE_CODE %}selected{% endif %}>{{ language.name_local }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</form>

@@ -2,8 +2,7 @@
 <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-zinc-500">
   {% for item in logos %}
     {% if item.url %}
-      <a href="{{ item.url }}"
-         class="opacity-70 hover:opacity-100 underline decoration-dotted">{{ item.name }}</a>
+      <a href="{{ item.url }}" class="opacity-70 transition hover:opacity-100">{{ item.name }}</a>
     {% else %}
       <span class="opacity-70">{{ item }}</span>
     {% endif %}

@@ -1,0 +1,282 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-24 12:53+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+#: config/settings/base.py:34
+msgid "English"
+msgstr ""
+
+#: config/settings/base.py:35
+msgid "Spanish"
+msgstr ""
+
+#: config/urls.py:29 leohakim_dev/templates/pages/home.html:29
+msgid "systems assessed"
+msgstr ""
+
+#: config/urls.py:30 leohakim_dev/templates/pages/home.html:30
+msgid "avg. cost savings"
+msgstr ""
+
+#: config/urls.py:31 leohakim_dev/templates/pages/home.html:31
+msgid "uptime maintained"
+msgstr ""
+
+#: config/urls.py:35 leohakim_dev/templates/pages/home.html:61
+msgid "Reliability Accelerator"
+msgstr ""
+
+#: config/urls.py:37
+msgid "SLOs & incident review"
+msgstr ""
+
+#: config/urls.py:38
+msgid "Runbooks ready for on-call"
+msgstr ""
+
+#: config/urls.py:39
+msgid "Observability deep dive"
+msgstr ""
+
+#: config/urls.py:43 leohakim_dev/templates/pages/home.html:62
+msgid "Cloud Architecture Sprint"
+msgstr ""
+
+#: config/urls.py:45
+msgid "Kubernetes & Terraform audits"
+msgstr ""
+
+#: config/urls.py:46
+msgid "CI/CD hardening"
+msgstr ""
+
+#: config/urls.py:47
+msgid "Security & compliance guardrails"
+msgstr ""
+
+#: config/urls.py:51 leohakim_dev/templates/pages/home.html:63
+msgid "FinOps Optimization"
+msgstr ""
+
+#: config/urls.py:53
+msgid "Usage profiling"
+msgstr ""
+
+#: config/urls.py:54
+msgid "Right-sizing & autoscaling"
+msgstr ""
+
+#: config/urls.py:55
+msgid "Alerts on spend anomalies"
+msgstr ""
+
+#: config/urls.py:60 leohakim_dev/templates/pages/home.html:80
+msgid ""
+"Migrated legacy workloads to Kubernetes with Terraform, introduced SLO-"
+"driven on-call, and removed single points of failure."
+msgstr ""
+
+#: config/urls.py:64 leohakim_dev/templates/pages/home.html:84
+msgid "p95 latency"
+msgstr ""
+
+#: config/urls.py:65 leohakim_dev/templates/pages/home.html:85
+msgid "uptime"
+msgstr ""
+
+#: config/urls.py:66 leohakim_dev/templates/pages/home.html:86
+msgid "cloud spend"
+msgstr ""
+
+#: leohakim_dev/templates/allauth/layouts/entrance.html:13
+msgid "Sign In"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:42 leohakim_dev/templates/base.html:74
+msgid "Home"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:43 leohakim_dev/templates/base.html:75
+msgid "Case Studies"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:44 leohakim_dev/templates/base.html:76
+msgid "Services"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:45 leohakim_dev/templates/base.html:77
+msgid "Writing"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:46 leohakim_dev/templates/base.html:78
+#: leohakim_dev/templates/pages/home.html:103
+msgid "About"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:47 leohakim_dev/templates/base.html:79
+msgid "Contact"
+msgstr ""
+
+#: leohakim_dev/templates/base.html:71
+msgid ""
+"SRE & Cloud Architect crafting resilient, performant, cost-efficient systems."
+msgstr ""
+
+#: leohakim_dev/templates/base.html:81
+msgid "All rights reserved."
+msgstr ""
+
+#: leohakim_dev/templates/components/language_switcher.html:5
+msgid "Change language"
+msgstr ""
+
+#: leohakim_dev/templates/components/language_switcher.html:8
+msgid "Language"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:12
+msgid "SRE / Cloud Architect"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:15
+msgid "Designing systems that stay fast, resilient, and affordable."
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:18
+msgid ""
+"I partner with engineering teams to reduce latency, prevent incidents, and "
+"keep cloud bills under control across AWS and GCP."
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:22
+msgid "Start a project"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:23
+msgid "See case studies"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:39
+#: leohakim_dev/templates/pages/home.html:98
+msgid "Portrait of Leonardo Hakim"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:42
+msgid "Meet Leonardo"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:43
+msgid "SRE & Cloud Architect"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:44
+msgid ""
+"Helping startups and scaleups with production readiness, SLOs and cost "
+"governance."
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:55
+msgid "What I deliver"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:56
+msgid ""
+"Engagements designed to give you immediate reliability wins and a clear path "
+"to sustainable operations."
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:58
+msgid "See all services"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:72
+msgid "Case Study"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:73
+msgid "Aire — From fragile releases to resilient pipelines"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:75
+msgid "Read case study"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:104
+msgid "20+ years building and scaling platforms"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:106
+msgid ""
+"From seed-stage teams to enterprise rollouts, I bring a production-first "
+"mindset, empathy for engineers, and a bias toward measurable outcomes."
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:121
+msgid "Let's collaborate"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:122
+msgid "Tell me about your system"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:123
+msgid ""
+"We will define SLOs, streamline deployments, and unlock cost savings without "
+"compromising velocity."
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:127
+msgid "Book a call"
+msgstr ""
+
+#: leohakim_dev/templates/pages/home.html:128
+msgid "Explore services"
+msgstr ""
+
+#: leohakim_dev/users/admin.py:24
+msgid "Personal info"
+msgstr ""
+
+#: leohakim_dev/users/admin.py:26
+msgid "Permissions"
+msgstr ""
+
+#: leohakim_dev/users/admin.py:37
+msgid "Important dates"
+msgstr ""
+
+#: leohakim_dev/users/apps.py:9
+msgid "Users"
+msgstr ""
+
+#: leohakim_dev/users/forms.py:27 leohakim_dev/users/tests/test_forms.py:35
+msgid "This email has already been taken."
+msgstr ""
+
+#: leohakim_dev/users/models.py:20
+msgid "Name of User"
+msgstr ""
+
+#: leohakim_dev/users/models.py:23
+msgid "email address"
+msgstr ""
+
+#: leohakim_dev/users/tests/test_views.py:72 leohakim_dev/users/views.py:25
+msgid "Information successfully updated"
+msgstr ""
