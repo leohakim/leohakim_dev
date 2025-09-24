@@ -3,280 +3,443 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-24 12:53+0200\n"
+"POT-Creation-Date: 2025-09-24 16:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
+
 #: config/settings/base.py:34
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: config/settings/base.py:35
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
-#: config/urls.py:29 leohakim_dev/templates/pages/home.html:29
+#: config/urls.py:29
 msgid "systems assessed"
-msgstr ""
+msgstr "sistemas evaluados"
 
-#: config/urls.py:30 leohakim_dev/templates/pages/home.html:30
+#: config/urls.py:30
 msgid "avg. cost savings"
-msgstr ""
+msgstr "ahorro medio de costes"
 
-#: config/urls.py:31 leohakim_dev/templates/pages/home.html:31
+#: config/urls.py:31
 msgid "uptime maintained"
-msgstr ""
+msgstr "uptime mantenido"
 
-#: config/urls.py:35 leohakim_dev/templates/pages/home.html:61
+#: config/urls.py:35
 msgid "Reliability Accelerator"
-msgstr ""
+msgstr "Acelerador de fiabilidad"
 
 #: config/urls.py:37
 msgid "SLOs & incident review"
-msgstr ""
+msgstr "Revisión de SLOs e incidentes"
 
 #: config/urls.py:38
 msgid "Runbooks ready for on-call"
-msgstr ""
+msgstr "Runbooks listos para guardias"
 
 #: config/urls.py:39
 msgid "Observability deep dive"
-msgstr ""
+msgstr "Análisis profundo de observabilidad"
 
-#: config/urls.py:43 leohakim_dev/templates/pages/home.html:62
+#: config/urls.py:43
 msgid "Cloud Architecture Sprint"
-msgstr ""
+msgstr "Sprint de arquitectura cloud"
 
 #: config/urls.py:45
 msgid "Kubernetes & Terraform audits"
-msgstr ""
+msgstr "Auditorías de Kubernetes y Terraform"
 
 #: config/urls.py:46
 msgid "CI/CD hardening"
-msgstr ""
+msgstr "Endurecimiento de CI/CD"
 
 #: config/urls.py:47
 msgid "Security & compliance guardrails"
-msgstr ""
+msgstr "Directrices de seguridad y cumplimiento"
 
-#: config/urls.py:51 leohakim_dev/templates/pages/home.html:63
+#: config/urls.py:51
 msgid "FinOps Optimization"
-msgstr ""
+msgstr "Optimización FinOps"
 
 #: config/urls.py:53
 msgid "Usage profiling"
-msgstr ""
+msgstr "Perfilado de uso"
 
 #: config/urls.py:54
 msgid "Right-sizing & autoscaling"
-msgstr ""
+msgstr "Dimensionamiento correcto y autoescalado"
 
 #: config/urls.py:55
 msgid "Alerts on spend anomalies"
-msgstr ""
+msgstr "Alertas por anomalías de gasto"
 
 #: config/urls.py:60 leohakim_dev/templates/pages/home.html:80
 msgid ""
 "Migrated legacy workloads to Kubernetes with Terraform, introduced SLO-"
 "driven on-call, and removed single points of failure."
 msgstr ""
+"Migré cargas heredadas a Kubernetes con Terraform, introduje guardias basadas en SLOs "
+"y eliminé puntos únicos de fallo."
 
-#: config/urls.py:64 leohakim_dev/templates/pages/home.html:84
+#: config/urls.py:64
 msgid "p95 latency"
-msgstr ""
+msgstr "Latencia p95"
 
-#: config/urls.py:65 leohakim_dev/templates/pages/home.html:85
+#: config/urls.py:65
 msgid "uptime"
-msgstr ""
+msgstr "disponibilidad"
 
-#: config/urls.py:66 leohakim_dev/templates/pages/home.html:86
+#: config/urls.py:66
 msgid "cloud spend"
+msgstr "Gasto en la nube"
+
+#: leohakim_dev/templates/403.html:5 leohakim_dev/templates/403.html:9
+#: leohakim_dev/templates/403_csrf.html:5
+#: leohakim_dev/templates/403_csrf.html:9
+msgid "Forbidden (403)"
+msgstr "Prohibido (403)"
+
+#: leohakim_dev/templates/403.html:14 leohakim_dev/templates/403_csrf.html:14
+msgid "You're not allowed to access this page."
+msgstr "No tienes permiso para acceder a esta página."
+
+#: leohakim_dev/templates/404.html:5 leohakim_dev/templates/404.html:9
+msgid "Page not found"
+msgstr "Página no encontrada"
+
+#: leohakim_dev/templates/404.html:14
+msgid "This is not the page you were looking for."
+msgstr "Esta no es la página que estabas buscando."
+
+#: leohakim_dev/templates/500.html:5 leohakim_dev/templates/500.html:9
+msgid "Server Error"
+msgstr "Error del servidor"
+
+#: leohakim_dev/templates/500.html:10
+msgid "Looks like something went wrong!"
+msgstr "Parece que algo ha salido mal."
+
+#: leohakim_dev/templates/500.html:12
+msgid ""
+"We track these errors automatically, but if the problem persists feel free "
+"to contact us. In the meantime, try refreshing."
 msgstr ""
+"Registramos estos errores automáticamente, pero si el problema persiste no dudes en "
+"contactarnos. Mientras tanto, prueba a recargar."
 
 #: leohakim_dev/templates/allauth/layouts/entrance.html:13
 msgid "Sign In"
-msgstr ""
+msgstr "Iniciar sesión"
 
-#: leohakim_dev/templates/base.html:42 leohakim_dev/templates/base.html:74
+#: leohakim_dev/templates/base.html:15
+msgid "My personal website"
+msgstr "Mi sitio personal"
+
+#: leohakim_dev/templates/base.html:46 leohakim_dev/templates/base.html:99
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
-#: leohakim_dev/templates/base.html:43 leohakim_dev/templates/base.html:75
+#: leohakim_dev/templates/base.html:50 leohakim_dev/templates/base.html:101
+#: leohakim_dev/templates/pages/case_studies.html:5
+#: leohakim_dev/templates/pages/case_studies.html:9
 msgid "Case Studies"
-msgstr ""
+msgstr "Casos de estudio"
 
-#: leohakim_dev/templates/base.html:44 leohakim_dev/templates/base.html:76
+#: leohakim_dev/templates/base.html:54 leohakim_dev/templates/base.html:103
+#: leohakim_dev/templates/pages/services.html:5
+#: leohakim_dev/templates/pages/services.html:9
 msgid "Services"
-msgstr ""
+msgstr "Servicios"
 
-#: leohakim_dev/templates/base.html:45 leohakim_dev/templates/base.html:77
+#: leohakim_dev/templates/base.html:58 leohakim_dev/templates/base.html:105
+#: leohakim_dev/templates/pages/writing.html:5
+#: leohakim_dev/templates/pages/writing.html:9
 msgid "Writing"
-msgstr ""
+msgstr "Escritura"
 
-#: leohakim_dev/templates/base.html:46 leohakim_dev/templates/base.html:78
-#: leohakim_dev/templates/pages/home.html:103
+#: leohakim_dev/templates/base.html:62 leohakim_dev/templates/base.html:107
+#: leohakim_dev/templates/pages/home.html:98
 msgid "About"
-msgstr ""
+msgstr "Sobre mí"
 
-#: leohakim_dev/templates/base.html:47 leohakim_dev/templates/base.html:79
+#: leohakim_dev/templates/base.html:66 leohakim_dev/templates/base.html:109
+#: leohakim_dev/templates/pages/contact.html:5
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
-#: leohakim_dev/templates/base.html:71
+#: leohakim_dev/templates/base.html:94
 msgid ""
 "SRE & Cloud Architect crafting resilient, performant, cost-efficient systems."
 msgstr ""
+"SRE y Arquitecto Cloud creando sistemas resilientes, de alto rendimiento y "
+"eficientes en costes."
 
-#: leohakim_dev/templates/base.html:81
+#: leohakim_dev/templates/base.html:111
 msgid "All rights reserved."
-msgstr ""
+msgstr "Todos los derechos reservados."
 
-#: leohakim_dev/templates/components/language_switcher.html:5
+#: leohakim_dev/templates/components/card.html:28
+msgid "Read more"
+msgstr "Leer más"
+
+#: leohakim_dev/templates/components/language_switcher.html:9
 msgid "Change language"
-msgstr ""
+msgstr "Cambiar idioma"
 
-#: leohakim_dev/templates/components/language_switcher.html:8
+#: leohakim_dev/templates/components/language_switcher.html:12
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
-#: leohakim_dev/templates/pages/home.html:12
+#: leohakim_dev/templates/pages/case_studies.html:10
+msgid "Problems, constraints, outcomes. Measurable impact."
+msgstr "Problemas, restricciones, resultados. Impacto medible."
+
+#: leohakim_dev/templates/pages/case_studies.html:12
+#: leohakim_dev/templates/pages/speaking.html:12
+#: leohakim_dev/templates/pages/writing.html:12
+msgid "Coming soon"
+msgstr "Próximamente"
+
+#: leohakim_dev/templates/pages/contact.html:9
+msgid "Let’s make your system reliable"
+msgstr "Hagamos que tu sistema sea confiable"
+
+#: leohakim_dev/templates/pages/contact.html:19
+msgid "Name"
+msgstr "Nombre"
+
+#: leohakim_dev/templates/pages/contact.html:28
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: leohakim_dev/templates/pages/contact.html:37
+msgid "Message"
+msgstr "Mensaje"
+
+#: leohakim_dev/templates/pages/contact.html:43
+msgid "By submitting, you agree to a brief follow-up email. No spam."
+msgstr "Al enviar, aceptas recibir un breve correo de seguimiento. Sin spam."
+
+#: leohakim_dev/templates/pages/contact.html:45
+msgid "Send"
+msgstr "Enviar"
+
+#: leohakim_dev/templates/pages/contact.html:49
+msgid "Prefer to talk?"
+msgstr "¿Prefieres hablar?"
+
+#: leohakim_dev/templates/pages/contact.html:50
+msgid "Book a 30-min intro call via Calendly or email directly."
+msgstr "Reserva una llamada introductoria de 30 min por Calendly o escribe directamente por email."
+
+#: leohakim_dev/templates/pages/home.html:13
 msgid "SRE / Cloud Architect"
-msgstr ""
+msgstr "SRE y Arquitecto Cloud"
 
-#: leohakim_dev/templates/pages/home.html:15
+#: leohakim_dev/templates/pages/home.html:16
 msgid "Designing systems that stay fast, resilient, and affordable."
-msgstr ""
+msgstr "Diseño sistemas que se mantienen rápidos, resilientes y asequibles."
 
-#: leohakim_dev/templates/pages/home.html:18
+#: leohakim_dev/templates/pages/home.html:19
 msgid ""
 "I partner with engineering teams to reduce latency, prevent incidents, and "
 "keep cloud bills under control across AWS and GCP."
 msgstr ""
-
-#: leohakim_dev/templates/pages/home.html:22
-msgid "Start a project"
-msgstr ""
+"Trabajo con equipos de ingeniería para reducir la latencia, prevenir "
+"incidentes y mantener el gasto en la nube bajo control en AWS y GCP."
 
 #: leohakim_dev/templates/pages/home.html:23
-msgid "See case studies"
-msgstr ""
+msgid "Start a project"
+msgstr "Iniciar un proyecto"
 
-#: leohakim_dev/templates/pages/home.html:39
-#: leohakim_dev/templates/pages/home.html:98
+#: leohakim_dev/templates/pages/home.html:24
+msgid "See case studies"
+msgstr "Ver casos de estudio"
+
+#: leohakim_dev/templates/pages/home.html:37
+#: leohakim_dev/templates/pages/home.html:94
 msgid "Portrait of Leonardo Hakim"
-msgstr ""
+msgstr "Retrato de Leonardo Hakim"
+
+#: leohakim_dev/templates/pages/home.html:40
+msgid "Meet Leonardo"
+msgstr "Conoce a Leonardo"
+
+#: leohakim_dev/templates/pages/home.html:41
+msgid "SRE & Cloud Architect"
+msgstr "SRE y Arquitecto Cloud"
 
 #: leohakim_dev/templates/pages/home.html:42
-msgid "Meet Leonardo"
-msgstr ""
-
-#: leohakim_dev/templates/pages/home.html:43
-msgid "SRE & Cloud Architect"
-msgstr ""
-
-#: leohakim_dev/templates/pages/home.html:44
 msgid ""
 "Helping startups and scaleups with production readiness, SLOs and cost "
 "governance."
 msgstr ""
+"Ayudando a startups y scaleups con preparación para producción, SLOs y "
+"gobierno de costes."
+
+#: leohakim_dev/templates/pages/home.html:53
+msgid "What I deliver"
+msgstr "Qué entrego"
 
 #: leohakim_dev/templates/pages/home.html:55
-msgid "What I deliver"
-msgstr ""
-
-#: leohakim_dev/templates/pages/home.html:56
 msgid ""
 "Engagements designed to give you immediate reliability wins and a clear path "
 "to sustainable operations."
 msgstr ""
+"Servicios diseñados para darte victorias inmediatas en fiabilidad y un camino claro "
+"hacia operaciones sostenibles."
 
 #: leohakim_dev/templates/pages/home.html:58
 msgid "See all services"
-msgstr ""
+msgstr "Ver todos los servicios"
+
+#: leohakim_dev/templates/pages/home.html:70
+msgid "Case Study"
+msgstr "Caso de estudio"
 
 #: leohakim_dev/templates/pages/home.html:72
-msgid "Case Study"
-msgstr ""
-
-#: leohakim_dev/templates/pages/home.html:73
 msgid "Aire — From fragile releases to resilient pipelines"
-msgstr ""
+msgstr "Aire — De releases frágiles a pipelines resilientes"
 
 #: leohakim_dev/templates/pages/home.html:75
 msgid "Read case study"
-msgstr ""
+msgstr "Leer caso de estudio"
 
-#: leohakim_dev/templates/pages/home.html:104
+#: leohakim_dev/templates/pages/home.html:100
 msgid "20+ years building and scaling platforms"
-msgstr ""
+msgstr "+20 años construyendo y escalando plataformas"
 
-#: leohakim_dev/templates/pages/home.html:106
+#: leohakim_dev/templates/pages/home.html:103
 msgid ""
 "From seed-stage teams to enterprise rollouts, I bring a production-first "
 "mindset, empathy for engineers, and a bias toward measurable outcomes."
 msgstr ""
+"Desde equipos seed hasta despliegues enterprise, aporto mentalidad "
+"production-first, empatía por los ingenieros y foco en resultados medibles."
 
-#: leohakim_dev/templates/pages/home.html:121
+#: leohakim_dev/templates/pages/home.html:116
 msgid "Let's collaborate"
-msgstr ""
+msgstr "Colaboremos"
 
-#: leohakim_dev/templates/pages/home.html:122
+#: leohakim_dev/templates/pages/home.html:117
 msgid "Tell me about your system"
-msgstr ""
+msgstr "Cuéntame sobre tu sistema"
 
-#: leohakim_dev/templates/pages/home.html:123
+#: leohakim_dev/templates/pages/home.html:119
 msgid ""
 "We will define SLOs, streamline deployments, and unlock cost savings without "
 "compromising velocity."
 msgstr ""
+"Definiremos SLOs, optimizaremos despliegues y desbloquearemos ahorros sin "
+"comprometer la velocidad."
 
-#: leohakim_dev/templates/pages/home.html:127
+#: leohakim_dev/templates/pages/home.html:123
 msgid "Book a call"
-msgstr ""
+msgstr "Reserva una llamada"
 
-#: leohakim_dev/templates/pages/home.html:128
+#: leohakim_dev/templates/pages/home.html:124
 msgid "Explore services"
-msgstr ""
+msgstr "Explorar servicios"
+
+#: leohakim_dev/templates/pages/services.html:10
+msgid "Services for reliable & cost-efficient systems."
+msgstr "Servicios para sistemas confiables y eficientes en costes."
+
+#: leohakim_dev/templates/pages/services.html:13
+msgid "SRE / DevOps"
+msgstr "SRE / DevOps"
+
+#: leohakim_dev/templates/pages/services.html:15
+msgid "SLOs, incident response, HA/DR"
+msgstr "SLOs, respuesta a incidentes, HA/DR"
+
+#: leohakim_dev/templates/pages/services.html:16
+msgid "Observability: Prometheus, Grafana, Loki, OpenTelemetry"
+msgstr "Observabilidad: Prometheus, Grafana, Loki, OpenTelemetry"
+
+#: leohakim_dev/templates/pages/services.html:17
+msgid "Deliverables: playbook + dashboards + alerts"
+msgstr "Entregables: playbook + dashboards + alertas"
+
+#: leohakim_dev/templates/pages/services.html:21
+msgid "Cloud Architecture"
+msgstr "Arquitectura Cloud"
+
+#: leohakim_dev/templates/pages/services.html:23
+msgid "K8s (EKS/GKE), Terraform/Helm, networking, IAM"
+msgstr "K8s (EKS/GKE), Terraform/Helm, redes, IAM"
+
+#: leohakim_dev/templates/pages/services.html:24
+msgid "CI/CD: blue/green, canary, rollbacks"
+msgstr "CI/CD: blue/green, canary, rollbacks"
+
+#: leohakim_dev/templates/pages/services.html:28
+msgid "Cost Optimization"
+msgstr "Optimización de costes"
+
+#: leohakim_dev/templates/pages/services.html:30
+msgid "Profiling, cache & CDN strategy, autoscaling"
+msgstr "Profiling, estrategia de caché y CDN, autoescalado"
+
+#: leohakim_dev/templates/pages/services.html:31
+#, python-format
+msgid "Reports with 10–30%% savings targets"
+msgstr "Informes con objetivos de ahorro del 10–30%%"
+
+#: leohakim_dev/templates/pages/speaking.html:5
+#: leohakim_dev/templates/pages/speaking.html:9
+msgid "Speaking"
+msgstr "Charlas"
+
+#: leohakim_dev/templates/pages/speaking.html:10
+msgid "Talks and workshops. Optional section."
+msgstr "Charlas y workshops. Sección opcional."
+
+#: leohakim_dev/templates/pages/writing.html:10
+msgid "Technical notes and articles. Coming soon."
+msgstr "Notas técnicas y artículos. Próximamente."
 
 #: leohakim_dev/users/admin.py:24
 msgid "Personal info"
-msgstr ""
+msgstr "Información personal"
 
 #: leohakim_dev/users/admin.py:26
 msgid "Permissions"
-msgstr ""
+msgstr "Permisos"
 
 #: leohakim_dev/users/admin.py:37
 msgid "Important dates"
-msgstr ""
+msgstr "Fechas importantes"
 
 #: leohakim_dev/users/apps.py:9
 msgid "Users"
-msgstr ""
+msgstr "Usuarios"
 
 #: leohakim_dev/users/forms.py:27 leohakim_dev/users/tests/test_forms.py:35
 msgid "This email has already been taken."
-msgstr ""
+msgstr "Este correo ya está en uso."
 
 #: leohakim_dev/users/models.py:20
 msgid "Name of User"
-msgstr ""
+msgstr "Nombre del usuario"
 
 #: leohakim_dev/users/models.py:23
 msgid "email address"
-msgstr ""
+msgstr "dirección de correo electrónico"
 
 #: leohakim_dev/users/tests/test_views.py:72 leohakim_dev/users/views.py:25
 msgid "Information successfully updated"
-msgstr ""
+msgstr "Información actualizada correctamente"

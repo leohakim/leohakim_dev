@@ -24,7 +24,7 @@ class HomeView(TemplateView):
             "Prometheus",
             "OpenTelemetry",
         ]
-        context["trust_logos"] = ["Aire", "Osoigo", "ENACT"]
+        context["trust_logos"] = ["Aire de Santa Fe", "RTVE", "ENACT"]
         context["hero_kpis"] = [
             {"value": "135+", "label": _("systems assessed")},
             {"value": "22%", "label": _("avg. cost savings")},

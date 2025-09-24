@@ -1,4 +1,6 @@
 {# Props: title, body (safe HTML), items (optional list), href (optional), chips (optional list) #}
+{% load i18n %}
+
 <article class="group relative flex h-full flex-col gap-4 rounded-xl bg-white p-6 ring-1 ring-inset ring-zinc-200 transition hover:bg-zinc-50 hover:ring-zinc-300 dark:bg-zinc-900 dark:ring-zinc-700">
   {% if title %}
     <h3 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-white">{{ title }}</h3>
@@ -24,6 +26,6 @@
   {% endif %}
   {% if href %}
     <a class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-600 dark:text-brand-300 dark:hover:text-brand-200"
-       href="{{ href }}">Read more →</a>
+       href="{{ href }}">{% translate "Read more" %} →</a>
   {% endif %}
 </article>

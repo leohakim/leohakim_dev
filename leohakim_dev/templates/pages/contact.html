@@ -1,53 +1,79 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block title %}
-  Contact | leohakim.dev
+  {% translate "Contact" %} | leohakim.dev
 {% endblock title %}
 {% block content %}
-  <section aria-labelledby="page-title">
-    <h1 id="page-title" class="text-2xl font-semibold tracking-tight">Let’s make your system reliable</h1>
+  <section aria-labelledby="page-title"
+           class="rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      {% translate "Let’s make your system reliable" %}
+    </h1>
     <div class="mt-6 grid gap-8 md:grid-cols-2">
       <form class="space-y-4" method="post" action="#">
         {% csrf_token %}
+        <!-- Honeypot simple -->
+        <div class="hidden" aria-hidden="true">
+          <label for="hp_url">URL</label>
+          <input id="hp_url"
+                 name="hp_url"
+                 type="text"
+                 tabindex="-1"
+                 autocomplete="off" />
+        </div>
         <div>
-          <label for="name" class="block text-sm font-medium">Name</label>
+          <label for="name"
+                 class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{% translate "Name" %}</label>
           <input id="name"
                  name="name"
                  type="text"
-                 class="mt-1 w-full rounded border px-3 py-2"
+                 class="mt-1 w-full rounded-md bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 ring-1 ring-inset ring-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:ring-zinc-700"
                  required
                  aria-required="true" />
         </div>
         <div>
-          <label for="email" class="block text-sm font-medium">Email</label>
+          <label for="email"
+                 class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{% translate "Email" %}</label>
           <input id="email"
                  name="email"
                  type="email"
-                 class="mt-1 w-full rounded border px-3 py-2"
+                 class="mt-1 w-full rounded-md bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 ring-1 ring-inset ring-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:ring-zinc-700"
                  required
                  aria-required="true" />
         </div>
         <div>
-          <label for="message" class="block text-sm font-medium">Message</label>
+          <label for="message"
+                 class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{% translate "Message" %}</label>
           <textarea id="message"
                     name="message"
                     rows="5"
-                    class="mt-1 w-full rounded border px-3 py-2"></textarea>
+                    class="mt-1 w-full rounded-md bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 ring-1 ring-inset ring-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:ring-zinc-700"></textarea>
         </div>
-        <p class="text-xs text-zinc-500">By submitting, you agree to a brief follow-up email. No spam.</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">
+          {% translate "By submitting, you agree to a brief follow-up email. No spam." %}
+        </p>
         <button type="submit"
-                class="rounded bg-black px-4 py-2 text-white dark:bg-white dark:text-black">Send</button>
+                class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950">
+          {% translate "Send" %}
+        </button>
       </form>
       <aside>
-        <div class="rounded-md border p-4">
-          <h2 class="font-medium">Prefer to talk?</h2>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Book a 30-min intro call via Calendly or email directly.</p>
-          <ul class="mt-3 list-disc pl-5 text-sm">
+        <div class="rounded-2xl bg-white p-4 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+          <h2 class="font-medium text-zinc-900 dark:text-white">{% translate "Prefer to talk?" %}</h2>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            {% translate "Book a 30-min intro call via web form or email directly." %}
+          </p>
+          <ul class="mt-3 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300">
             <li>
-              <a class="underline" href="#">Calendly</a>
+              <a class="underline decoration-dotted underline-offset-4"
+                 href="https://cal.leohakim.dev/">{% translate "Make an appointment" %}</a>
             </li>
             <li>
-              <a class="underline" href="mailto:leohakim@gmail.com">leohakim@gmail.com</a>
+              <a class="underline decoration-dotted underline-offset-4"
+                 href="mailto:work@leohakim.dev">{% translate "Email" %}</a>
             </li>
           </ul>
         </div>

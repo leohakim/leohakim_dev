@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block title %}
-  Server Error
+  {% translate "Server Error" %}
 {% endblock title %}
 {% block content %}
-  <h1>Ooops!!! 500</h1>
-  <h3>Looks like something went wrong!</h3>
-  <p>
-    We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
-  </p>
+  <section class="rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">{% translate "Server Error" %}</h1>
+    <h3 class="mt-2 text-zinc-800 dark:text-zinc-200">{% translate "Looks like something went wrong!" %}</h3>
+    <p class="mt-2 text-zinc-700 dark:text-zinc-300">
+      {% translate "We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing." %}
+    </p>
+  </section>
 {% endblock content %}
