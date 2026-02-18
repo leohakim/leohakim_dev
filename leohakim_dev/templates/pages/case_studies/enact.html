@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  ENACT — Case Study | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      ENACT — Orquestación K8s multi‑partner (Use‑Case‑2)
+    </h1>
+    <p class="text-zinc-600 dark:text-zinc-400">
+      Consorcio EU con requisitos de clusters con ingress, TLS, namespaces y pods bajo un orquestador edge/fog/cloud.
+    </p>
+    <section aria-labelledby="problema" class="space-y-2">
+      <h2 id="problema" class="text-xl font-semibold">Problema</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Integrar servicios Django/DRF en Kubernetes del consorcio.</li>
+        <li>Cumplir requisitos de runtime y seguridad multi‑tenant.</li>
+        <li>Preparar demos y revisiones con datos reales.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="entrega" class="space-y-3">
+      <h2 id="entrega" class="text-xl font-semibold">Entrega técnica</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% include "components/card.html" with title="Red & TLS" body="<ul><li>Traefik Ingress</li><li>cert-manager</li><li>TLS automatizado</li></ul>" %}
+        {% include "components/card.html" with title="Aislamiento" body="<ul><li>Namespaces por partner</li><li>Secrets y configs</li><li>Declarativo (Helm/Kustomize)</li></ul>" %}
+        {% include "components/card.html" with title="CI/CD" body="<ul><li>Imágenes versionadas</li><li>Pruebas y despliegues</li><li>Diagramas/ADRs</li></ul>" %}
+      </div>
+    </section>
+    <section aria-labelledby="rol" class="space-y-2">
+      <h2 id="rol" class="text-xl font-semibold">Rol y stack</h2>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Rol:</strong> Integración técnica, coordinación con Application Controller, documentación de runtime.
+      </p>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Stack:</strong> Kubernetes, Traefik, cert-manager, Django/DRF, Redis, Postgres, Helm/Kustomize.
+      </p>
+    </section>
+  </section>
+{% endblock content %}

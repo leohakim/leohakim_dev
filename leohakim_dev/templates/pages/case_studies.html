@@ -16,7 +16,11 @@
       {% translate "Problems, constraints, outcomes. Measurable impact." %}
     </p>
     <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="rounded-2xl bg-white p-4 text-sm text-zinc-500 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:text-zinc-400 dark:ring-zinc-700">{% translate "Coming soon" %}</article>
+      {% include "components/card.html" with title="Aire de Santa Fe — App móvil + Push Engine" body="<ul><li><strong>Problema:</strong> latencia variable; necesidad de segmentación y AB/n</li><li><strong>Solución:</strong> Cache Firestore + API DRF; FCM con tracking</li><li><strong>Impacto:</strong> ↓ p95, ↑ open rate, ↓ coste</li></ul>" href="/case-studies/aire/" %}
+      {% include "components/card.html" with title="Osoigo — Plataforma participativa / mensajería" body="<ul><li><strong>Problema:</strong> modelo resiliente de conversaciones/mensajes</li><li><strong>Solución:</strong> DRF con acciones; Redis/RabbitMQ; K8s+PgBouncer</li><li><strong>Impacto:</strong> entrega continua y seguridad reforzada</li></ul>" href="/case-studies/osoigo/" %}
+      {% include "components/card.html" with title="ENACT — Orquestación K8s multi‑partner" body="<ul><li><strong>Problema:</strong> integrar servicios DRF en K8s del consorcio</li><li><strong>Solución:</strong> Ingress TLS, namespaces, CI/CD con imágenes</li><li><strong>Impacto:</strong> demos fiables y cumplimiento multi‑tenant</li></ul>" href="/case-studies/enact/" %}
+      {% include "components/card.html" with title="Atempora — SaaS salud mental (multi‑tenant)" body="<ul><li><strong>Problema:</strong> turnos/créditos multimoneda y políticas</li><li><strong>Solución:</strong> backend DRF + Agora + pagos intercambiables</li><li><strong>Impacto:</strong> dominio robusto y dashboards por nivel</li></ul>" href="/case-studies/atempora/" %}
+      {% include "components/card.html" with title="Embever — IoT/Cloud (resumen)" body="<ul><li><strong>Problema:</strong> backend para gestión de dispositivos/APIs</li><li><strong>Solución:</strong> APIs + procesos asíncronos; seguridad/observabilidad</li><li><strong>Impacto:</strong> mayor confiabilidad y base para escalar</li></ul>" href="/case-studies/embever/" %}
     </div>
   </section>
 {% endblock content %}

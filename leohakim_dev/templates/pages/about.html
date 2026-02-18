@@ -1,1 +1,103 @@
 {% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block title %}
+  {% translate "About" %} | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-8 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">Sobre mí</h1>
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+      <div class="space-y-6">
+        <p class="text-zinc-700 dark:text-zinc-300">
+          <strong>Hola, soy Leo Hakim.</strong> Llevo <strong>20+ años</strong> diseñando y desarrollando <strong>backends y plataformas web</strong> con Python/Django y ecosistemas modernos. Hoy estoy <strong>formándome activamente en SRE/Cloud</strong> y puedo asumir funciones SRE cuando el proyecto lo requiere.
+        </p>
+        <section aria-labelledby="value" class="space-y-2">
+          <h2 id="value"
+              class="text-lg font-semibold text-zinc-900 dark:text-white">Propuesta de valor</h2>
+          <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+            <li>Backends robustos con Django/DRF y arquitecturas limpias.</li>
+            <li>Plataformas resilientes y escalables (Kubernetes, colas, cache, CDN).</li>
+            <li>Observabilidad y rendimiento medibles (SLIs/SLOs, p50/p95/p99).</li>
+            <li>Cost‑efficiency: cache/CDN, right‑sizing, escalado automático.</li>
+            <li>Entrega continua segura: CI/CD, canary/blue‑green, rollbacks.</li>
+            <li>Seguridad por diseño: autenticación/OAuth2‑OIDC, CSP y secretos.</li>
+          </ul>
+        </section>
+        <section aria-labelledby="sectors" class="space-y-2">
+          <h2 id="sectors"
+              class="text-lg font-semibold text-zinc-900 dark:text-white">Sectores y tipos de proyecto</h2>
+          <div class="flex flex-wrap gap-2">
+            {% include "components/chip.html" with label="Media/Streaming" %}
+            {% include "components/chip.html" with label="SaaS B2B/B2C" %}
+            {% include "components/chip.html" with label="Participación/Comunidades" %}
+          </div>
+        </section>
+      </div>
+      <aside class="mx-auto w-full max-w-sm lg:max-w-md">
+        <div class="overflow-hidden rounded-2xl bg-white ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+          <img src="{% static 'images/home_photo.png' %}"
+               alt="Retrato de Leonardo Hakim"
+               class="h-auto w-full object-cover" />
+          <div class="space-y-3 px-6 pb-6 pt-5 text-sm text-zinc-600 dark:text-zinc-400">
+            <p class="text-base font-semibold text-zinc-900 dark:text-zinc-100">Ingeniero de software — Backend & Cloud</p>
+            <p>SRE en formación. Enfoque en confiabilidad, rendimiento y costes medibles.</p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              {% include "components/chip.html" with label="Django" %}
+              {% include "components/chip.html" with label="DRF" %}
+              {% include "components/chip.html" with label="K8s" %}
+              {% include "components/chip.html" with label="Terraform" %}
+              {% include "components/chip.html" with label="AWS" %}
+              {% include "components/chip.html" with label="GCP" %}
+              {% include "components/chip.html" with label="Prometheus" %}
+              {% include "components/chip.html" with label="OpenTelemetry" %}
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              {% include "components/cta.html" with href="/cv/" text="Ver CV one‑pager" variant="secondary" %}
+              {% include "components/cta.html" with href="/contact/" text="Contactar" variant="primary" %}
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <section aria-labelledby="timeline" class="space-y-4">
+      <h2 id="timeline"
+          class="text-lg font-semibold text-zinc-900 dark:text-white">Timeline — Experiencia</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>
+          <strong>Aire de Santa Fe</strong> — Director técnico de app móvil, backend y push engine.
+        </li>
+        <li>
+          <strong>Osoigo</strong> — Arquitectura DRF, mensajería y K8s (ENACT).
+        </li>
+        <li>
+          <strong>Atempora (SaaS)</strong> — Dominio sesiones/créditos, multimoneda y compliance.
+        </li>
+        <li>
+          <strong>Embever (IoT)</strong> — Backends y APIs para dispositivos.
+        </li>
+        <li>
+          <strong>Proyectos previos</strong> — Consultoría, web apps y plataformas B2B/B2C.
+        </li>
+      </ul>
+    </section>
+    <section aria-labelledby="learning" class="space-y-3">
+      <h2 id="learning"
+          class="text-lg font-semibold text-zinc-900 dark:text-white">Plan de formación SRE (2025–2026)</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Lecturas: Google SRE Workbook, AWS Well‑Architected, OTel patterns.</li>
+        <li>Práctica: definir SLOs en proyectos activos; tableros y alertas.</li>
+        <li>Certificación: AWS SAA o GCP (objetivo 2025 Q4).</li>
+        <li>IaC: Terraform módulos + Helm charts productivos.</li>
+        <li>DR/HA: runbooks, pruebas de failover, game days trimestrales.</li>
+      </ul>
+      <div class="flex flex-wrap gap-3 pt-1">
+        {% include "components/cta.html" with href="/playbook/" text="Ver Playbook" variant="secondary" %}
+        {% include "components/cta.html" with href="/services/" text="Ver servicios" variant="secondary" %}
+      </div>
+    </section>
+  </section>
+{% endblock content %}

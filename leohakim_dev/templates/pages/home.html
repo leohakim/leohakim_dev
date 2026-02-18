@@ -10,7 +10,7 @@
   <section class="relative overflow-hidden rounded-3xl bg-white px-8 py-12 ring-1 ring-inset ring-zinc-200 sm:px-12 lg:px-16">
     <div class="relative grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
       <div class="space-y-8">
-        {% include "components/badge.html" with text=_("SRE / Cloud Architect") %}
+        {% include "components/badge.html" with text=_("Backend & Cloud (SRE in training)") %}
         <div class="space-y-5">
           <h1 class="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
             {% translate "Designing systems that stay fast, resilient, and affordable." %}
@@ -22,6 +22,7 @@
         <div class="flex flex-wrap gap-3">
           {% include "components/cta.html" with href="/contact/" text=_("Start a project") variant="primary" %}
           {% include "components/cta.html" with href="/case-studies/" text=_("See case studies") variant="secondary" %}
+          {% include "components/cta.html" with href="/cv/" text=_("View CV one‑pager") variant="secondary" %}
         </div>
         <div class="pt-6">{% include "components/trust_bar.html" with logos=trust_logos %}</div>
         <div class="grid gap-4 sm:grid-cols-3">
@@ -38,8 +39,10 @@
                  class="h-auto w-full rounded-t-xl object-cover" />
             <div class="space-y-3 px-6 pb-6 pt-5 text-sm text-zinc-600">
               <p class="text-xs uppercase tracking-[0.28em] text-brand-600">{% translate "Meet Leonardo" %}</p>
-              <p class="text-base font-semibold text-zinc-900">{% translate "SRE & Cloud Architect" %}</p>
-              <p>{% translate "Helping startups and scaleups with production readiness, SLOs and cost governance." %}</p>
+              <p class="text-base font-semibold text-zinc-900">{% translate "Backend & Cloud engineer (SRE in training)" %}</p>
+              <p>
+                {% translate "I build backends and platforms with Django/DRF and help teams get to production with reliability and cost visibility." %}
+              </p>
             </div>
           </div>
         </div>

@@ -80,6 +80,32 @@ urlpatterns = [
         TemplateView.as_view(template_name="pages/case_studies.html"),
         name="case-studies",
     ),
+    # Case study detail pages
+    path(
+        "case-studies/aire/",
+        TemplateView.as_view(template_name="pages/case_studies/aire.html"),
+        name="case-study-aire",
+    ),
+    path(
+        "case-studies/osoigo/",
+        TemplateView.as_view(template_name="pages/case_studies/osoigo.html"),
+        name="case-study-osoigo",
+    ),
+    path(
+        "case-studies/enact/",
+        TemplateView.as_view(template_name="pages/case_studies/enact.html"),
+        name="case-study-enact",
+    ),
+    path(
+        "case-studies/atempora/",
+        TemplateView.as_view(template_name="pages/case_studies/atempora.html"),
+        name="case-study-atempora",
+    ),
+    path(
+        "case-studies/embever/",
+        TemplateView.as_view(template_name="pages/case_studies/embever.html"),
+        name="case-study-embever",
+    ),
     path(
         "services/",
         TemplateView.as_view(template_name="pages/services.html"),
@@ -94,6 +120,17 @@ urlpatterns = [
         "contact/",
         TemplateView.as_view(template_name="pages/contact.html"),
         name="contact",
+    ),
+    # CV and Playbook resources
+    path(
+        "cv/",
+        TemplateView.as_view(template_name="pages/cv.html"),
+        name="cv",
+    ),
+    path(
+        "playbook/",
+        TemplateView.as_view(template_name="pages/playbook.html"),
+        name="playbook",
     ),
     path(
         "speaking/",

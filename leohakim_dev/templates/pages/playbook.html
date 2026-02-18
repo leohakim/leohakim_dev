@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  Playbook — Resiliencia, escalabilidad y seguridad | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      Playbook — Resiliencia, escalabilidad y seguridad
+    </h1>
+    <section class="space-y-2" aria-labelledby="d1">
+      <h2 id="d1" class="text-xl font-semibold">1) Diseño para fallas</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Timeouts, retires con backoff, circuit breakers.</li>
+        <li>Idempotencia, colas y compensaciones.</li>
+      </ul>
+    </section>
+    <section class="space-y-2" aria-labelledby="d2">
+      <h2 id="d2" class="text-xl font-semibold">2) Escalabilidad</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Estado fuera de proceso (DB/Redis/obj store).</li>
+        <li>Autoescalado, particionamiento/caching, CDN.</li>
+      </ul>
+    </section>
+    <section class="space-y-2" aria-labelledby="d3">
+      <h2 id="d3" class="text-xl font-semibold">3) Observabilidad</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>KPIs: p50/p95/p99, error rate, saturación.</li>
+        <li>Trazas distribuidas y dashboards por servicio.</li>
+      </ul>
+    </section>
+    <section class="space-y-2" aria-labelledby="d4">
+      <h2 id="d4" class="text-xl font-semibold">4) Entrega continua</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Estrategia de despliegue (canary/blue‑green).</li>
+        <li>Migraciones con seguridad (migración + backfill).</li>
+      </ul>
+    </section>
+    <section class="space-y-2" aria-labelledby="d5">
+      <h2 id="d5" class="text-xl font-semibold">5) Seguridad</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>CSP, HSTS, headers, OAuth2/OIDC.</li>
+        <li>Rotación de secretos y mínimos privilegios.</li>
+      </ul>
+    </section>
+    <section class="space-y-2" aria-labelledby="d6">
+      <h2 id="d6" class="text-xl font-semibold">6) Cost‑efficiency</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Right‑sizing, jobs vs. sync, cache TTL adecuado.</li>
+        <li>Alertas por coste y pruebas de impacto.</li>
+      </ul>
+    </section>
+    <div class="flex flex-wrap gap-3 pt-4">
+      {% include "components/cta.html" with href="/contact/" text="Solicitar auditoría" variant="primary" %}
+      <button onclick="window.print()"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-slate-900 ring-1 ring-inset ring-zinc-200 transition hover:bg-zinc-50 hover:ring-zinc-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-zinc-900 dark:text-zinc-100 dark:ring-zinc-700 dark:hover:bg-zinc-800 dark:focus-visible:ring-offset-zinc-950">
+        Descargar / Imprimir
+      </button>
+    </div>
+  </section>
+{% endblock content %}

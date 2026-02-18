@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  Osoigo — Case Study | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      Osoigo — Plataforma participativa / mensajería
+    </h1>
+    <p class="text-zinc-600 dark:text-zinc-400">
+      Plataforma de participación con conversaciones entre familias y profesorado, y proyectos europeos. Requisitos de escalabilidad, integridad y seguridad.
+    </p>
+    <section aria-labelledby="problema" class="space-y-2">
+      <h2 id="problema" class="text-xl font-semibold">Problema</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Modelo de datos de conversaciones y mensajes resiliente ante borrado de usuarios.</li>
+        <li>API REST clara (acciones personalizadas) y permisos robustos.</li>
+        <li>Necesidad de entrega continua y ambientes (staging/producción).</li>
+      </ul>
+    </section>
+    <section aria-labelledby="arquitectura" class="space-y-3">
+      <h2 id="arquitectura" class="text-xl font-semibold">Arquitectura y decisiones</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% include "components/card.html" with title="Backend" body="<ul><li>Django/DRF con acciones custom</li><li>on_delete=SET_NULL para historiales</li><li>Permisos y auditoría</li></ul>" %}
+        {% include "components/card.html" with title="Async" body="<ul><li>RabbitMQ/Redis + Celery</li><li>Pgbouncer para pooling</li><li>PostgreSQL 16</li></ul>" %}
+        {% include "components/card.html" with title="Runtime" body="<ul><li>Kubernetes (Traefik Ingress)</li><li>TLS con cert-manager</li><li>Secrets y Flower</li></ul>" %}
+      </div>
+    </section>
+    <section aria-labelledby="observabilidad" class="space-y-2">
+      <h2 id="observabilidad" class="text-xl font-semibold">Observabilidad y SRE (en evolución)</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>SLIs/SLOs básicos, métricas de colas y DB.</li>
+        <li>Dashboards iniciales; alertas por latencia/errores.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="rol" class="space-y-2">
+      <h2 id="rol" class="text-xl font-semibold">Rol y stack</h2>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Rol:</strong> Diseño de modelo, API DRF, despliegue Docker/K8s, troubleshooting productivo.
+      </p>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Stack:</strong> Django/DRF, Celery, Redis, PostgreSQL, PgBouncer, RabbitMQ, Traefik, cert-manager.
+      </p>
+    </section>
+  </section>
+{% endblock content %}

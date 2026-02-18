@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  Aire — Case Study | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      Aire de Santa Fe — App móvil + Push Engine
+    </h1>
+    <p class="text-zinc-600 dark:text-zinc-400">
+      Medio provincial con alto tráfico. Objetivo: app móvil con noticias en tiempo real, motor de notificaciones push segmentadas y panel interno para campañas.
+    </p>
+    <section aria-labelledby="problema" class="space-y-2">
+      <h2 id="problema" class="text-xl font-semibold">Problema</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Latencia variable (contenido dinámico).</li>
+        <li>Necesidad de segmentación y AB/n en notificaciones.</li>
+        <li>Métricas de delivery, open rate y CTR.</li>
+        <li>Costes y resiliencia bajo picos.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="arquitectura" class="space-y-3">
+      <h2 id="arquitectura" class="text-xl font-semibold">Arquitectura (resumen)</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% include "components/card.html" with title="API & Cache" body="<ul><li>API Django/DRF</li><li>Cache Firestore 5 min</li><li>Artículos on‑demand con TTL</li></ul>" %}
+        {% include "components/card.html" with title="Mensajería" body="<ul><li>FCM para envío y tracking</li><li>Audiencias y variantes AB/n</li><li>Dashboards por campaña</li></ul>" %}
+        {% include "components/card.html" with title="Infra" body="<ul><li>PostgreSQL</li><li>Redis</li><li>Celery Workers</li></ul>" %}
+      </div>
+    </section>
+    <section aria-labelledby="confiabilidad" class="space-y-2">
+      <h2 id="confiabilidad" class="text-xl font-semibold">Entrega y confiabilidad</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>CI/CD con imágenes versionadas.</li>
+        <li>Estrategia de rollbacks y alertas.</li>
+        <li>SLOs: disponibilidad API y latencia p95.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="impacto" class="space-y-4">
+      <h2 id="impacto" class="text-xl font-semibold">Resultados (impacto)</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% include "components/kpi.html" with value="↓ p95" label="latencia en endpoints críticos" %}
+        {% include "components/kpi.html" with value="↑" label="tasa de apertura (segmentación + ventanas)" %}
+        {% include "components/kpi.html" with value="↓" label="coste (cache + CDN + workers)" %}
+      </div>
+    </section>
+    <section aria-labelledby="rol" class="space-y-2">
+      <h2 id="rol" class="text-xl font-semibold">Rol y stack</h2>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Rol:</strong> Arquitectura backend, data model de audiencias, motor de notificaciones, CI/CD e infraestructura.
+      </p>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Stack:</strong> Django/DRF, Celery, Redis, PostgreSQL, FCM, HTMX, Firestore.
+      </p>
+    </section>
+  </section>
+{% endblock content %}

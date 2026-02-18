@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  CV — One‑pager | leohakim.dev
+{% endblock title %}
+{% block css %}
+  {{ block.super }}
+  <style>
+    @media print {
+      @page {
+        size: A4;
+        margin: 4mm;
+      }
+
+      html,
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-size: 9.5px;
+      }
+
+      /* Ocultar chrome del sitio */
+      header,
+      footer,
+      nav {
+        display: none !important;
+      }
+
+      .cv-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      .cv-header h1 {
+        font-size: 16px !important;
+        line-height: 1.05 !important;
+      }
+
+      .cv-section-title {
+        font-size: 11.5px !important;
+        margin-bottom: 1.8mm !important;
+      }
+
+      .cv-list {
+        margin: 0 !important;
+        padding-left: 16px !important;
+      }
+
+      .cv-list li {
+        margin-bottom: 1mm !important;
+      }
+
+      .cv-tight {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .cv-small {
+        font-size: 11px !important;
+      }
+
+      .cv-xsmall {
+        font-size: 10px !important;
+      }
+    }
+  </style>
+{% endblock css %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="cv-container space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 print:space-y-2 print:p-0 print:ring-0 dark:bg-zinc-900 dark:ring-zinc-700">
+    <!-- Header -->
+    <header class="cv-header flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div class="print:col-span-1">
+        <h1 id="page-title"
+            class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white print:text-base">Leo Hakim</h1>
+        <p class="text-zinc-700 dark:text-zinc-300 print:text-[10px]">
+          Backend & Cloud engineer (SRE in training) — Django/DRF, Kubernetes, Terraform, AWS/GCP.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 print:hidden">
+        {% include "components/chip.html" with label="Django/DRF" %}
+        {% include "components/chip.html" with label="Kubernetes" %}
+        {% include "components/chip.html" with label="Terraform" %}
+        {% include "components/chip.html" with label="AWS/GCP" %}
+        {% include "components/chip.html" with label="PostgreSQL" %}
+        {% include "components/chip.html" with label="Redis" %}
+        {% include "components/chip.html" with label="Celery" %}
+        {% include "components/chip.html" with label="OpenTelemetry" %}
+      </div>
+    </header>
+    <!-- Summary -->
+    <section class="grid gap-4 sm:grid-cols-3 print:grid-cols-2 print:gap-[2mm]">
+      <div class="sm:col-span-2 print:col-span-1">
+        <h2 class="cv-section-title text-base font-semibold text-zinc-900 dark:text-white print:text-sm">Propuesta</h2>
+        <p class="text-zinc-600 dark:text-zinc-400 print:text-[10px]">
+          Diseño y desarrollo de backends y plataformas medibles, resilientes y eficientes en costes. Acompaño a equipos a producción con SLOs, despliegues seguros y visibilidad de costes.
+        </p>
+      </div>
+      <div class="print:col-span-1">
+        <h2 class="cv-section-title text-base font-semibold text-zinc-900 dark:text-white print:text-sm">Servicios</h2>
+        <ul class="cv-list list-disc pl-5 text-zinc-600 dark:text-zinc-400 print:text-[10px]">
+          <li>Backend (APIs, dominio, integraciones)</li>
+          <li>Cloud (IaC, K8s, CI/CD)</li>
+          <li>SRE/DevOps (SLOs, observabilidad)</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Experience -->
+    <section aria-labelledby="exp" class="space-y-2 print:space-y-1 cv-tight">
+      <h2 id="exp" class="cv-section-title text-xl font-semibold print:text-sm">Experiencia clave</h2>
+      <div class="grid gap-3 sm:grid-cols-2 print:gap-[2mm]">
+        <div>
+          <h3 class="font-medium text-zinc-900 dark:text-white print:text-[11px]">Aire de Santa Fe</h3>
+          <ul class="cv-list text-sm text-zinc-700 dark:text-zinc-300 print:text-[10px]">
+            <li>Backend/API + Push Engine</li>
+            <li>Cache, FCM, métricas</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-medium text-zinc-900 dark:text-white print:text-[11px]">Osoigo / ENACT</h3>
+          <ul class="cv-list text-sm text-zinc-700 dark:text-zinc-300 print:text-xs">
+            <li>DRF + K8s; ingress TLS</li>
+            <li>Colas, CI/CD</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-medium text-zinc-900 dark:text-white print:text-[11px]">Atempora</h3>
+          <ul class="cv-list text-sm text-zinc-700 dark:text-zinc-300 print:text-xs">
+            <li>SaaS multi‑tenant</li>
+            <li>Sesiones/créditos, Agora, pagos</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-medium text-zinc-900 dark:text-white print:text-[11px]">Embever</h3>
+          <ul class="cv-list text-sm text-zinc-700 dark:text-zinc-300 print:text-xs">
+            <li>IoT</li>
+            <li>APIs y procesos backend</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Capabilities -->
+    <section class="grid gap-4 sm:grid-cols-3 print:grid-cols-2 print:gap-1">
+      <div>
+        <h3 class="cv-section-title font-medium text-zinc-900 dark:text-white print:text-sm">Backend</h3>
+        <ul class="cv-list list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400 print:text-[10px]">
+          <li>Django/DRF, validación, serialización</li>
+          <li>Autenticación (JWT/OIDC), permisos, auditoría</li>
+          <li>Integraciones (pagos, colas, cache, storage)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="cv-section-title font-medium text-zinc-900 dark:text-white print:text-sm">Cloud</h3>
+        <ul class="cv-list list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400 print:text-xs">
+          <li>K8s (ingress, autoscaling, secrets)</li>
+          <li>Terraform/Helm/Kustomize</li>
+          <li>CI/CD (canary, blue/green, rollbacks)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="cv-section-title font-medium text-zinc-900 dark:text-white print:text-sm">SRE/Observabilidad</h3>
+        <ul class="cv-list list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400 print:text-xs">
+          <li>SLIs/SLOs y alertas accionables</li>
+          <li>Prometheus/Grafana/Loki, OTel</li>
+          <li>Rendimiento (p95/p99), pruebas de carga</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Actions -->
+    <div class="flex flex-wrap gap-3 print:hidden">
+      {% include "components/cta.html" with href="/contact/" text="Contactar" variant="primary" %}
+      <button onclick="window.print()"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-slate-900 ring-1 ring-inset ring-zinc-200 transition hover:bg-zinc-50 hover:ring-zinc-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-zinc-900 dark:text-zinc-100 dark:ring-zinc-700 dark:hover:bg-zinc-800 dark:focus-visible:ring-offset-zinc-950">
+        Imprimir / Guardar PDF
+      </button>
+    </div>
+  </section>
+{% endblock content %}

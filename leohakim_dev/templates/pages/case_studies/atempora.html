@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  Atempora — Case Study | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      Atempora — SaaS salud mental (multi‑tenant)
+    </h1>
+    <p class="text-zinc-600 dark:text-zinc-400">
+      SaaS para psicólogos y clínicas: sesiones de 50 min, buffers de descanso, créditos desacoplados de moneda, multimoneda y liquidaciones por profesional.
+    </p>
+    <section aria-labelledby="problema" class="space-y-2">
+      <h2 id="problema" class="text-xl font-semibold">Problema</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Modelo de turnos y créditos flexible y ético.</li>
+        <li>Reglas de expiración (12 meses), devoluciones y políticas de cancelación.</li>
+        <li>Video/voz/chat integrados con costo controlado.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="arquitectura" class="space-y-3">
+      <h2 id="arquitectura" class="text-xl font-semibold">Arquitectura</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% include "components/card.html" with title="Backend" body="<ul><li>Django + DRF</li><li>Postgres, Redis, Celery</li><li>Niveles clínica/profesional</li></ul>" %}
+        {% include "components/card.html" with title="Frontend & Comms" body="<ul><li>React + TS</li><li>Agora.io (voz/video/chat)</li><li>Alternativas evaluadas</li></ul>" %}
+        {% include "components/card.html" with title="Pagos" body="<ul><li>MercadoPago/Stripe</li><li>Multimoneda</li><li>Proveedores intercambiables</li></ul>" %}
+      </div>
+    </section>
+    <section aria-labelledby="rol" class="space-y-2">
+      <h2 id="rol" class="text-xl font-semibold">Rol y stack</h2>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Rol:</strong> Diseño de dominio, APIs, reglas de negocio, CI/CD y despliegue.
+      </p>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        <strong>Stack:</strong> Django/DRF, React/TS, Redis, Celery, PostgreSQL, Agora, proveedores de pago.
+      </p>
+    </section>
+  </section>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  Embever — Case Study | leohakim.dev
+{% endblock title %}
+{% block content %}
+  <section aria-labelledby="page-title"
+           class="space-y-6 rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+    <h1 id="page-title"
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+      Embever — Integración IoT y backend cloud (resumen)
+    </h1>
+    <p class="text-zinc-600 dark:text-zinc-400">
+      Resumen general sin datos sensibles. Métricas concretas y capturas se completarán tras validación.
+    </p>
+    <section aria-labelledby="contexto" class="space-y-2">
+      <h2 id="contexto" class="text-xl font-semibold">Contexto</h2>
+      <p class="text-zinc-700 dark:text-zinc-300">
+        Empresa de IoT con necesidades de backend para gestión de dispositivos, APIs y dashboards.
+      </p>
+    </section>
+    <section aria-labelledby="aportes" class="space-y-2">
+      <h2 id="aportes" class="text-xl font-semibold">Aportes principales</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Diseño de APIs y servicios backend robustos.</li>
+        <li>Integración de procesos asíncronos y manejo de colas.</li>
+        <li>Mejores prácticas de seguridad y observabilidad.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="resultados" class="space-y-2">
+      <h2 id="resultados" class="text-xl font-semibold">Resultados (genéricos)</h2>
+      <ul class="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+        <li>Mejora de confiabilidad en flujos críticos.</li>
+        <li>Base sólida para escalar dispositivos y usuarios.</li>
+      </ul>
+    </section>
+  </section>
+{% endblock content %}

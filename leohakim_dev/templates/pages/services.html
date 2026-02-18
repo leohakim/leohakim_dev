@@ -10,7 +10,9 @@
            class="rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
     <h1 id="page-title"
         class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">{% translate "Services" %}</h1>
-    <p class="mt-2 text-zinc-600 dark:text-zinc-400">{% translate "Services for reliable & cost-efficient systems." %}</p>
+    <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+      {% translate "Backend development, Cloud architecture and SRE/DevOps for reliable & cost‑efficient systems." %}
+    </p>
     <div class="mt-6 grid gap-6 md:grid-cols-3">
       <article class="rounded-2xl bg-white p-4 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
         <h2 class="font-medium text-zinc-900 dark:text-white">{% translate "SRE / DevOps" %}</h2>
@@ -35,5 +37,54 @@
         </ul>
       </article>
     </div>
+    <!-- Contenido ampliado -->
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl bg-white p-5 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">
+          {% translate "Backend development (Python/Django/DRF)" %}
+        </h3>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>{% translate "Clean architecture (layers/services), validations, serialization" %}</li>
+          <li>{% translate "Integrations: queues, cache, storage, third-parties (payments, FCM)" %}</li>
+          <li>{% translate "Authentication: JWT, OAuth2/OIDC, permissions and auditing" %}</li>
+        </ul>
+      </article>
+      <article class="rounded-2xl bg-white p-5 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">{% translate "Cloud architecture & containers" %}</h3>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>{% translate "Docker and Kubernetes (ingress, autoscaling, secrets, networking)" %}</li>
+          <li>{% translate "IaC: Terraform/Helm/Kustomize" %}</li>
+          <li>{% translate "CI/CD: pipelines, blue/green, canary, rollbacks and tests" %}</li>
+        </ul>
+      </article>
+      <article class="rounded-2xl bg-white p-5 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">{% translate "Observability & performance" %}</h3>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>{% translate "Metrics (Prometheus/Otel), logs and traces" %}</li>
+          <li>{% translate "SLIs/SLOs definition and actionable alerts" %}</li>
+          <li>{% translate "Performance budget and load testing" %}</li>
+        </ul>
+      </article>
+      <article class="rounded-2xl bg-white p-5 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">{% translate "Security" %}</h3>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+          <li>{% translate "Headers, CSP, hardening, secrets protection" %}</li>
+          <li>{% translate "Dependency review and SBOM" %}</li>
+          <li>{% translate "Data policies and compliance" %}</li>
+        </ul>
+      </article>
+    </div>
+    <section class="mt-10 rounded-2xl bg-zinc-50 p-5 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-950/40 dark:ring-zinc-700">
+      <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">{% translate "Ways of working" %}</h3>
+      <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
+        <li>{% translate "Audit (1–2 weeks): assessment and action plan" %}</li>
+        <li>{% translate "Implementation (4–8 weeks): deliverables and handover" %}</li>
+        <li>{% translate "Ongoing (monthly): evolving SRE/DevOps" %}</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {% include "components/cta.html" with href="/playbook/" text=_("View Playbook") variant="secondary" %}
+        {% include "components/cta.html" with href="/contact/" text=_("Request an audit") variant="primary" %}
+      </div>
+    </section>
   </section>
 {% endblock content %}

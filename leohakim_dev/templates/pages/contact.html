@@ -76,6 +76,10 @@
                  href="mailto:work@leohakim.dev">{% translate "Email" %}</a>
             </li>
           </ul>
+          <div class="mt-4 flex flex-wrap gap-3">
+            {% include "components/cta.html" with href="/cv/" text=_("View CV one‑pager") variant="secondary" %}
+            {% include "components/cta.html" with href="/playbook/" text=_("View Playbook") variant="secondary" %}
+          </div>
         </div>
       </aside>
     </div>
