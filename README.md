@@ -159,6 +159,38 @@ make build-local  # or: docker compose -f docker-compose.local.yml up --build
 
 The Django container mounts the project directory, applies migrations against `leohakim_dev.db`, and runs `runserver_plus`. Logs can be tailed with `docker compose logs -f`.
 
+## VPS-style production flow (web + nginx on port 8001)
+
+This repository also includes a production layout compatible with the existing
+`leohakim.dev` VPS setup:
+
+- `production.yml` with two services: `web` (gunicorn) and `nginx`.
+- `nginx` listens on container port `80` and is mapped to host `8001`.
+- Static files are shared through a Docker volume.
+- SQLite persists under `./db` (mounted as `/app/db` in the web container).
+
+Steps:
+
+1. Create `.env` from template:
+   ```bash
+   cp .env.example .env
+   ```
+2. Start production stack:
+   ```bash
+   docker compose -f production.yml up -d --build
+   ```
+   or:
+   ```bash
+   make run-prod
+   ```
+
+Image build/publish commands:
+
+```bash
+make xbuild
+make xpublish
+```
+
 ## Additional resources
 
 - Cookiecutter Django docs: <https://cookiecutter-django.readthedocs.io/>
