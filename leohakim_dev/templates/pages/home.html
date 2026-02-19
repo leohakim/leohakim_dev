@@ -5,33 +5,33 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% url 'contact' as contact_url %}
 {% url 'case-studies' as case_studies_url %}
-{% url 'cv' as cv_url %}
+{% url 'services' as services_url %}
 {% block title %}
   {% if LANGUAGE_CODE == 'en' %}
-    Leonardo Hakim | Backend, Cloud and Professional Positioning
+    Leonardo Hakim | Backend engineering with business focus
   {% else %}
-    Leonardo Hakim | Backend, Cloud y posicionamiento tecnico
+    Leonardo Hakim | Backend con foco en negocio
   {% endif %}
 {% endblock title %}
 {% block meta_description %}
   {% if LANGUAGE_CODE == 'en' %}
-    Professional website of Leonardo Hakim: backend, cloud, and visibility assets for clients and recruiters.
+    Leonardo Hakim helps teams stabilize products, modernize backend platforms, and make technical decisions easier for business teams.
   {% else %}
-    Sitio profesional de Leonardo Hakim: backend, cloud y activos de visibilidad para redes, reclutadores y clientes.
+    Leonardo Hakim ayuda a estabilizar productos, modernizar plataformas backend y traducir decisiones tecnicas para equipos de negocio.
   {% endif %}
 {% endblock meta_description %}
 {% block og_title %}
   {% if LANGUAGE_CODE == 'en' %}
-    Leonardo Hakim | Technical profile focused on impact
+    Leonardo Hakim | Backend leadership for growing products
   {% else %}
-    Leonardo Hakim | Perfil tecnico con enfoque en impacto
+    Leonardo Hakim | Liderazgo backend para productos en crecimiento
   {% endif %}
 {% endblock og_title %}
 {% block og_description %}
   {% if LANGUAGE_CODE == 'en' %}
-    Real cases, modern technical narrative, and visibility structure to grow your professional profile.
+    Real client projects, clear delivery approach, and technical leadership with language that both technical and non-technical teams can follow.
   {% else %}
-    Casos reales, narrativa tecnica moderna y estructura de visibilidad profesional para crecer en redes.
+    Proyectos reales, metodo de trabajo claro y liderazgo tecnico explicado en un lenguaje que entiende todo el equipo.
   {% endif %}
 {% endblock og_description %}
 {% block content %}
@@ -41,35 +41,41 @@
     <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
       <div class="space-y-7">
         {% if LANGUAGE_CODE == 'en' %}
-          {% include "components/badge.html" with text="A clearer and stronger positioning" %}
+          {% include "components/badge.html" with text="Backend leadership for real products" %}
         {% else %}
-          {% include "components/badge.html" with text="Nueva direccion visual y narrativa" %}
+          {% include "components/badge.html" with text="Liderazgo backend para productos reales" %}
         {% endif %}
         <div class="space-y-4">
           <h1 class="headline-xl">
             {% if LANGUAGE_CODE == 'en' %}
-              Your technical experience, presented with a modern style and strong professional positioning.
+              I help companies turn complex systems into reliable products that can grow with confidence.
             {% else %}
-              Tu experiencia tecnica, presentada con estilo moderno y posicionamiento profesional.
+              Ayudo a empresas a convertir sistemas complejos en productos confiables, listos para crecer con seguridad.
             {% endif %}
           </h1>
           <p class="max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
             {% if LANGUAGE_CODE == 'en' %}
-              I am Leonardo Hakim. I build backend and cloud platforms, and turn that work into a clear profile for LinkedIn, recruiters, clients, and communities.
+              I work with technical and non-technical teams to improve product stability, simplify backend operations, and guide decisions with clear business impact.
             {% else %}
-              Soy Leonardo Hakim. Construyo plataformas backend y cloud, y transformo ese trabajo en un perfil visible para LinkedIn, reclutadores, clientes y comunidades.
+              Trabajo con equipos tecnicos y no tecnicos para mejorar estabilidad de producto, simplificar operaciones backend y orientar decisiones con impacto de negocio.
             {% endif %}
           </p>
+          <ul class="space-y-2 text-sm text-slate-600 sm:text-base">
+            {% for item in hero_highlights %}
+              <li class="flex items-start gap-2">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+                <span>{{ item }}</span>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
         <div class="flex flex-wrap gap-3">
           {% if LANGUAGE_CODE == 'en' %}
             {% include "components/cta.html" with href=contact_url text="Start a conversation" variant="primary" %}
-            {% include "components/cta.html" with href=case_studies_url text="View full success stories" variant="secondary" %}
-            {% include "components/cta.html" with href=cv_url text="Open CV one-pager" variant="secondary" %}
+            {% include "components/cta.html" with href=case_studies_url text="View success stories" variant="secondary" %}
           {% else %}
-            {% include "components/cta.html" with href=contact_url text="Hablar ahora" variant="primary" %}
-            {% include "components/cta.html" with href=case_studies_url text="Ver casos completos" variant="secondary" %}
-            {% include "components/cta.html" with href=cv_url text="Descubrir CV one-pager" variant="secondary" %}
+            {% include "components/cta.html" with href=contact_url text="Iniciar conversacion" variant="primary" %}
+            {% include "components/cta.html" with href=case_studies_url text="Ver casos de exito" variant="secondary" %}
           {% endif %}
         </div>
         <div class="flex flex-wrap gap-2 text-xs">
@@ -87,16 +93,34 @@
           <div class="space-y-4 px-3 pb-3 pt-5">
             <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">
               {% if LANGUAGE_CODE == 'en' %}
-                Positioning dashboard
+                Where I usually add value
               {% else %}
-                Tablero de posicionamiento
+                Donde suelo aportar mas valor
               {% endif %}
             </p>
-            <div class="grid gap-3">
-              {% for kpi in hero_kpis %}
-                {% include "components/kpi.html" with value=kpi.value label=kpi.label %}
-              {% endfor %}
-            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>
+                {% if LANGUAGE_CODE == 'en' %}
+                  Stabilizing products under high demand
+                {% else %}
+                  Estabilizar productos bajo alta demanda
+                {% endif %}
+              </li>
+              <li>
+                {% if LANGUAGE_CODE == 'en' %}
+                  Aligning product, engineering, and operations
+                {% else %}
+                  Alinear producto, ingenieria y operacion
+                {% endif %}
+              </li>
+              <li>
+                {% if LANGUAGE_CODE == 'en' %}
+                  Enabling safer and faster delivery cycles
+                {% else %}
+                  Habilitar entregas mas seguras y fluidas
+                {% endif %}
+              </li>
+            </ul>
             <div class="pt-1">{% include "components/trust_bar.html" with logos=trust_logos %}</div>
           </div>
         </div>
@@ -107,25 +131,24 @@
     <div class="space-y-2">
       <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
         {% if LANGUAGE_CODE == 'en' %}
-          Profile in 15 seconds
+          How I can help
         {% else %}
-          Perfil en 15 segundos
+          Como te puedo ayudar
         {% endif %}
       </p>
       <h2 class="headline-lg">
         {% if LANGUAGE_CODE == 'en' %}
-          What this website communicates about you at first glance
+          Practical support for teams that need reliability and clarity
         {% else %}
-          Lo que este sitio comunica de ti al primer vistazo
+          Acompanamiento practico para equipos que necesitan confiabilidad y claridad
         {% endif %}
       </h2>
     </div>
     <div class="grid gap-5 md:grid-cols-3">
       {% for block in signature_blocks %}
         <article class="surface-card flex h-full flex-col gap-4 p-6">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-blue-700">{{ block.stat }}</p>
           <h3 class="text-xl font-semibold text-slate-900">{{ block.title }}</h3>
-          <p class="text-sm leading-relaxed text-slate-600">{{ block.summary }}</p>
+          <p class="text-sm leading-relaxed text-slate-600">{{ block.description }}</p>
         </article>
       {% endfor %}
     </div>
@@ -135,27 +158,81 @@
       <div class="space-y-2">
         <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
           {% if LANGUAGE_CODE == 'en' %}
-            Professional visibility
+            Real projects
           {% else %}
-            Visibilidad profesional
+            Proyectos reales
           {% endif %}
         </p>
         <h2 class="headline-lg">
           {% if LANGUAGE_CODE == 'en' %}
-            30-day sprint to increase visibility and conversion
+            Selected success stories and what changed in each case
           {% else %}
-            Sprint de 30 dias para aumentar exposicion y conversion
+            Casos destacados y que se logro en cada uno
           {% endif %}
         </h2>
       </div>
       {% if LANGUAGE_CODE == 'en' %}
-        {% include "components/cta.html" with href=contact_url text="I want this plan" variant="secondary" %}
+        {% include "components/cta.html" with href=case_studies_url text="View all case studies" variant="secondary" %}
       {% else %}
-        {% include "components/cta.html" with href=contact_url text="Quiero este plan" variant="secondary" %}
+        {% include "components/cta.html" with href=case_studies_url text="Ver todos los casos" variant="secondary" %}
       {% endif %}
     </div>
+    <div class="grid gap-5 lg:grid-cols-2">
+      {% for case in featured_cases %}
+        <article class="surface-card flex h-full flex-col gap-4 p-6">
+          <h3 class="text-xl font-semibold text-slate-900">{{ case.title }}</h3>
+          <div class="space-y-2 text-sm leading-relaxed text-slate-600">
+            <p>
+              <span class="font-semibold text-slate-900">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Context:
+                {% else %}
+                  Contexto:
+                {% endif %}
+              </span>
+              {{ case.context }}
+            </p>
+            <p>
+              <span class="font-semibold text-slate-900">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Result:
+                {% else %}
+                  Resultado:
+                {% endif %}
+              </span>
+              {{ case.outcome }}
+            </p>
+          </div>
+          <a href="{{ case.href }}" class="accent-link mt-auto">
+            {% if LANGUAGE_CODE == 'en' %}
+              Open full story ->
+            {% else %}
+              Abrir historia completa ->
+            {% endif %}
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+  <section class="mt-20 space-y-8">
+    <div class="space-y-2">
+      <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+        {% if LANGUAGE_CODE == 'en' %}
+          Work method
+        {% else %}
+          Metodo de trabajo
+        {% endif %}
+      </p>
+      <h2 class="headline-lg">
+        {% if LANGUAGE_CODE == 'en' %}
+          A simple process focused on progress and continuity
+        {% else %}
+          Un proceso simple, orientado a avance real y continuidad
+        {% endif %}
+      </h2>
+    </div>
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-      {% for step in visibility_sprint %}
+      {% for step in work_steps %}
         <article class="surface-soft p-5">
           <p class="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">{{ step.step }}</p>
           <h3 class="mt-3 text-lg font-semibold text-slate-900">{{ step.title }}</h3>
@@ -168,129 +245,26 @@
     <div class="space-y-2">
       <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
         {% if LANGUAGE_CODE == 'en' %}
-          Key assets
+          Experience contexts
         {% else %}
-          Activos clave
+          Contextos de experiencia
         {% endif %}
       </p>
       <h2 class="headline-lg">
         {% if LANGUAGE_CODE == 'en' %}
-          Resources to share in social media, email, and hiring processes
+          Product environments where I have delivered results
         {% else %}
-          Recursos para compartir en redes, email y procesos de seleccion
+          Entornos de producto donde ya consegui resultados
         {% endif %}
       </h2>
     </div>
-    <div class="grid gap-5 lg:grid-cols-3">
-      {% for asset in quick_assets %}
-        <article class="surface-card flex h-full flex-col gap-4 p-6">
-          <h3 class="text-xl font-semibold text-slate-900">{{ asset.title }}</h3>
-          <p class="text-sm leading-relaxed text-slate-600">{{ asset.description }}</p>
-          <a href="{{ asset.href }}" class="accent-link mt-auto">{{ asset.cta }} -></a>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-  <section class="mt-20 space-y-8">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <div class="space-y-2">
-        <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-          {% if LANGUAGE_CODE == 'en' %}
-            Technical authority
-          {% else %}
-            Autoridad tecnica
-          {% endif %}
-        </p>
-        <h2 class="headline-lg">
-          {% if LANGUAGE_CODE == 'en' %}
-            Stories that support your professional positioning
-          {% else %}
-            Casos que sostienen tu posicionamiento
-          {% endif %}
-        </h2>
-      </div>
-      {% if LANGUAGE_CODE == 'en' %}
-        {% include "components/cta.html" with href=case_studies_url text="View all stories" variant="secondary" %}
-      {% else %}
-        {% include "components/cta.html" with href=case_studies_url text="Ver todos los casos" variant="secondary" %}
-      {% endif %}
-    </div>
-    <div class="grid gap-5 lg:grid-cols-3">
-      {% for case in featured_cases %}
-        <article class="surface-card flex h-full flex-col gap-4 p-6">
-          <h3 class="text-xl font-semibold text-slate-900">{{ case.title }}</h3>
-          <p class="text-sm leading-relaxed text-slate-600">{{ case.summary }}</p>
-          <p class="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-blue-800">
-            {{ case.kpi }}
-          </p>
-          <a href="{{ case.href }}" class="accent-link mt-auto">
-            {% if LANGUAGE_CODE == 'en' %}
-              Open full story ->
-            {% else %}
-              Abrir caso completo ->
-            {% endif %}
-          </a>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-  <section class="mt-20 space-y-8">
-    <div class="space-y-2">
-      <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-        {% if LANGUAGE_CODE == 'en' %}
-          Collaboration models
-        {% else %}
-          Modelos de colaboracion
-        {% endif %}
-      </p>
-      <h2 class="headline-lg">
-        {% if LANGUAGE_CODE == 'en' %}
-          Ways of working based on your professional goals
-        {% else %}
-          Formatos de trabajo segun tu objetivo profesional
-        {% endif %}
-      </h2>
-    </div>
-    <div class="grid gap-5 lg:grid-cols-3">
-      {% for model in collaboration_models %}
-        <article class="surface-card flex h-full flex-col gap-4 p-6">
-          <p class="inline-flex w-fit items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-orange-700">
-            {{ model.duration }}
-          </p>
-          <h3 class="text-xl font-semibold text-slate-900">{{ model.title }}</h3>
-          <p class="text-sm leading-relaxed text-slate-600">{{ model.description }}</p>
-          <a href="{{ model.href }}" class="accent-link mt-auto">{{ model.cta }} -></a>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-  <section class="mt-20 space-y-8">
-    <div class="space-y-2">
-      <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-        {% if LANGUAGE_CODE == 'en' %}
-          Channel playbook
-        {% else %}
-          Playbook de canales
-        {% endif %}
-      </p>
-      <h2 class="headline-lg">
-        {% if LANGUAGE_CODE == 'en' %}
-          How to maintain a consistent professional presence
-        {% else %}
-          Como mantener una presencia profesional consistente
-        {% endif %}
-      </h2>
-    </div>
-    <div class="surface-card overflow-hidden">
-      <div class="grid gap-px bg-slate-200 md:grid-cols-2">
-        {% for entry in channel_playbook %}
-          <article class="bg-white p-6">
-            <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">{{ entry.channel }}</p>
-            <p class="mt-2 text-sm font-semibold text-slate-900">{{ entry.format }}</p>
-            <p class="mt-2 text-sm text-slate-600">{{ entry.frequency }}</p>
-          </article>
+    <div class="surface-card p-6">
+      <ul class="mb-5 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
+        {% for item in focus_areas %}
+          <li class="rounded-xl border border-slate-200 bg-white px-4 py-3">{{ item }}</li>
         {% endfor %}
-      </div>
+      </ul>
+      {% include "components/trust_bar.html" with logos=trust_logos %}
     </div>
   </section>
   <section class="mt-20 overflow-hidden rounded-[30px] bg-gradient-to-r from-blue-800 via-blue-700 to-orange-500 px-8 py-10 text-white sm:px-11 lg:px-14">
@@ -298,28 +272,28 @@
       <div class="space-y-3">
         <p class="text-xs font-bold uppercase tracking-[0.18em] text-white/80">
           {% if LANGUAGE_CODE == 'en' %}
-            Next move
+            Next step
           {% else %}
-            Siguiente movimiento
+            Siguiente paso
           {% endif %}
         </p>
         <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
           {% if LANGUAGE_CODE == 'en' %}
-            If you want stronger professional visibility, start with a website that communicates trust and experience clearly.
+            If your product needs more reliability and better technical direction, let's talk.
           {% else %}
-            Si quieres mas exposicion profesional, empieza por un sitio con narrativa, estructura y estilo premium.
+            Si tu producto necesita mas confiabilidad y mejor direccion tecnica, conversemos.
           {% endif %}
         </h2>
         <p class="text-sm leading-relaxed text-white/85">
           {% if LANGUAGE_CODE == 'en' %}
-            We define your message, strengthen your assets, connect channels, and optimize conversion into real opportunities.
+            We can review your current situation and define a realistic plan for your team and business.
           {% else %}
-            Definimos mensaje, reforzamos activos, conectamos canales y optimizamos conversion a oportunidades reales.
+            Podemos revisar la situacion actual y definir un plan realista para tu equipo y tu negocio.
           {% endif %}
         </p>
       </div>
       <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
-        <a href="{% url 'contact' %}"
+        <a href="{{ contact_url }}"
            class="btn-secondary border-white/40 bg-white text-blue-800 hover:bg-blue-50">
           {% if LANGUAGE_CODE == 'en' %}
             Book a call
@@ -327,7 +301,7 @@
             Agendar llamada
           {% endif %}
         </a>
-        <a href="{% url 'services' %}"
+        <a href="{{ services_url }}"
            class="btn-secondary border-white/35 bg-transparent text-white hover:bg-white/10">
           {% if LANGUAGE_CODE == 'en' %}
             View services

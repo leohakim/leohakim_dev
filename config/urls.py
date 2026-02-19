@@ -14,362 +14,261 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         is_en = self.request.LANGUAGE_CODE.startswith("en")
-        context["skills"] = [
-            "Django",
-            "DRF",
-            "K8s",
-            "Terraform",
-            "AWS",
-            "GCP",
-            "Prometheus",
-            "OpenTelemetry",
-        ]
         context["trust_logos"] = [
             {"name": "Aire de Santa Fe", "url": "/case-studies/aire/"},
             {"name": "Osoigo", "url": "/case-studies/osoigo/"},
             {"name": "ENACT", "url": "/case-studies/enact/"},
             {"name": "Atempora", "url": "/case-studies/atempora/"},
+            {"name": "Embever", "url": "/case-studies/embever/"},
         ]
         if is_en:
-            context["hero_kpis"] = [
-                {"value": "20+", "label": "years in software engineering"},
-                {"value": "5", "label": "public success stories"},
-                {"value": "3", "label": "focus areas: product, platform, growth"},
+            context["hero_highlights"] = [
+                "Stabilize products that grew fast and became hard to operate.",
+                "Translate technical complexity into decisions people can understand.",
+                "Build practical roadmaps for product, platform, and team growth.",
             ]
             context["signature_blocks"] = [
                 {
-                    "title": "Technical depth",
-                    "summary": (
-                        "Success stories with real context, "
-                        "decisions, and delivery journey."
-                    ),
-                    "stat": "Execution quality",
-                },
-                {
-                    "title": "Business outcomes",
-                    "summary": (
-                        "Clear communication of what changed and why it mattered."
-                    ),
-                    "stat": "Business clarity",
-                },
-                {
-                    "title": "Professional visibility",
-                    "summary": (
-                        "Assets ready for clients, recruiters, "
-                        "and leadership conversations."
-                    ),
-                    "stat": "Trust and positioning",
-                },
-            ]
-            context["visibility_sprint"] = [
-                {
-                    "step": "Week 1",
-                    "title": "Clarify your message",
+                    "title": "Product stabilization",
                     "description": (
-                        "Define a positioning statement people understand in seconds."
+                        "I help teams reduce operational noise and recover confidence "
+                        "in day-to-day delivery."
                     ),
                 },
                 {
-                    "step": "Week 2",
-                    "title": "Publish proof of work",
+                    "title": "Backend modernization",
                     "description": (
-                        "Turn real projects into clear and credible success stories."
+                        "I redesign critical backend areas so products can evolve "
+                        "without breaking what already works."
                     ),
                 },
                 {
-                    "step": "Week 3",
-                    "title": "Build content cadence",
+                    "title": "Technical leadership support",
                     "description": (
-                        "Create a practical rhythm for LinkedIn and website updates."
-                    ),
-                },
-                {
-                    "step": "Week 4",
-                    "title": "Improve conversion",
-                    "description": (
-                        "Guide profile visitors into conversations "
-                        "and new opportunities."
+                        "I align technical and non-technical stakeholders "
+                        "to keep projects moving with clarity."
                     ),
                 },
             ]
             context["featured_cases"] = [
                 {
                     "title": "Aire de Santa Fe",
-                    "summary": (
-                        "Media product with high traffic needs "
-                        "and a stronger operating model."
+                    "context": (
+                        "Media platform with high traffic and campaigns "
+                        "that needed more predictable operations."
                     ),
-                    "kpi": "Stability and campaign performance improved",
+                    "outcome": (
+                        "A stronger publishing and notification flow with "
+                        "clearer operational decisions."
+                    ),
                     "href": "/case-studies/aire/",
                 },
                 {
-                    "title": "Osoigo / ENACT",
-                    "summary": (
-                        "Collaborative platform strengthened "
-                        "for growth and operational confidence."
+                    "title": "Osoigo",
+                    "context": (
+                        "Participation platform that needed a more robust base "
+                        "for product evolution."
                     ),
-                    "kpi": "More predictable delivery",
+                    "outcome": (
+                        "Lower operational risk and cleaner delivery flow "
+                        "for continuous improvement."
+                    ),
                     "href": "/case-studies/osoigo/",
                 },
                 {
-                    "title": "Atempora",
-                    "summary": (
-                        "Complex product rules simplified for teams and end users."
+                    "title": "ENACT",
+                    "context": (
+                        "Multi-team international initiative with complex "
+                        "coordination requirements."
                     ),
-                    "kpi": "Clearer operations and product evolution",
+                    "outcome": (
+                        "Stable cross-team delivery and shared working rules "
+                        "for reliable execution."
+                    ),
+                    "href": "/case-studies/enact/",
+                },
+                {
+                    "title": "Atempora",
+                    "context": (
+                        "Product with complex scheduling and payment rules "
+                        "that impacted users and operations."
+                    ),
+                    "outcome": (
+                        "Simpler product logic, clearer operation, and a stronger "
+                        "base for future growth."
+                    ),
                     "href": "/case-studies/atempora/",
                 },
             ]
-            context["collaboration_models"] = [
+            context["work_steps"] = [
                 {
-                    "title": "Profile upgrade sprint",
-                    "duration": "2-3 weeks",
+                    "step": "Step 1",
+                    "title": "Understand your context",
                     "description": (
-                        "Refine your professional message "
-                        "and upgrade your web presence."
+                        "We align on business goals, current bottlenecks, "
+                        "and the risks that matter most."
                     ),
-                    "href": "/contact/",
-                    "cta": "Start this sprint",
                 },
                 {
-                    "title": "Delivery and impact package",
-                    "duration": "4-8 weeks",
+                    "step": "Step 2",
+                    "title": "Prioritize for impact",
                     "description": (
-                        "Improve product and platform execution, "
-                        "then communicate outcomes."
+                        "We define a realistic plan focused on visible gains "
+                        "for product and operations."
                     ),
-                    "href": "/services/",
-                    "cta": "Explore this engagement",
                 },
                 {
-                    "title": "Technical authority advisory",
-                    "duration": "Monthly",
+                    "step": "Step 3",
+                    "title": "Execute with quality and rhythm",
                     "description": (
-                        "Ongoing support for positioning, storytelling, and growth."
+                        "Implementation happens with close follow-up, clear "
+                        "communication, and controlled delivery."
                     ),
-                    "href": "/speaking/",
-                    "cta": "See this model",
+                },
+                {
+                    "step": "Step 4",
+                    "title": "Transfer and continuity",
+                    "description": (
+                        "Your team keeps the improvements with practical "
+                        "documentation and clear ownership."
+                    ),
                 },
             ]
-            context["channel_playbook"] = [
-                {
-                    "channel": "LinkedIn",
-                    "format": "Lessons from real projects in plain language",
-                    "frequency": "2 posts per week",
-                },
-                {
-                    "channel": "Case studies",
-                    "format": "Challenge -> approach -> outcome",
-                    "frequency": "1 in-depth story per month",
-                },
-                {
-                    "channel": "Speaking",
-                    "format": "Talks about execution and product growth",
-                    "frequency": "1 proposal per month",
-                },
-                {
-                    "channel": "Direct outreach",
-                    "format": "CV one-pager + selected case links",
-                    "frequency": "Every strategic opportunity",
-                },
-            ]
-            context["quick_assets"] = [
-                {
-                    "title": "Success stories",
-                    "description": (
-                        "Real projects explained in client-friendly language."
-                    ),
-                    "href": "/case-studies/",
-                    "cta": "Open success stories",
-                },
-                {
-                    "title": "CV one-pager",
-                    "description": (
-                        "Short professional profile for recruiters and clients."
-                    ),
-                    "href": "/cv/",
-                    "cta": "Open CV",
-                },
-                {
-                    "title": "Speaking profile",
-                    "description": (
-                        "Topics and sessions to build technical credibility."
-                    ),
-                    "href": "/speaking/",
-                    "cta": "Open speaking page",
-                },
+            context["focus_areas"] = [
+                "Media and content products",
+                "Collaborative and civic platforms",
+                "Complex service operations",
+                "IoT and integration-heavy products",
             ]
             context["social_links"] = [
-                {"label": "Website", "href": "/"},
+                {"label": "Case studies", "href": "/case-studies/"},
                 {"label": "Email", "href": "mailto:work@leohakim.dev"},
                 {"label": "Book intro call", "href": "https://cal.leohakim.dev/"},
             ]
         else:
-            context["hero_kpis"] = [
-                {"value": "20+", "label": "anos en ingenieria de software"},
-                {"value": "5", "label": "casos de exito publicados"},
-                {"value": "3", "label": "focos: producto, plataforma, crecimiento"},
+            context["hero_highlights"] = [
+                (
+                    "Estabilizar productos que crecieron rapido "
+                    "y se volvieron dificiles de operar."
+                ),
+                "Traducir complejidad tecnica en decisiones faciles de entender.",
+                "Armar una hoja de ruta practica para producto, plataforma y equipo.",
             ]
             context["signature_blocks"] = [
                 {
-                    "title": "Profundidad tecnica",
-                    "summary": (
-                        "Casos reales con contexto, decisiones y camino de ejecucion."
-                    ),
-                    "stat": "Calidad de ejecucion",
-                },
-                {
-                    "title": "Resultado de negocio",
-                    "summary": (
-                        "Explicacion clara de que cambio y por que fue relevante."
-                    ),
-                    "stat": "Claridad para negocio",
-                },
-                {
-                    "title": "Visibilidad profesional",
-                    "summary": (
-                        "Activos listos para clientes, recruiters "
-                        "y conversaciones de liderazgo."
-                    ),
-                    "stat": "Confianza y posicionamiento",
-                },
-            ]
-            context["visibility_sprint"] = [
-                {
-                    "step": "Semana 1",
-                    "title": "Claridad de mensaje",
+                    "title": "Estabilizacion de producto",
                     "description": (
-                        "Definir una propuesta de valor que se entienda en segundos."
+                        "Ayudo a bajar ruido operativo y recuperar confianza "
+                        "en la entrega del dia a dia."
                     ),
                 },
                 {
-                    "step": "Semana 2",
-                    "title": "Publicar pruebas reales",
+                    "title": "Modernizacion de backend",
                     "description": (
-                        "Convertir proyectos reales en casos creibles "
-                        "y faciles de entender."
+                        "Rediseno partes criticas del backend para evolucionar "
+                        "producto sin romper lo que ya funciona."
                     ),
                 },
                 {
-                    "step": "Semana 3",
-                    "title": "Crear cadencia de contenido",
+                    "title": "Acompanamiento de liderazgo tecnico",
                     "description": (
-                        "Establecer una rutina practica para LinkedIn "
-                        "y actualizaciones web."
-                    ),
-                },
-                {
-                    "step": "Semana 4",
-                    "title": "Mejorar conversion",
-                    "description": (
-                        "Guiar visitantes del perfil hacia "
-                        "conversaciones y oportunidades."
+                        "Alineo equipos tecnicos y no tecnicos para avanzar "
+                        "con claridad y foco."
                     ),
                 },
             ]
             context["featured_cases"] = [
                 {
                     "title": "Aire de Santa Fe",
-                    "summary": (
-                        "Producto media con alto trafico "
-                        "y necesidad de mayor estabilidad."
+                    "context": (
+                        "Plataforma media con alto trafico y campanas "
+                        "que necesitaban una operacion mas previsible."
                     ),
-                    "kpi": "Mejoro estabilidad y rendimiento de campanas",
+                    "outcome": (
+                        "Se ordeno el flujo de publicacion y notificaciones "
+                        "para operar con mas confianza."
+                    ),
                     "href": "/case-studies/aire/",
                 },
                 {
-                    "title": "Osoigo / ENACT",
-                    "summary": (
-                        "Plataforma colaborativa fortalecida "
-                        "para crecimiento y continuidad."
+                    "title": "Osoigo",
+                    "context": (
+                        "Plataforma participativa que necesitaba una base "
+                        "mas robusta para evolucionar."
                     ),
-                    "kpi": "Entregas mas predecibles",
+                    "outcome": (
+                        "Se redujo riesgo operativo y se logro "
+                        "una entrega continua mas ordenada."
+                    ),
                     "href": "/case-studies/osoigo/",
                 },
                 {
-                    "title": "Atempora",
-                    "summary": (
-                        "Reglas complejas de producto simplificadas "
-                        "para equipos y usuarios."
+                    "title": "ENACT",
+                    "context": (
+                        "Iniciativa internacional con varios equipos y "
+                        "necesidad de coordinar entregas complejas."
                     ),
-                    "kpi": "Operacion mas clara y sostenible",
+                    "outcome": (
+                        "Se logro una entrega estable entre equipos "
+                        "con reglas comunes de trabajo."
+                    ),
+                    "href": "/case-studies/enact/",
+                },
+                {
+                    "title": "Atempora",
+                    "context": (
+                        "Producto con reglas complejas de agenda y pagos "
+                        "que afectaban operacion y experiencia."
+                    ),
+                    "outcome": (
+                        "Se simplifico la logica de producto para operar "
+                        "con mas claridad y sostener crecimiento."
+                    ),
                     "href": "/case-studies/atempora/",
                 },
             ]
-            context["collaboration_models"] = [
+            context["work_steps"] = [
                 {
-                    "title": "Sprint de posicionamiento",
-                    "duration": "2-3 semanas",
+                    "step": "Paso 1",
+                    "title": "Entender el contexto",
                     "description": (
-                        "Ajuste de mensaje profesional y mejora de presencia digital."
+                        "Alineamos objetivos de negocio, cuellos de botella "
+                        "actuales y riesgos prioritarios."
                     ),
-                    "href": "/contact/",
-                    "cta": "Empezar este sprint",
                 },
                 {
-                    "title": "Paquete de ejecucion e impacto",
-                    "duration": "4-8 semanas",
+                    "step": "Paso 2",
+                    "title": "Priorizar impacto",
                     "description": (
-                        "Mejorar producto y plataforma, "
-                        "y comunicar resultados logrados."
+                        "Definimos un plan realista, con foco "
+                        "en mejoras visibles para producto y operacion."
                     ),
-                    "href": "/services/",
-                    "cta": "Explorar esta colaboracion",
                 },
                 {
-                    "title": "Advisory de autoridad tecnica",
-                    "duration": "Mensual",
+                    "step": "Paso 3",
+                    "title": "Ejecutar con calidad y ritmo",
                     "description": (
-                        "Acompanamiento continuo para posicionamiento y crecimiento."
+                        "La implementacion avanza con seguimiento cercano, "
+                        "comunicacion clara y entrega controlada."
                     ),
-                    "href": "/speaking/",
-                    "cta": "Ver este modelo",
+                },
+                {
+                    "step": "Paso 4",
+                    "title": "Transferencia y continuidad",
+                    "description": (
+                        "Tu equipo mantiene las mejoras con documentacion "
+                        "practica y ownership claro."
+                    ),
                 },
             ]
-            context["channel_playbook"] = [
-                {
-                    "channel": "LinkedIn",
-                    "format": "Aprendizajes de proyectos reales en lenguaje claro",
-                    "frequency": "2 publicaciones por semana",
-                },
-                {
-                    "channel": "Casos de exito",
-                    "format": "Desafio -> enfoque -> resultado",
-                    "frequency": "1 historia en profundidad por mes",
-                },
-                {
-                    "channel": "Speaking",
-                    "format": "Charlas sobre ejecucion y crecimiento de producto",
-                    "frequency": "1 propuesta por mes",
-                },
-                {
-                    "channel": "Outreach directo",
-                    "format": "CV one-pager + enlaces seleccionados",
-                    "frequency": "En cada oportunidad estrategica",
-                },
-            ]
-            context["quick_assets"] = [
-                {
-                    "title": "Casos de exito",
-                    "description": "Proyectos reales explicados para clientes.",
-                    "href": "/case-studies/",
-                    "cta": "Abrir casos de exito",
-                },
-                {
-                    "title": "CV one-pager",
-                    "description": "Perfil corto para recruiters y clientes.",
-                    "href": "/cv/",
-                    "cta": "Abrir CV",
-                },
-                {
-                    "title": "Perfil de speaking",
-                    "description": "Temas y sesiones para reforzar autoridad tecnica.",
-                    "href": "/speaking/",
-                    "cta": "Abrir speaking",
-                },
+            context["focus_areas"] = [
+                "Productos media y contenido",
+                "Plataformas colaborativas y civicas",
+                "Operaciones de servicios complejos",
+                "Productos IoT con multiples integraciones",
             ]
             context["social_links"] = [
-                {"label": "Web", "href": "/"},
+                {"label": "Casos", "href": "/case-studies/"},
                 {"label": "Email", "href": "mailto:work@leohakim.dev"},
                 {"label": "Agendar llamada", "href": "https://cal.leohakim.dev/"},
             ]
