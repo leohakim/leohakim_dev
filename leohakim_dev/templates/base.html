@@ -36,7 +36,19 @@
           content="{% block twitter_description %}{% if LANGUAGE_CODE == 'en' %}Backend and cloud engineering profile with clear success stories and delivery experience.{% else %}Perfil de ingeniería backend y cloud con casos de éxito claros y experiencia real de entrega.{% endif %}{% endblock twitter_description %}" />
     <meta name="twitter:image"
           content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/home_photo.png' %}" />
-    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="{% static 'images/favicons/favicon-32x32.png' %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="{% static 'images/favicons/favicon-16x16.png' %}" />
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="{% static 'images/favicons/apple-touch-icon.png' %}" />
+    <link rel="manifest" href="{% static 'images/favicons/site.webmanifest' %}" />
+    <link rel="shortcut icon" href="{% static 'images/favicons/favicon.ico' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
