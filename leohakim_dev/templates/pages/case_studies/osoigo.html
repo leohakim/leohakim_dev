@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+  {% if LANGUAGE_CODE == 'en' %}
+    Success story: Osoigo | leohakim.dev
+  {% else %}
+    Caso de exito: Osoigo | leohakim.dev
+  {% endif %}
+{% endblock title %}
+{% block content %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <a href="{% url 'case-studies' %}" class="accent-link">
+      {% if LANGUAGE_CODE == 'en' %}
+        Back to success stories ->
+      {% else %}
+        Volver a casos de exito ->
+      {% endif %}
+    </a>
+    <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Success story
+      {% else %}
+        Caso de exito
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        Osoigo: a participation platform prepared to grow with stronger reliability.
+      {% else %}
+        Osoigo: una plataforma participativa lista para crecer con mas seguridad.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        The challenge was to support high-volume user conversations with good experience, clear rules, and service continuity.
+      {% else %}
+        El desafio era sostener conversaciones entre muchos usuarios con buena experiencia, reglas claras y continuidad de servicio.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Starting point
+        {% else %}
+          Situacion inicial
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          The platform needed a stronger base to sustain product evolution without affecting data integrity or user quality.
+        {% else %}
+          La plataforma necesitaba una base mas robusta para soportar evolucion de producto sin comprometer historial ni calidad de uso.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Goal
+        {% else %}
+          Objetivo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Improve stability, organize internal flows, and enable continuous delivery with lower risk.
+        {% else %}
+          Mejorar estabilidad, ordenar flujos internos y facilitar entregas continuas con menor riesgo.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-8 surface-card p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        How we achieved it
+      {% else %}
+        Como se logro
+      {% endif %}
+    </h2>
+    <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            1. Redesigned key components:
+          {% else %}
+            1. Rediseno de piezas clave:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          critical model areas were reinforced to protect conversations and key data.
+        {% else %}
+          se reforzaron partes sensibles del modelo para proteger conversaciones y datos importantes.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            2. Cleaner delivery flow:
+          {% else %}
+            2. Flujo de trabajo mas ordenado:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          processes were consolidated so new versions could ship with less friction.
+        {% else %}
+          se consolidaron procesos para que nuevas versiones salgan con menos friccion.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            3. More stable operations:
+          {% else %}
+            3. Base operativa mas estable:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          response capacity improved for demand and product change.
+        {% else %}
+          se mejoro la capacidad de respuesta ante demanda y cambios del producto.
+        {% endif %}
+      </li>
+    </ol>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Outcome achieved
+        {% else %}
+          Resultado logrado
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Operational risk was reduced and the team moved forward with better control over quality and timing.
+        {% else %}
+          Se redujo el riesgo operativo y el equipo pudo avanzar con mas control sobre calidad y tiempos.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Business value
+        {% else %}
+          Valor para negocio
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          A stronger platform to grow, iterate new features, and sustain user trust.
+        {% else %}
+          Plataforma mas confiable para crecer, iterar nuevas funcionalidades y sostener la confianza de usuarios.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+{% endblock content %}

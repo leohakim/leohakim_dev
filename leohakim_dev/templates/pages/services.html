@@ -2,38 +2,238 @@
 
 {% load i18n %}
 
+{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% translate "Services" %} | leohakim.dev
+  {% if LANGUAGE_CODE == 'en' %}
+    Services | leohakim.dev
+  {% else %}
+    Servicios | leohakim.dev
+  {% endif %}
 {% endblock title %}
 {% block content %}
-  <section aria-labelledby="page-title"
-           class="rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
-    <h1 id="page-title"
-        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">{% translate "Services" %}</h1>
-    <p class="mt-2 text-zinc-600 dark:text-zinc-400">{% translate "Services for reliable & cost-efficient systems." %}</p>
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      <article class="rounded-2xl bg-white p-4 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
-        <h2 class="font-medium text-zinc-900 dark:text-white">{% translate "SRE / DevOps" %}</h2>
-        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
-          <li>{% translate "SLOs, incident response, HA/DR" %}</li>
-          <li>{% translate "Observability: Prometheus, Grafana, Loki, OpenTelemetry" %}</li>
-          <li>{% translate "Deliverables: playbook + dashboards + alerts" %}</li>
-        </ul>
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Services
+      {% else %}
+        Servicios
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        I help you turn complex systems into reliable products that are easier to operate.
+      {% else %}
+        Te ayudo a convertir sistemas complejos en productos confiables y faciles de operar.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        My services are designed for teams that want to move forward without chaos: better product quality, clearer processes, and calmer operations.
+      {% else %}
+        Mis servicios estan pensados para empresas que quieren avanzar sin sobresaltos: mejorar calidad de producto, ordenar procesos y ganar tranquilidad en la operacion diaria.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-10 grid gap-5 lg:grid-cols-3">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Assessment and improvement plan
+        {% else %}
+          Diagnostico y plan de mejora
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          I review your current product and operations, identify bottlenecks, and propose a clear priority plan.
+        {% else %}
+          Analizo como esta hoy tu producto, detecto cuellos de botella y propongo un plan claro de prioridades.
+        {% endif %}
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          <li>- Technical and operational review.</li>
+          <li>- Risks and opportunities explained in plain language.</li>
+          <li>- Actionable roadmap for your team.</li>
+        {% else %}
+          <li>- Revision tecnica y funcional.</li>
+          <li>- Riesgos y oportunidades explicados sin jerga.</li>
+          <li>- Hoja de ruta accionable para el equipo.</li>
+        {% endif %}
+      </ul>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Implementation and stabilization
+        {% else %}
+          Implementacion y estabilizacion
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          I execute improvements in architecture, delivery flow, and operational quality so your product performs better with fewer incidents.
+        {% else %}
+          Ejecuto mejoras en arquitectura, flujo de entrega y calidad operativa para que el producto responda mejor y falle menos.
+        {% endif %}
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          <li>- Practical technical improvements with business impact.</li>
+          <li>- Progressive changes to reduce risk.</li>
+          <li>- Team support during adoption.</li>
+        {% else %}
+          <li>- Mejoras tecnicas orientadas a resultados.</li>
+          <li>- Cambios progresivos para evitar riesgos.</li>
+          <li>- Acompanamiento al equipo durante la adopcion.</li>
+        {% endif %}
+      </ul>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Continuous support
+        {% else %}
+          Acompanamiento continuo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          For teams that need continuity, I collaborate as a technical partner to sustain product evolution over time.
+        {% else %}
+          Si necesitas soporte sostenido, colaboro como referente tecnico para mantener la evolucion del producto en el tiempo.
+        {% endif %}
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          <li>- Priority and decision follow-up.</li>
+          <li>- Technical mentoring for your team.</li>
+          <li>- Regular reviews of progress and next steps.</li>
+        {% else %}
+          <li>- Seguimiento de prioridades y decisiones clave.</li>
+          <li>- Mentoria tecnica para el equipo.</li>
+          <li>- Revision periodica de avances y proximos pasos.</li>
+        {% endif %}
+      </ul>
+    </article>
+  </section>
+  <section class="mt-10 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        How the process works
+      {% else %}
+        Como es el proceso
+      {% endif %}
+    </h2>
+    <div class="mt-5 grid gap-4 md:grid-cols-4">
+      <article class="rounded-2xl bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+          {% if LANGUAGE_CODE == 'en' %}
+            Step 1
+          {% else %}
+            Paso 1
+          {% endif %}
+        </p>
+        <p class="mt-2 text-sm font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            Initial call
+          {% else %}
+            Reunion inicial
+          {% endif %}
+        </p>
+        <p class="mt-1 text-sm text-slate-600">
+          {% if LANGUAGE_CODE == 'en' %}
+            We align on goals, context, and urgency.
+          {% else %}
+            Entiendo objetivos, contexto y urgencias reales.
+          {% endif %}
+        </p>
       </article>
-      <article class="rounded-2xl bg-white p-4 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
-        <h2 class="font-medium text-zinc-900 dark:text-white">{% translate "Cloud Architecture" %}</h2>
-        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
-          <li>{% translate "K8s (EKS/GKE), Terraform/Helm, networking, IAM" %}</li>
-          <li>{% translate "CI/CD: blue/green, canary, rollbacks" %}</li>
-        </ul>
+      <article class="rounded-2xl bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+          {% if LANGUAGE_CODE == 'en' %}
+            Step 2
+          {% else %}
+            Paso 2
+          {% endif %}
+        </p>
+        <p class="mt-2 text-sm font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            Clear plan
+          {% else %}
+            Plan concreto
+          {% endif %}
+        </p>
+        <p class="mt-1 text-sm text-slate-600">
+          {% if LANGUAGE_CODE == 'en' %}
+            We define scope, timeline, and deliverables.
+          {% else %}
+            Definimos alcance, tiempos y entregables.
+          {% endif %}
+        </p>
       </article>
-      <article class="rounded-2xl bg-white p-4 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
-        <h2 class="font-medium text-zinc-900 dark:text-white">{% translate "Cost Optimization" %}</h2>
-        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-400">
-          <li>{% translate "Profiling, cache & CDN strategy, autoscaling" %}</li>
-          <li>{% translate "Reports with 10–30% savings targets" %}</li>
-        </ul>
+      <article class="rounded-2xl bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+          {% if LANGUAGE_CODE == 'en' %}
+            Step 3
+          {% else %}
+            Paso 3
+          {% endif %}
+        </p>
+        <p class="mt-2 text-sm font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            Guided execution
+          {% else %}
+            Ejecucion guiada
+          {% endif %}
+        </p>
+        <p class="mt-1 text-sm text-slate-600">
+          {% if LANGUAGE_CODE == 'en' %}
+            Implementation with close follow-up.
+          {% else %}
+            Implementamos con seguimiento cercano.
+          {% endif %}
+        </p>
       </article>
+      <article class="rounded-2xl bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+          {% if LANGUAGE_CODE == 'en' %}
+            Step 4
+          {% else %}
+            Paso 4
+          {% endif %}
+        </p>
+        <p class="mt-2 text-sm font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            Handover and continuity
+          {% else %}
+            Transferencia y continuidad
+          {% endif %}
+        </p>
+        <p class="mt-1 text-sm text-slate-600">
+          {% if LANGUAGE_CODE == 'en' %}
+            Your team is ready to sustain improvements.
+          {% else %}
+            El equipo queda preparado para sostener mejoras.
+          {% endif %}
+        </p>
+      </article>
+    </div>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="{% url 'contact' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Request a call
+        {% else %}
+          Solicitar reunion
+        {% endif %}
+      </a>
+      <a href="{% url 'case-studies' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          View success stories
+        {% else %}
+          Ver casos de exito
+        {% endif %}
+      </a>
     </div>
   </section>
 {% endblock content %}

@@ -1,10 +1,9 @@
 {# Props: title, body (safe HTML), items (optional list), href (optional), chips (optional list) #}
 {% load i18n %}
 
-<article class="group relative flex h-full flex-col gap-4 rounded-xl bg-white p-6 ring-1 ring-inset ring-zinc-200 transition hover:bg-zinc-50 hover:ring-zinc-300 dark:bg-zinc-900 dark:ring-zinc-700">
-  {% if title %}
-    <h3 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-white">{{ title }}</h3>
-  {% endif %}
+{% get_current_language as LANGUAGE_CODE %}
+<article class="surface-card group relative flex h-full flex-col gap-4 p-6 reveal-up transition hover:-translate-y-0.5">
+  {% if title %}<h3 class="text-lg font-semibold tracking-tight text-slate-900">{{ title }}</h3>{% endif %}
   {% if chips %}
     <div class="flex flex-wrap gap-2">
       {% for c in chips %}
@@ -13,19 +12,26 @@
     </div>
   {% endif %}
   {% if items %}
-    <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-200">
+    <ul class="space-y-2 text-sm text-slate-600">
       {% for item in items %}
         <li class="flex items-start gap-2">
-          <span class="relative mt-2 h-1.5 w-1.5 flex-none rounded-full bg-emerald-500/80 shadow-sm dark:bg-emerald-400/80"></span>
+          <span class="relative mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-600/90 shadow-sm"></span>
           <span>{{ item }}</span>
         </li>
       {% endfor %}
     </ul>
   {% elif body %}
-    <div class="prose prose-sm max-w-none text-zinc-600 dark:prose-invert dark:text-zinc-200">{{ body|safe }}</div>
+    <div class="prose prose-sm max-w-none text-slate-600">{{ body|safe }}</div>
   {% endif %}
   {% if href %}
-    <a class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-600 dark:text-brand-300 dark:hover:text-brand-200"
-       href="{{ href }}">{% translate "Read more" %} →</a>
+    <a class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-800"
+       href="{{ href }}">
+      {% if LANGUAGE_CODE == 'en' %}
+        Read more
+      {% else %}
+        Ver mas
+      {% endif %}
+      ->
+    </a>
   {% endif %}
 </article>

@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+  {% if LANGUAGE_CODE == 'en' %}
+    Success story: ENACT | leohakim.dev
+  {% else %}
+    Caso de exito: ENACT | leohakim.dev
+  {% endif %}
+{% endblock title %}
+{% block content %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <a href="{% url 'case-studies' %}" class="accent-link">
+      {% if LANGUAGE_CODE == 'en' %}
+        Back to success stories ->
+      {% else %}
+        Volver a casos de exito ->
+      {% endif %}
+    </a>
+    <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Success story
+      {% else %}
+        Caso de exito
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        ENACT: technical coordination across multiple teams with reliable delivery.
+      {% else %}
+        ENACT: coordinacion tecnica entre multiples equipos para entregar con confianza.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        In this international context, the main challenge was aligning different teams and requirements while keeping speed and reliability.
+      {% else %}
+        En este contexto internacional, el gran reto era alinear distintos equipos y requisitos sin perder velocidad ni confiabilidad.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Starting point
+        {% else %}
+          Situacion inicial
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Multiple stakeholders had their own technical and operational requirements, increasing delivery complexity.
+        {% else %}
+          Habia varios actores involucrados, cada uno con necesidades tecnicas y operativas propias, lo que aumentaba la complejidad de entrega.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Goal
+        {% else %}
+          Objetivo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Achieve smooth cross-team integration with stable deployments and shared working rules.
+        {% else %}
+          Conseguir una integracion fluida entre equipos, con despliegues estables y un marco comun de trabajo.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-8 surface-card p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        How we reached success
+      {% else %}
+        Como se llego al exito
+      {% endif %}
+    </h2>
+    <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            1. Early alignment:
+          {% else %}
+            1. Alineacion temprana:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          shared rules were defined for environment and delivery flow.
+        {% else %}
+          se establecieron reglas compartidas para entorno, despliegue y configuracion.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            2. Progressive integration:
+          {% else %}
+            2. Integracion progresiva:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          intermediate stages helped detect mismatches before key milestones.
+        {% else %}
+          se probaron etapas intermedias para detectar desajustes antes de las entregas clave.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            3. Clear documentation:
+          {% else %}
+            3. Documentacion clara:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          a common base was created so each team knew exactly how to continue.
+        {% else %}
+          se genero una base comun para que cada equipo supiera exactamente como continuar.
+        {% endif %}
+      </li>
+    </ol>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Outcome achieved
+        {% else %}
+          Resultado logrado
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Coordinated and stable delivery was achieved for demos and reviews with less technical uncertainty.
+        {% else %}
+          Se logro una entrega coordinada y estable para demos y revisiones, con menos incertidumbre tecnica.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Business value
+        {% else %}
+          Valor para negocio
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Greater institutional confidence and a useful base for future collaboration phases.
+        {% else %}
+          Mayor confianza institucional en el proyecto y una base util para futuras etapas de colaboracion.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+{% endblock content %}

@@ -2,17 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tokens y estilos globales ligeros */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+  --ink-950: #0f172a;
+  --ink-700: #334155;
+  --ink-500: #64748b;
+  --surface-0: #f8fafc;
+  --surface-1: #ffffff;
+  --brand-500: #1d4ed8;
+  --brand-600: #1e40af;
+  --accent-500: #ea580c;
+  --line: #dbe3f0;
 }
 
-/* Accesibilidad: focus visible */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+    background: radial-gradient(circle at 8% 0%, #e0ecff 0%, transparent 34%),
+      radial-gradient(circle at 92% 14%, #ffe7d7 0%, transparent 30%),
+      linear-gradient(180deg, #f8fbff 0%, #f7f9fc 100%);
+    color: var(--ink-950);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-[28px] border border-slate-200/80 bg-white shadow-[0_20px_55px_-38px_rgba(16,24,40,0.55)];
+  }
+
+  .surface-soft {
+    @apply rounded-3xl border border-slate-200/80 bg-slate-50/90;
+  }
+
+  .headline-xl {
+    @apply text-4xl font-semibold leading-[1.05] text-slate-950 sm:text-5xl lg:text-6xl;
+  }
+
+  .headline-lg {
+    @apply text-3xl font-semibold leading-tight text-slate-950 sm:text-[2.15rem];
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-blue-700 bg-blue-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-800 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+
+  .accent-link {
+    @apply inline-flex items-center gap-2 text-sm font-bold text-blue-700 transition hover:text-blue-800;
+  }
+
+  .reveal-up {
+    animation: reveal-up 0.55s ease both;
+  }
+}
+
 :focus-visible {
-  outline: 2px solid theme('colors.brand.500');
+  outline: 2px solid var(--brand-500);
   outline-offset: 2px;
 }
 
-/* Tipografías del sistema por defecto */
-html { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
-body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+.site-grid {
+  background-image: linear-gradient(rgba(30, 64, 175, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 64, 175, 0.08) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), transparent 82%);
+}
+
+.ambient-glow {
+  filter: blur(76px);
+  opacity: 0.32;
+}
+
+.brand-divider {
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 45%, #fb923c 100%);
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

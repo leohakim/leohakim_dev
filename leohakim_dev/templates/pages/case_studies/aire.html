@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+  {% if LANGUAGE_CODE == 'en' %}
+    Success story: Aire de Santa Fe | leohakim.dev
+  {% else %}
+    Caso de exito: Aire de Santa Fe | leohakim.dev
+  {% endif %}
+{% endblock title %}
+{% block content %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <a href="{% url 'case-studies' %}" class="accent-link">
+      {% if LANGUAGE_CODE == 'en' %}
+        Back to success stories ->
+      {% else %}
+        Volver a casos de exito ->
+      {% endif %}
+    </a>
+    <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Success story
+      {% else %}
+        Caso de exito
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        Aire de Santa Fe: from fragile operations to a more reliable and organized platform.
+      {% else %}
+        Aire de Santa Fe: de una operacion fragil a una plataforma mas confiable y ordenada.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        The product needed to sustain high traffic and improve reading and notification experience without slowing team delivery.
+      {% else %}
+        Este proyecto necesitaba sostener alto trafico y mejorar la experiencia de lectura y notificaciones sin perder velocidad de trabajo del equipo.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Starting point
+        {% else %}
+          Situacion inicial
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Performance varied significantly under demand peaks, affecting users, internal teams, and content campaigns.
+        {% else %}
+          Habia variaciones fuertes de rendimiento en momentos de alta demanda. Eso impactaba en usuarios, equipos internos y campanas de contenido.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Goal
+        {% else %}
+          Objetivo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Build a stable base for publishing, notifications, and clearer decision-making.
+        {% else %}
+          Lograr una base estable para publicar, enviar notificaciones y medir resultados con mayor claridad.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-8 surface-card p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        How we got there
+      {% else %}
+        Como se llego al resultado
+      {% endif %}
+    </h2>
+    <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            1. Cleaner delivery flow:
+          {% else %}
+            1. Orden del flujo tecnico:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          content delivery was reorganized to reduce overload and improve consistency.
+        {% else %}
+          se reorganizo la forma en que se servia el contenido para evitar sobrecargas y mejorar consistencia.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            2. Better user communication:
+          {% else %}
+            2. Mejora de comunicacion con usuarios:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          notifications were improved to segment better and learn from each campaign.
+        {% else %}
+          se profesionalizo la gestion de notificaciones para segmentar mejor y aprender de cada envio.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            3. More predictable operation:
+          {% else %}
+            3. Operacion mas previsible:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          delivery and monitoring process was reinforced to reduce production surprises.
+        {% else %}
+          se fortalecio el proceso de entrega y seguimiento para reducir sorpresas en produccion.
+        {% endif %}
+      </li>
+    </ol>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Outcome achieved
+        {% else %}
+          Resultado logrado
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          The product became more stable, the team operated with greater confidence, and campaign data became clearer for decisions.
+        {% else %}
+          El producto gano estabilidad, el equipo opero con mas confianza y las acciones de contenido pasaron a tener mejor trazabilidad para tomar decisiones.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Business value
+        {% else %}
+          Valor para negocio
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Better user experience, less operational friction, and a stronger base for future growth.
+        {% else %}
+          Mejor experiencia para usuarios, menor friccion operativa y una base solida para seguir creciendo sin rehacer todo de cero.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Need this kind of improvement in your product?
+      {% else %}
+        Quieres este tipo de mejora en tu producto?
+      {% endif %}
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        I can help you diagnose your current situation and define a realistic action plan.
+      {% else %}
+        Puedo ayudarte a diagnosticar tu situacion actual y definir un plan realista para lograr un resultado similar.
+      {% endif %}
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="{% url 'contact' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Book a call
+        {% else %}
+          Agendar una charla
+        {% endif %}
+      </a>
+      <a href="{% url 'services' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          View services
+        {% else %}
+          Ver servicios
+        {% endif %}
+      </a>
+    </div>
+  </section>
+{% endblock content %}

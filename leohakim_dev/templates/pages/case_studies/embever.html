@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+  {% if LANGUAGE_CODE == 'en' %}
+    Success story: Embever | leohakim.dev
+  {% else %}
+    Caso de exito: Embever | leohakim.dev
+  {% endif %}
+{% endblock title %}
+{% block content %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <a href="{% url 'case-studies' %}" class="accent-link">
+      {% if LANGUAGE_CODE == 'en' %}
+        Back to success stories ->
+      {% else %}
+        Volver a casos de exito ->
+      {% endif %}
+    </a>
+    <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Success story
+      {% else %}
+        Caso de exito
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        Embever: strengthening backend foundations for a growing IoT environment.
+      {% else %}
+        Embever: fortalecer la base de backend para un entorno de IoT en crecimiento.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        The challenge required a more reliable base for integrations and sensitive processes with service continuity.
+      {% else %}
+        Se necesitaba una base confiable para gestionar integraciones y procesos sensibles, con foco en continuidad del servicio.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Starting point
+        {% else %}
+          Situacion inicial
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          The context required stronger backend reliability to support growth and reduce incidents in critical flows.
+        {% else %}
+          El contexto exigia mejorar la robustez del backend para sostener crecimiento y evitar incidencias en flujos clave.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Goal
+        {% else %}
+          Objetivo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Build a more stable base for operating devices, integrations, and processes with lower risk.
+        {% else %}
+          Construir una base mas estable para operar dispositivos, integraciones y procesos con menor riesgo.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-8 surface-card p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        How we worked
+      {% else %}
+        Como se trabajo
+      {% endif %}
+    </h2>
+    <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            1. Critical flow review:
+          {% else %}
+            1. Revision de flujos criticos:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          sensitive points were mapped to prioritize stability work.
+        {% else %}
+          se mapearon puntos sensibles para priorizar mejoras de estabilidad.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            2. Backend service reinforcement:
+          {% else %}
+            2. Refuerzo de servicios backend:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          improvements were implemented to increase reliability in daily operations.
+        {% else %}
+          se implementaron ajustes para una operacion mas confiable.
+        {% endif %}
+      </li>
+      <li>
+        <span class="font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            3. Better operational visibility:
+          {% else %}
+            3. Mejoras en seguimiento operativo:
+          {% endif %}
+        </span>
+        {% if LANGUAGE_CODE == 'en' %}
+          teams could detect issues earlier and react faster.
+        {% else %}
+          se facilito la deteccion temprana de problemas y la reaccion del equipo.
+        {% endif %}
+      </li>
+    </ol>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Outcome achieved
+        {% else %}
+          Resultado logrado
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          The platform became more stable day to day and better prepared for future growth stages.
+        {% else %}
+          Se obtuvo una plataforma mas estable para el dia a dia, con mejor capacidad para sostener nuevas etapas de crecimiento.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Business value
+        {% else %}
+          Valor para negocio
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Greater operational confidence and a stronger foundation for ongoing product evolution.
+        {% else %}
+          Mayor confiabilidad operativa y mas tranquilidad para seguir evolucionando producto y servicio.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+{% endblock content %}

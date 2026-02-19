@@ -8,123 +8,325 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
       {% block title %}
-        leohakim_dev
+        {% if LANGUAGE_CODE == 'en' %}
+          Leo Hakim | Backend & Cloud Engineer
+        {% else %}
+          Leo Hakim | Ingenieria Backend y Cloud
+        {% endif %}
       {% endblock title %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% translate 'My personal website' %}" />
+    <meta name="description"
+          content="{% block meta_description %}{% if LANGUAGE_CODE == 'en' %}Personal website of Leonardo Hakim: backend engineering, cloud architecture, and client-ready success stories.{% else %}Sitio profesional de Leonardo Hakim: ingenieria backend, arquitectura cloud y casos de exito para clientes.{% endif %}{% endblock meta_description %}" />
     <meta name="author" content="Leonardo Hakim" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="leohakim.dev" />
+    <meta property="og:title"
+          content="{% block og_title %}{% if LANGUAGE_CODE == 'en' %}Leo Hakim | Backend & Cloud Engineer{% else %}Leo Hakim | Ingenieria Backend y Cloud{% endif %}{% endblock og_title %}" />
+    <meta property="og:description"
+          content="{% block og_description %}{% if LANGUAGE_CODE == 'en' %}Success stories and services focused on reliable product delivery and business outcomes.{% else %}Casos de exito y servicios enfocados en entrega confiable e impacto de negocio.{% endif %}{% endblock og_description %}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:image"
+          content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/home_photo.png' %}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title"
+          content="{% block twitter_title %}{% if LANGUAGE_CODE == 'en' %}Leo Hakim | Backend & Cloud Engineer{% else %}Leo Hakim | Ingenieria Backend y Cloud{% endif %}{% endblock twitter_title %}" />
+    <meta name="twitter:description"
+          content="{% block twitter_description %}{% if LANGUAGE_CODE == 'en' %}Backend and cloud engineering profile with clear success stories and delivery experience.{% else %}Perfil de ingenieria backend y cloud con casos de exito claros y experiencia real de entrega.{% endif %}{% endblock twitter_description %}" />
+    <meta name="twitter:image"
+          content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/home_photo.png' %}" />
     <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
+          rel="stylesheet" />
     {% block css %}
-      <!-- CSS del proyecto (Tailwind se agregará luego en app.css) -->
       <link href="{% static 'css/project.css' %}" rel="stylesheet" />
-      {# Tailwind compilado #}
       <link href="{% static 'css/app.build.css' %}" rel="stylesheet" />
     {% endblock css %}
-    {# JS ligero y no bloqueante #}
     {% block javascript %}
       <script defer src="https://unpkg.com/htmx.org@1.9.12"></script>
       <script defer src="https://unpkg.com/alpinejs@3.x.x" crossorigin="anonymous"></script>
-      <!-- JS del proyecto -->
       <script defer src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-zinc-50 via-white to-zinc-100 text-zinc-900 antialiased dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 dark:text-zinc-100 {% block bodyclass %}{% endblock bodyclass %}">
+  <body class="relative min-h-screen text-slate-900 antialiased {% block bodyclass %}{% endblock bodyclass %}">
+    <div class="site-grid pointer-events-none fixed inset-0 -z-20"></div>
+    <div class="ambient-glow pointer-events-none fixed -left-36 top-20 -z-10 h-72 w-72 rounded-full bg-blue-200"></div>
+    <div class="ambient-glow pointer-events-none fixed bottom-16 right-0 -z-10 h-72 w-72 rounded-full bg-orange-200">
+    </div>
     {% block body %}
-      <header class="bg-white/80 shadow-sm backdrop-blur-sm dark:bg-zinc-950/70">
-        <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+      <header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/88 backdrop-blur-xl">
+        <div class="brand-divider h-1 w-full"></div>
+        <nav x-data="{ open: false }"
+             class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
              aria-label="Primary">
-          <a class="inline-flex items-center gap-2 font-semibold text-lg tracking-tight"
-             href="{% url 'home' %}">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-950">LH</span>
-            <span>leohakim.dev</span>
-          </a>
-          <div class="flex items-center gap-6 text-sm font-medium">
-            <ul class="hidden items-center gap-6 md:flex">
-              <li>
-                <a class="transition hover:text-zinc-950 dark:hover:text-white"
-                   href="{% url 'home' %}">{% translate "Home" %}</a>
-              </li>
-              <li>
-                <a class="transition hover:text-zinc-950 dark:hover:text-white"
-                   href="{% url 'case-studies' %}">{% translate "Case Studies" %}</a>
-              </li>
-              <li>
-                <a class="transition hover:text-zinc-950 dark:hover:text-white"
-                   href="{% url 'services' %}">{% translate "Services" %}</a>
-              </li>
-              <li>
-                <a class="transition hover:text-zinc-950 dark:hover:text-white"
-                   href="{% url 'writing' %}">{% translate "Writing" %}</a>
-              </li>
-              <li>
-                <a class="transition hover:text-zinc-950 dark:hover:text-white"
-                   href="{% url 'about' %}">{% translate "About" %}</a>
-              </li>
-              <li>
-                <a class="transition hover:text-zinc-950 dark:hover:text-white"
-                   href="{% url 'contact' %}">{% translate "Contact" %}</a>
-              </li>
-            </ul>
-            <div class="flex items-center gap-2">{% include "components/language_switcher.html" %}</div>
+          <div class="flex items-center justify-between py-4">
+            <a class="inline-flex items-center gap-3 text-slate-900"
+               href="{% url 'home' %}">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-orange-500 font-extrabold text-white shadow-lg shadow-blue-900/20">LH</span>
+              <span class="leading-tight">
+                <span class="block text-sm font-bold tracking-[0.1em]">LEONARDO HAKIM</span>
+                <span class="block text-xs font-medium text-slate-500">
+                  {% if LANGUAGE_CODE == 'en' %}
+                    Backend . Cloud . Reliability
+                  {% else %}
+                    Backend . Cloud . Confianza
+                  {% endif %}
+                </span>
+              </span>
+            </a>
+            <div class="hidden items-center gap-2 text-sm font-semibold md:flex">
+              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                 href="{% url 'home' %}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Home
+                {% else %}
+                  Inicio
+                {% endif %}
+              </a>
+              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                 href="{% url 'case-studies' %}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Case Studies
+                {% else %}
+                  Casos de exito
+                {% endif %}
+              </a>
+              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                 href="{% url 'services' %}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Services
+                {% else %}
+                  Servicios
+                {% endif %}
+              </a>
+              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                 href="{% url 'writing' %}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Writing
+                {% else %}
+                  Contenido
+                {% endif %}
+              </a>
+              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+                 href="{% url 'about' %}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  About
+                {% else %}
+                  Sobre mi
+                {% endif %}
+              </a>
+              <a class="btn-primary" href="{% url 'contact' %}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Contact
+                {% else %}
+                  Contacto
+                {% endif %}
+              </a>
+              {% include "components/language_switcher.html" %}
+            </div>
+            <button type="button"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-700 md:hidden"
+                    @click="open = !open"
+                    :aria-expanded="open.toString()"
+                    aria-label="{% if LANGUAGE_CODE == 'en' %}Toggle navigation{% else %}Abrir menu{% endif %}">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="2"
+                   class="h-5 w-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
+          <div x-show="open"
+               x-transition
+               class="space-y-2 border-t border-slate-200 pb-4 pt-3 md:hidden">
+            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+               href="{% url 'home' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Home
+              {% else %}
+                Inicio
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+               href="{% url 'case-studies' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Case Studies
+              {% else %}
+                Casos de exito
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+               href="{% url 'services' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Services
+              {% else %}
+                Servicios
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+               href="{% url 'writing' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Writing
+              {% else %}
+                Contenido
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+               href="{% url 'about' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                About
+              {% else %}
+                Sobre mi
+              {% endif %}
+            </a>
+            <a class="btn-primary w-full justify-center" href="{% url 'contact' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Contact
+              {% else %}
+                Contacto
+              {% endif %}
+            </a>
+            <div class="pt-1">{% include "components/language_switcher.html" %}</div>
           </div>
         </nav>
       </header>
-      <main id="main" class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <main id="main" class="mx-auto max-w-7xl px-4 pb-16 pt-9 sm:px-6 lg:px-8">
         {% if messages %}
-          <div role="status" aria-live="polite" class="space-y-2">
+          <div role="status" aria-live="polite" class="mb-5 space-y-2">
             {% for message in messages %}
-              <div class="rounded-lg bg-white px-4 py-3 text-sm text-zinc-800 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:text-zinc-100 dark:ring-zinc-700">
-                {{ message }}
-              </div>
+              <div class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">{{ message }}</div>
             {% endfor %}
           </div>
         {% endif %}
         {% block main %}
           {% block content %}
-            <p class="text-sm text-zinc-600 dark:text-zinc-400">Use this document as a way to quick start any new project.</p>
+            <p class="text-sm text-slate-600">
+              {% if LANGUAGE_CODE == 'en' %}
+                Use this document as a way to quick start any new project.
+              {% else %}
+                Usa este documento como punto de partida para tu proyecto.
+              {% endif %}
+            </p>
           {% endblock content %}
         {% endblock main %}
       </main>
-      <footer class="mt-16 border-t border-zinc-200/60 bg-white/80 py-10 dark:border-zinc-800/60 dark:bg-zinc-950/60">
-        <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 text-sm text-zinc-600 dark:text-zinc-400 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p class="font-semibold text-zinc-900 dark:text-zinc-100">Leonardo Hakim</p>
-            <p class="mt-1 max-w-xs text-sm">
-              {% translate "SRE & Cloud Architect crafting resilient, performant, cost-efficient systems." %}
+      {% now "Y" as current_year %}
+      <footer class="border-t border-slate-200 bg-white/95 py-12">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(0,0.8fr)] lg:px-8">
+          <div class="space-y-4">
+            <p class="text-lg font-bold text-slate-900">Leonardo Hakim</p>
+            <p class="max-w-md text-sm leading-relaxed text-slate-600">
+              {% if LANGUAGE_CODE == 'en' %}
+                Backend engineer focused on cloud and reliability. I build robust systems and turn delivery into clear professional positioning.
+              {% else %}
+                Ingeniero backend con foco en cloud y confiabilidad. Construyo sistemas robustos y convierto la entrega tecnica en posicionamiento profesional claro.
+              {% endif %}
             </p>
+            <div class="flex flex-wrap gap-2">
+              {% if social_links %}
+                {% for link in social_links %}
+                  <a href="{{ link.href }}" class="btn-secondary px-4 py-2 text-xs">{{ link.label }}</a>
+                {% endfor %}
+              {% else %}
+                <a href="mailto:work@leohakim.dev"
+                   class="btn-secondary px-4 py-2 text-xs">Email</a>
+                <a href="https://cal.leohakim.dev/"
+                   class="btn-secondary px-4 py-2 text-xs">
+                  {% if LANGUAGE_CODE == 'en' %}
+                    Book intro call
+                  {% else %}
+                    Agendar llamada
+                  {% endif %}
+                </a>
+              {% endif %}
+            </div>
           </div>
-          <nav aria-label="Footer" class="flex flex-wrap gap-4 font-medium">
-            <a class="hover:text-zinc-950 dark:hover:text-white"
-               href="{% url 'home' %}">{% translate "Home" %}</a>
-            <a class="hover:text-zinc-950 dark:hover:text-white"
-               href="{% url 'case-studies' %}">{% translate "Case Studies" %}</a>
-            <a class="hover:text-zinc-950 dark:hover:text-white"
-               href="{% url 'services' %}">{% translate "Services" %}</a>
-            <a class="hover:text-zinc-950 dark:hover:text-white"
-               href="{% url 'writing' %}">{% translate "Writing" %}</a>
-            <a class="hover:text-zinc-950 dark:hover:text-white"
-               href="{% url 'about' %}">{% translate "About" %}</a>
-            <a class="hover:text-zinc-950 dark:hover:text-white"
-               href="{% url 'contact' %}">{% translate "Contact" %}</a>
-          </nav>
-          <p class="text-xs">© {{ now|date:"Y" }} Leonardo Hakim. {% translate "All rights reserved." %}</p>
+          <div class="space-y-3 text-sm font-semibold text-slate-600">
+            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
+               href="{% url 'case-studies' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Case Studies
+              {% else %}
+                Casos de exito
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
+               href="{% url 'services' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Services
+              {% else %}
+                Servicios
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
+               href="{% url 'speaking' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Speaking
+              {% else %}
+                Charlas
+              {% endif %}
+            </a>
+            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
+               href="{% url 'contact' %}">
+              {% if LANGUAGE_CODE == 'en' %}
+                Contact
+              {% else %}
+                Contacto
+              {% endif %}
+            </a>
+          </div>
+          <div class="surface-soft p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+              {% if LANGUAGE_CODE == 'en' %}
+                Availability
+              {% else %}
+                Disponibilidad
+              {% endif %}
+            </p>
+            <p class="mt-2 text-sm font-semibold text-slate-900">
+              {% if LANGUAGE_CODE == 'en' %}
+                Open to remote consulting and technical leadership engagements.
+              {% else %}
+                Disponible para consultoria remota y colaboraciones de liderazgo tecnico.
+              {% endif %}
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href="{% url 'cv' %}" class="btn-primary px-4 py-2 text-xs">
+                {% if LANGUAGE_CODE == 'en' %}
+                  CV one-pager
+                {% else %}
+                  CV resumido
+                {% endif %}
+              </a>
+              <a href="{% url 'playbook' %}" class="btn-secondary px-4 py-2 text-xs">
+                {% if LANGUAGE_CODE == 'en' %}
+                  Playbook
+                {% else %}
+                  Metodo de trabajo
+                {% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-auto mt-8 max-w-7xl px-4 text-xs text-slate-500 sm:px-6 lg:px-8">
+          Copyright {{ current_year }} Leonardo Hakim.
+          {% if LANGUAGE_CODE == 'en' %}
+            All rights reserved.
+          {% else %}
+            Todos los derechos reservados.
+          {% endif %}
         </div>
       </footer>
     {% endblock body %}
-    <!-- /container -->
     {% block modal %}
     {% endblock modal %}
     {% block inline_javascript %}
-      {% comment %}
-    Script tags with only code, no src (defer by default). To run
-    with a "defer" so that you run inline code:
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        /* Run whatever you want */
-      });
-    </script>
-      {% endcomment %}
     {% endblock inline_javascript %}
   </body>
 </html>

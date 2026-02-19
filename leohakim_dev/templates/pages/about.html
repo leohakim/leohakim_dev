@@ -1,1 +1,127 @@
 {% extends "base.html" %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+  {% if LANGUAGE_CODE == 'en' %}
+    About Leonardo Hakim | leohakim.dev
+  {% else %}
+    Sobre Leonardo Hakim | leohakim.dev
+  {% endif %}
+{% endblock title %}
+{% block content %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        About
+      {% else %}
+        Sobre mi
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        Technical experience with a human focus: stable projects, calmer teams, and clients who feel supported.
+      {% else %}
+        Experiencia tecnica con foco humano: proyectos estables, equipos tranquilos y clientes bien acompanados.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        I am Leonardo Hakim. I have spent over 20 years building digital products and backend platforms.
+        I work with companies that need order, clarity, and reliable outcomes: products that work well, teams with a clear path, and businesses that can grow with confidence.
+      {% else %}
+        Soy Leonardo Hakim. Llevo mas de 20 anos construyendo productos digitales y plataformas backend.
+        Trabajo con empresas que necesitan orden, claridad y resultados: que el producto funcione bien, que el equipo tenga un camino claro y que el negocio pueda crecer con confianza.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-10 grid gap-5 lg:grid-cols-3">
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          How I work
+        {% else %}
+          Como trabajo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          I start by understanding real business and team context. From there, I define a simple, prioritized, and executable plan.
+        {% else %}
+          Empiezo entendiendo el contexto real del negocio y del equipo. A partir de ahi, defino un plan simple, priorizado y ejecutable.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          What I value
+        {% else %}
+          Que valoro
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Clear communication, transparent decisions, and delivery that truly helps the end client.
+        {% else %}
+          Comunicacion clara, decisiones transparentes y entregas que realmente le sirvan al cliente final.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          What you get
+        {% else %}
+          Que te llevas
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          A more reliable system, a clearer roadmap, and a team with greater confidence to sustain growth.
+        {% else %}
+          Un sistema mas confiable, una hoja de ruta clara y un equipo con mas confianza para sostener el crecimiento.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-10 surface-card px-7 py-8 sm:px-10">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Quick profile
+      {% else %}
+        Perfil rapido
+      {% endif %}
+    </h2>
+    <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        <li>Specialty: backend and platform work for digital products.</li>
+        <li>Focus: stability, delivery quality, and sustainable evolution.</li>
+        <li>Collaboration style: advisory, implementation, and continuous support.</li>
+        <li>Sectors: media, SaaS, digital product, and complex business environments.</li>
+      {% else %}
+        <li>Especialidad: backend y plataformas para productos digitales.</li>
+        <li>Enfoque: estabilidad, calidad de entrega y evolucion sostenible.</li>
+        <li>Forma de colaborar: consultoria, implementacion y acompanamiento continuo.</li>
+        <li>Sectores trabajados: media, SaaS, producto digital y proyectos complejos de negocio.</li>
+      {% endif %}
+    </ul>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="{% url 'case-studies' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          View success stories
+        {% else %}
+          Ver casos de exito
+        {% endif %}
+      </a>
+      <a href="{% url 'contact' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Talk about your project
+        {% else %}
+          Hablar de tu proyecto
+        {% endif %}
+      </a>
+    </div>
+  </section>
+{% endblock content %}

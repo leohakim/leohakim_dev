@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+  {% if LANGUAGE_CODE == 'en' %}
+    Work playbook | leohakim.dev
+  {% else %}
+    Playbook de trabajo | leohakim.dev
+  {% endif %}
+{% endblock title %}
+{% block content %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Playbook</p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        My way of working to deliver sustainable results.
+      {% else %}
+        Mi forma de trabajar para lograr resultados sostenibles.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        This playbook summarizes my approach in every project: understand context, decide clearly, execute with order, and transfer knowledge to the team.
+      {% else %}
+        Este playbook resume el enfoque que aplico en cada proyecto: entender el contexto, decidir con claridad, ejecutar con orden y transferir conocimiento al equipo.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          1. Understand before changing
+        {% else %}
+          1. Entender antes de tocar
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          I begin by understanding business, users, and team reality. Without that context, solutions tend to be expensive and ineffective.
+        {% else %}
+          Empiezo por comprender negocio, usuarios y equipo. Sin ese contexto, las soluciones suelen ser caras y poco utiles.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          2. Prioritize for impact
+        {% else %}
+          2. Priorizar lo que genera impacto
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          We define a clear sequence to solve what reduces risk and improves experience first.
+        {% else %}
+          Definimos un orden de trabajo simple para resolver primero lo que mas reduce riesgo y mejora experiencia.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          3. Implement safely
+        {% else %}
+          3. Implementar de forma segura
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Changes are delivered in stages with continuous validation to protect operations and team velocity.
+        {% else %}
+          Los cambios se hacen por etapas, con validacion continua, para proteger operacion y equipo.
+        {% endif %}
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          4. Measure and adapt
+        {% else %}
+          4. Medir y ajustar
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          We review real outcomes, learn, and optimize. Improvement is continuous, not a one-time event.
+        {% else %}
+          Revisamos resultados reales, aprendemos y optimizamos. La mejora es continua, no un evento aislado.
+        {% endif %}
+      </p>
+    </article>
+  </section>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Final objective
+      {% else %}
+        Objetivo final
+      {% endif %}
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        Your product runs with confidence, your team works with less friction, and your business has a stable base for growth.
+      {% else %}
+        Que tu producto funcione con confianza, que tu equipo trabaje con menos friccion y que el negocio tenga una base estable para crecer.
+      {% endif %}
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="{% url 'contact' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Start a conversation
+        {% else %}
+          Iniciar conversacion
+        {% endif %}
+      </a>
+      <a href="{% url 'services' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          View services
+        {% else %}
+          Ver servicios
+        {% endif %}
+      </a>
+    </div>
+  </section>
+{% endblock content %}

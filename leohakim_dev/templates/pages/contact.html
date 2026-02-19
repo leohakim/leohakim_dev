@@ -2,82 +2,149 @@
 
 {% load i18n %}
 
+{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% translate "Contact" %} | leohakim.dev
+  {% if LANGUAGE_CODE == 'en' %}
+    Contact | leohakim.dev
+  {% else %}
+    Contacto | leohakim.dev
+  {% endif %}
 {% endblock title %}
 {% block content %}
-  <section aria-labelledby="page-title"
-           class="rounded-3xl bg-white p-6 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
-    <h1 id="page-title"
-        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
-      {% translate "Let’s make your system reliable" %}
+  <section class="surface-card px-7 py-9 sm:px-10">
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Contact
+      {% else %}
+        Contacto
+      {% endif %}
+    </p>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+      {% if LANGUAGE_CODE == 'en' %}
+        If you want a more professional, stable, and trustworthy platform, let's talk.
+      {% else %}
+        Si quieres una web o plataforma mas profesional, estable y confiable, conversemos.
+      {% endif %}
     </h1>
-    <div class="mt-6 grid gap-8 md:grid-cols-2">
-      <form class="space-y-4" method="post" action="#">
-        {% csrf_token %}
-        <!-- Honeypot simple -->
-        <div class="hidden" aria-hidden="true">
-          <label for="hp_url">URL</label>
-          <input id="hp_url"
-                 name="hp_url"
-                 type="text"
-                 tabindex="-1"
-                 autocomplete="off" />
-        </div>
-        <div>
-          <label for="name"
-                 class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{% translate "Name" %}</label>
-          <input id="name"
-                 name="name"
-                 type="text"
-                 class="mt-1 w-full rounded-md bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 ring-1 ring-inset ring-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:ring-zinc-700"
-                 required
-                 aria-required="true" />
-        </div>
-        <div>
-          <label for="email"
-                 class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{% translate "Email" %}</label>
-          <input id="email"
-                 name="email"
-                 type="email"
-                 class="mt-1 w-full rounded-md bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 ring-1 ring-inset ring-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:ring-zinc-700"
-                 required
-                 aria-required="true" />
-        </div>
-        <div>
-          <label for="message"
-                 class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{% translate "Message" %}</label>
-          <textarea id="message"
-                    name="message"
-                    rows="5"
-                    class="mt-1 w-full rounded-md bg-white px-3 py-2 text-zinc-900 placeholder:text-zinc-400 ring-1 ring-inset ring-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:ring-zinc-700"></textarea>
-        </div>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400">
-          {% translate "By submitting, you agree to a brief follow-up email. No spam." %}
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        Share your context and goals. I will reply with a clear proposal and practical next steps.
+      {% else %}
+        Cuentame tu contexto y tus objetivos. Te respondere con una propuesta clara de siguientes pasos, sin vueltas.
+      {% endif %}
+    </p>
+  </section>
+  <section class="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+    <form class="surface-card space-y-4 p-6" method="post" action="#">
+      {% csrf_token %}
+      <div class="hidden" aria-hidden="true">
+        <label for="hp_url">URL</label>
+        <input id="hp_url"
+               name="hp_url"
+               type="text"
+               tabindex="-1"
+               autocomplete="off" />
+      </div>
+      <div>
+        <label for="name" class="block text-sm font-semibold text-slate-700">
+          {% if LANGUAGE_CODE == 'en' %}
+            Name
+          {% else %}
+            Nombre
+          {% endif %}
+        </label>
+        <input id="name"
+               name="name"
+               type="text"
+               class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+               required
+               aria-required="true" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-semibold text-slate-700">Email</label>
+        <input id="email"
+               name="email"
+               type="email"
+               class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+               required
+               aria-required="true" />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-semibold text-slate-700">
+          {% if LANGUAGE_CODE == 'en' %}
+            Tell me briefly about your project
+          {% else %}
+            Contame brevemente tu proyecto
+          {% endif %}
+        </label>
+        <textarea id="message"
+                  name="message"
+                  rows="6"
+                  class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="{% if LANGUAGE_CODE == 'en' %}Objective, current situation, and main challenge{% else %}Objetivo, situacion actual y principal desafio{% endif %}"></textarea>
+      </div>
+      <p class="text-xs text-slate-500">
+        {% if LANGUAGE_CODE == 'en' %}
+          I will reply with an initial proposal and practical next steps.
+        {% else %}
+          Te respondo con una propuesta inicial y proximos pasos concretos.
+        {% endif %}
+      </p>
+      <button type="submit" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Send
+        {% else %}
+          Enviar
+        {% endif %}
+      </button>
+    </form>
+    <aside class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Direct contact
+        {% else %}
+          Contacto directo
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          If you prefer, you can email me directly or book a 30-minute call.
+        {% else %}
+          Si prefieres, puedes escribirme o agendar una charla de 30 minutos.
+        {% endif %}
+      </p>
+      <div class="mt-5 space-y-3">
+        <a href="https://cal.leohakim.dev/"
+           class="btn-primary w-full justify-center">
+          {% if LANGUAGE_CODE == 'en' %}
+            Book a call
+          {% else %}
+            Agendar llamada
+          {% endif %}
+        </a>
+        <a href="mailto:work@leohakim.dev"
+           class="btn-secondary w-full justify-center">work@leohakim.dev</a>
+      </div>
+      <div class="mt-6 border-t border-slate-200 pt-5">
+        <p class="text-sm font-semibold text-slate-900">
+          {% if LANGUAGE_CODE == 'en' %}
+            What you get from the first conversation
+          {% else %}
+            Que recibiras en la primera conversacion
+          {% endif %}
         </p>
-        <button type="submit"
-                class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950">
-          {% translate "Send" %}
-        </button>
-      </form>
-      <aside>
-        <div class="rounded-2xl bg-white p-4 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
-          <h2 class="font-medium text-zinc-900 dark:text-white">{% translate "Prefer to talk?" %}</h2>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-            {% translate "Book a 30-min intro call via web form or email directly." %}
-          </p>
-          <ul class="mt-3 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300">
-            <li>
-              <a class="underline decoration-dotted underline-offset-4"
-                 href="https://cal.leohakim.dev/">{% translate "Make an appointment" %}</a>
-            </li>
-            <li>
-              <a class="underline decoration-dotted underline-offset-4"
-                 href="mailto:work@leohakim.dev">{% translate "Email" %}</a>
-            </li>
-          </ul>
-        </div>
-      </aside>
-    </div>
+        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+          {% if LANGUAGE_CODE == 'en' %}
+            <li>- Initial diagnosis of your current situation.</li>
+            <li>- Recommended working approach.</li>
+            <li>- Suggested next steps.</li>
+          {% else %}
+            <li>- Diagnostico inicial de tu situacion.</li>
+            <li>- Recomendacion de enfoque de trabajo.</li>
+            <li>- Estimacion de siguientes pasos.</li>
+          {% endif %}
+        </ul>
+      </div>
+    </aside>
   </section>
 {% endblock content %}
