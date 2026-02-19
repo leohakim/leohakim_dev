@@ -5,39 +5,33 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
   {% if LANGUAGE_CODE == 'en' %}
-    Success story: Osoigo | leohakim.dev
+    Case study: Osoigo | leohakim.dev
   {% else %}
-    Caso de exito: Osoigo | leohakim.dev
+    Caso de estudio: Osoigo | leohakim.dev
   {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
     <a href="{% url 'case-studies' %}" class="accent-link">
       {% if LANGUAGE_CODE == 'en' %}
-        Back to success stories ->
+        Back to case studies ->
       {% else %}
-        Volver a casos de exito ->
+        Volver a casos de éxito ->
       {% endif %}
     </a>
     <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
       {% if LANGUAGE_CODE == 'en' %}
-        Success story
+        Case study
       {% else %}
-        Caso de exito
+        Caso de estudio
       {% endif %}
     </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Osoigo: a participation platform prepared to grow with stronger reliability.
-      {% else %}
-        Osoigo: una plataforma participativa lista para crecer con mas seguridad.
-      {% endif %}
-    </h1>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">Osoigo</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        The challenge was to support high-volume user conversations with good experience, clear rules, and service continuity.
+        Civic participation platform used by governments and organizations with strong reliability requirements.
       {% else %}
-        El desafio era sostener conversaciones entre muchos usuarios con buena experiencia, reglas claras y continuidad de servicio.
+        Plataforma de participación ciudadana usada por gobiernos y organizaciones con altos requisitos de confiabilidad.
       {% endif %}
     </p>
   </section>
@@ -45,32 +39,32 @@
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Starting point
+          Context
         {% else %}
-          Situacion inicial
+          Contexto
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          The platform needed a stronger base to sustain product evolution without affecting data integrity or user quality.
+          Public participation environment with growing traffic, evolving product requirements, and operational sensitivity.
         {% else %}
-          La plataforma necesitaba una base mas robusta para soportar evolucion de producto sin comprometer historial ni calidad de uso.
+          Entorno de participación pública con crecimiento de tráfico, requisitos cambiantes y alta sensibilidad operativa.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Goal
+          Objective
         {% else %}
           Objetivo
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Improve stability, organize internal flows, and enable continuous delivery with lower risk.
+          Increase stability, reduce operational risk, and improve delivery speed for a growing platform.
         {% else %}
-          Mejorar estabilidad, ordenar flujos internos y facilitar entregas continuas con menor riesgo.
+          Mejorar estabilidad, reducir riesgo operativo y acelerar entregas en una plataforma en crecimiento.
         {% endif %}
       </p>
     </article>
@@ -78,52 +72,52 @@
   <section class="mt-8 surface-card p-7">
     <h2 class="text-2xl font-semibold text-slate-950">
       {% if LANGUAGE_CODE == 'en' %}
-        How we achieved it
+        Approach
       {% else %}
-        Como se logro
+        Enfoque
       {% endif %}
     </h2>
     <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Redesigned key components:
+            1. Platform hardening:
           {% else %}
-            1. Rediseno de piezas clave:
+            1. Refuerzo de plataforma:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          critical model areas were reinforced to protect conversations and key data.
+          strengthened backend critical points to improve resilience.
         {% else %}
-          se reforzaron partes sensibles del modelo para proteger conversaciones y datos importantes.
+          se reforzaron puntos críticos del backend para mejorar resiliencia.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Cleaner delivery flow:
+            2. Delivery flow optimization:
           {% else %}
-            2. Flujo de trabajo mas ordenado:
+            2. Optimización del flujo de entrega:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          processes were consolidated so new versions could ship with less friction.
+          reduced friction in releases and technical coordination.
         {% else %}
-          se consolidaron procesos para que nuevas versiones salgan con menos friccion.
+          se redujo fricción en releases y coordinación técnica.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. More stable operations:
+            3. Operational reliability improvements:
           {% else %}
-            3. Base operativa mas estable:
+            3. Mejora de confiabilidad operativa:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          response capacity improved for demand and product change.
+          improved day-to-day predictability under scale.
         {% else %}
-          se mejoro la capacidad de respuesta ante demanda y cambios del producto.
+          se mejoró la previsibilidad diaria bajo mayor escala.
         {% endif %}
       </li>
     </ol>
@@ -132,16 +126,16 @@
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Outcome achieved
+          Result
         {% else %}
-          Resultado logrado
+          Resultado
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Operational risk was reduced and the team moved forward with better control over quality and timing.
+          Higher platform stability, faster delivery cycles, and lower operational risk.
         {% else %}
-          Se redujo el riesgo operativo y el equipo pudo avanzar con mas control sobre calidad y tiempos.
+          Mayor estabilidad, entregas más rápidas y menor riesgo operativo.
         {% endif %}
       </p>
     </article>
@@ -150,16 +144,28 @@
         {% if LANGUAGE_CODE == 'en' %}
           Business value
         {% else %}
-          Valor para negocio
+          Valor de negocio
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          A stronger platform to grow, iterate new features, and sustain user trust.
+          Better service continuity and stronger confidence for institutional users and stakeholders.
         {% else %}
-          Plataforma mas confiable para crecer, iterar nuevas funcionalidades y sostener la confianza de usuarios.
+          Mejor continuidad de servicio y mayor confianza para usuarios institucionales y stakeholders.
         {% endif %}
       </p>
     </article>
+  </section>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Simple stack
+      {% else %}
+        Stack simple
+      {% endif %}
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">
+      Django, scalable APIs, CI/CD pipelines, and modern cloud infrastructure.
+    </p>
   </section>
 {% endblock content %}

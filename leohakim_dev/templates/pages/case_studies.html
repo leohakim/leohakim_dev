@@ -7,30 +7,30 @@
   {% if LANGUAGE_CODE == 'en' %}
     Success stories | leohakim.dev
   {% else %}
-    Casos de exito | leohakim.dev
+    Casos de éxito | leohakim.dev
   {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
     <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
       {% if LANGUAGE_CODE == 'en' %}
-        Success stories
+        Case studies
       {% else %}
-        Casos de exito
+        Casos de éxito
       {% endif %}
     </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        Real projects: what the challenge was, what we did, and how we reached success.
+        Real systems. Real problems. Measurable outcomes.
       {% else %}
-        Proyectos reales: que problema habia, que hicimos y como llegamos al resultado.
+        Sistemas reales. Problemas reales. Resultados medibles.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        This section is written for clients and teams who want to understand real value without technical noise. Each story explains the full journey in clear language.
+        Practical project stories focused on context, technical approach, and business value.
       {% else %}
-        Esta seccion esta pensada para clientes y equipos que quieren entender el valor real del trabajo tecnico sin perderse en jerga. Cada caso cuenta el camino completo de forma clara.
+        Historias de proyectos reales con foco en contexto, enfoque técnico y valor para negocio.
       {% endif %}
     </p>
   </section>
@@ -39,16 +39,9 @@
       <h2 class="text-xl font-semibold text-slate-900">Aire de Santa Fe</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          News product with high traffic that needed more stability and better notification management.
+          High-traffic media product with a need for predictable operations and resilient backend behavior.
         {% else %}
-          Producto de noticias con alto trafico que necesitaba mayor estabilidad y mejor gestion de notificaciones.
-        {% endif %}
-      </p>
-      <p class="text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Outcome: a more organized operation, more consistent response times, and better campaign performance.
-        {% else %}
-          Resultado: una operacion mas ordenada, tiempos de respuesta mas consistentes y mejor rendimiento en campanas.
+          Producto media de alta carga con necesidad de operación predecible y backend resiliente.
         {% endif %}
       </p>
       <a href="{% url 'case-study-aire' %}" class="accent-link mt-auto">
@@ -63,16 +56,9 @@
       <h2 class="text-xl font-semibold text-slate-900">Osoigo</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Participation platform with growth, security, and service continuity needs.
+          Civic participation platform stabilized for scale, faster delivery, and lower operational risk.
         {% else %}
-          Plataforma de participacion con necesidades de escalabilidad, seguridad y continuidad de servicio.
-        {% endif %}
-      </p>
-      <p class="text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Outcome: a stronger technical base to support growth and product evolution.
-        {% else %}
-          Resultado: una base tecnica mas robusta para sostener crecimiento y evolucion del producto.
+          Plataforma cívica estabilizada para escalar, entregar más rápido y reducir riesgo operativo.
         {% endif %}
       </p>
       <a href="{% url 'case-study-osoigo' %}" class="accent-link mt-auto">
@@ -87,16 +73,9 @@
       <h2 class="text-xl font-semibold text-slate-900">ENACT</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          International collaborative project requiring technical coordination across multiple organizations.
+          International multi-team initiative with safer coordination, predictable delivery, and clearer collaboration.
         {% else %}
-          Proyecto colaborativo internacional que requeria coordinacion tecnica entre multiples organizaciones.
-        {% endif %}
-      </p>
-      <p class="text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Outcome: stable cross-team integration and more predictable delivery for demos and reviews.
-        {% else %}
-          Resultado: integracion estable entre equipos y despliegues mas previsibles para demos y revisiones.
+          Iniciativa internacional multi-equipo con coordinación técnica predecible y colaboración más clara.
         {% endif %}
       </p>
       <a href="{% url 'case-study-enact' %}" class="accent-link mt-auto">
@@ -111,16 +90,9 @@
       <h2 class="text-xl font-semibold text-slate-900">Atempora</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          SaaS with complex business rules around scheduling, payments, and user experience.
+          SaaS product with complex rules reorganized for better operational clarity and scalable growth.
         {% else %}
-          SaaS con reglas de negocio complejas para agenda, cobros y experiencia de usuarios profesionales.
-        {% endif %}
-      </p>
-      <p class="text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Outcome: a clearer product operation, stronger logic, and a better base for scale.
-        {% else %}
-          Resultado: un producto mas claro de operar, con logica solida y mejor base para escalar.
+          SaaS con reglas complejas reorganizado para operar con claridad y escalar sin fricción.
         {% endif %}
       </p>
       <a href="{% url 'case-study-atempora' %}" class="accent-link mt-auto">
@@ -135,16 +107,9 @@
       <h2 class="text-xl font-semibold text-slate-900">Embever</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          IoT environment requiring backend integration and reliability in sensitive processes.
+          Backend reliability for sensitive IoT processes with better traceability and long-term scalability.
         {% else %}
-          Entorno de IoT con necesidades de integracion backend y confiabilidad en procesos sensibles.
-        {% endif %}
-      </p>
-      <p class="text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Outcome: a more reliable technical base for future growth and safer operations.
-        {% else %}
-          Resultado: una base tecnica mas confiable para crecimiento futuro y operaciones mas seguras.
+          Backend confiable para procesos IoT sensibles, con mejor trazabilidad y escalabilidad.
         {% endif %}
       </p>
       <a href="{% url 'case-study-embever' %}" class="accent-link mt-auto">

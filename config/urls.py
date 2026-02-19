@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
+from django.urls import reverse
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 from django.views.i18n import set_language
@@ -15,260 +16,145 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         is_en = self.request.LANGUAGE_CODE.startswith("en")
         context["trust_logos"] = [
-            {"name": "Aire de Santa Fe", "url": "/case-studies/aire/"},
-            {"name": "Osoigo", "url": "/case-studies/osoigo/"},
-            {"name": "ENACT", "url": "/case-studies/enact/"},
-            {"name": "Atempora", "url": "/case-studies/atempora/"},
-            {"name": "Embever", "url": "/case-studies/embever/"},
+            {"name": "Aire de Santa Fe", "url": reverse("case-study-aire")},
+            {"name": "Osoigo", "url": reverse("case-study-osoigo")},
+            {"name": "ENACT", "url": reverse("case-study-enact")},
+            {"name": "Atempora", "url": reverse("case-study-atempora")},
+            {"name": "Embever", "url": reverse("case-study-embever")},
         ]
         if is_en:
             context["hero_highlights"] = [
-                "Stabilize products that grew fast and became hard to operate.",
-                "Translate technical complexity into decisions people can understand.",
-                "Build practical roadmaps for product, platform, and team growth.",
+                "Systems that stay reliable under pressure.",
+                "Technical debt turned into operational strength.",
+                "Engineering decisions that impact revenue and growth.",
             ]
-            context["signature_blocks"] = [
+            context["help_areas"] = [
                 {
-                    "title": "Product stabilization",
+                    "title": "Stabilize fast-growing products",
                     "description": (
-                        "I help teams reduce operational noise and recover confidence "
-                        "in day-to-day delivery."
+                        "Reduce incidents and improve day-to-day reliability "
+                        "in products under real demand."
                     ),
                 },
                 {
-                    "title": "Backend modernization",
+                    "title": "Modernize without business disruption",
                     "description": (
-                        "I redesign critical backend areas so products can evolve "
-                        "without breaking what already works."
+                        "Upgrade critical backend areas while keeping service "
+                        "continuity and delivery pace."
                     ),
                 },
                 {
-                    "title": "Technical leadership support",
+                    "title": "Scale with clear architecture",
                     "description": (
-                        "I align technical and non-technical stakeholders "
-                        "to keep projects moving with clarity."
+                        "Build a predictable technical base that supports "
+                        "growth without chaos."
                     ),
                 },
             ]
             context["featured_cases"] = [
                 {
                     "title": "Aire de Santa Fe",
-                    "context": (
-                        "Media platform with high traffic and campaigns "
-                        "that needed more predictable operations."
+                    "summary": (
+                        "High-traffic media environment improved with more "
+                        "predictable operations."
                     ),
-                    "outcome": (
-                        "A stronger publishing and notification flow with "
-                        "clearer operational decisions."
-                    ),
-                    "href": "/case-studies/aire/",
+                    "href": reverse("case-study-aire"),
                 },
                 {
                     "title": "Osoigo",
-                    "context": (
-                        "Participation platform that needed a more robust base "
-                        "for product evolution."
+                    "summary": (
+                        "Civic participation platform stabilized to operate "
+                        "safely at scale."
                     ),
-                    "outcome": (
-                        "Lower operational risk and cleaner delivery flow "
-                        "for continuous improvement."
-                    ),
-                    "href": "/case-studies/osoigo/",
+                    "href": reverse("case-study-osoigo"),
                 },
                 {
                     "title": "ENACT",
-                    "context": (
-                        "Multi-team international initiative with complex "
-                        "coordination requirements."
+                    "summary": (
+                        "International multi-team project coordinated "
+                        "with safer technical delivery."
                     ),
-                    "outcome": (
-                        "Stable cross-team delivery and shared working rules "
-                        "for reliable execution."
-                    ),
-                    "href": "/case-studies/enact/",
+                    "href": reverse("case-study-enact"),
                 },
                 {
                     "title": "Atempora",
-                    "context": (
-                        "Product with complex scheduling and payment rules "
-                        "that impacted users and operations."
+                    "summary": (
+                        "Complex SaaS rules and flows reorganized for "
+                        "clearer operations."
                     ),
-                    "outcome": (
-                        "Simpler product logic, clearer operation, and a stronger "
-                        "base for future growth."
-                    ),
-                    "href": "/case-studies/atempora/",
+                    "href": reverse("case-study-atempora"),
                 },
-            ]
-            context["work_steps"] = [
-                {
-                    "step": "Step 1",
-                    "title": "Understand your context",
-                    "description": (
-                        "We align on business goals, current bottlenecks, "
-                        "and the risks that matter most."
-                    ),
-                },
-                {
-                    "step": "Step 2",
-                    "title": "Prioritize for impact",
-                    "description": (
-                        "We define a realistic plan focused on visible gains "
-                        "for product and operations."
-                    ),
-                },
-                {
-                    "step": "Step 3",
-                    "title": "Execute with quality and rhythm",
-                    "description": (
-                        "Implementation happens with close follow-up, clear "
-                        "communication, and controlled delivery."
-                    ),
-                },
-                {
-                    "step": "Step 4",
-                    "title": "Transfer and continuity",
-                    "description": (
-                        "Your team keeps the improvements with practical "
-                        "documentation and clear ownership."
-                    ),
-                },
-            ]
-            context["focus_areas"] = [
-                "Media and content products",
-                "Collaborative and civic platforms",
-                "Complex service operations",
-                "IoT and integration-heavy products",
             ]
             context["social_links"] = [
-                {"label": "Case studies", "href": "/case-studies/"},
+                {"label": "Case studies", "href": reverse("case-studies")},
                 {"label": "Email", "href": "mailto:work@leohakim.dev"},
                 {"label": "Book intro call", "href": "https://cal.leohakim.dev/"},
             ]
         else:
             context["hero_highlights"] = [
-                (
-                    "Estabilizar productos que crecieron rapido "
-                    "y se volvieron dificiles de operar."
-                ),
-                "Traducir complejidad tecnica en decisiones faciles de entender.",
-                "Armar una hoja de ruta practica para producto, plataforma y equipo.",
+                "Sistemas que dejan de fallar bajo presión.",
+                "Deuda técnica convertida en ventaja operativa.",
+                "Decisiones técnicas con impacto comercial real.",
             ]
-            context["signature_blocks"] = [
+            context["help_areas"] = [
                 {
-                    "title": "Estabilizacion de producto",
+                    "title": "Estabilizar productos que crecieron rápido",
                     "description": (
-                        "Ayudo a bajar ruido operativo y recuperar confianza "
-                        "en la entrega del dia a dia."
+                        "Reducir incidentes y mejorar confiabilidad diaria "
+                        "en productos bajo demanda real."
                     ),
                 },
                 {
-                    "title": "Modernizacion de backend",
+                    "title": "Modernizar backend sin frenar el negocio",
                     "description": (
-                        "Rediseno partes criticas del backend para evolucionar "
-                        "producto sin romper lo que ya funciona."
+                        "Actualizar áreas críticas manteniendo continuidad "
+                        "de servicio y ritmo de entrega."
                     ),
                 },
                 {
-                    "title": "Acompanamiento de liderazgo tecnico",
+                    "title": "Escalar con arquitectura clara y predecible",
                     "description": (
-                        "Alineo equipos tecnicos y no tecnicos para avanzar "
-                        "con claridad y foco."
+                        "Construir una base técnica ordenada para crecer "
+                        "sin volver al caos operativo."
                     ),
                 },
             ]
             context["featured_cases"] = [
                 {
                     "title": "Aire de Santa Fe",
-                    "context": (
-                        "Plataforma media con alto trafico y campanas "
-                        "que necesitaban una operacion mas previsible."
+                    "summary": (
+                        "Entorno media de alto tráfico mejorado con una "
+                        "operación más predecible."
                     ),
-                    "outcome": (
-                        "Se ordeno el flujo de publicacion y notificaciones "
-                        "para operar con mas confianza."
-                    ),
-                    "href": "/case-studies/aire/",
+                    "href": reverse("case-study-aire"),
                 },
                 {
                     "title": "Osoigo",
-                    "context": (
-                        "Plataforma participativa que necesitaba una base "
-                        "mas robusta para evolucionar."
+                    "summary": (
+                        "Plataforma cívica estabilizada para operar a escala "
+                        "con menor riesgo."
                     ),
-                    "outcome": (
-                        "Se redujo riesgo operativo y se logro "
-                        "una entrega continua mas ordenada."
-                    ),
-                    "href": "/case-studies/osoigo/",
+                    "href": reverse("case-study-osoigo"),
                 },
                 {
                     "title": "ENACT",
-                    "context": (
-                        "Iniciativa internacional con varios equipos y "
-                        "necesidad de coordinar entregas complejas."
+                    "summary": (
+                        "Proyecto internacional coordinado con "
+                        "entrega técnica más segura."
                     ),
-                    "outcome": (
-                        "Se logro una entrega estable entre equipos "
-                        "con reglas comunes de trabajo."
-                    ),
-                    "href": "/case-studies/enact/",
+                    "href": reverse("case-study-enact"),
                 },
                 {
                     "title": "Atempora",
-                    "context": (
-                        "Producto con reglas complejas de agenda y pagos "
-                        "que afectaban operacion y experiencia."
+                    "summary": (
+                        "Reglas y flujos complejos de SaaS ordenados para "
+                        "operar con más claridad."
                     ),
-                    "outcome": (
-                        "Se simplifico la logica de producto para operar "
-                        "con mas claridad y sostener crecimiento."
-                    ),
-                    "href": "/case-studies/atempora/",
+                    "href": reverse("case-study-atempora"),
                 },
-            ]
-            context["work_steps"] = [
-                {
-                    "step": "Paso 1",
-                    "title": "Entender el contexto",
-                    "description": (
-                        "Alineamos objetivos de negocio, cuellos de botella "
-                        "actuales y riesgos prioritarios."
-                    ),
-                },
-                {
-                    "step": "Paso 2",
-                    "title": "Priorizar impacto",
-                    "description": (
-                        "Definimos un plan realista, con foco "
-                        "en mejoras visibles para producto y operacion."
-                    ),
-                },
-                {
-                    "step": "Paso 3",
-                    "title": "Ejecutar con calidad y ritmo",
-                    "description": (
-                        "La implementacion avanza con seguimiento cercano, "
-                        "comunicacion clara y entrega controlada."
-                    ),
-                },
-                {
-                    "step": "Paso 4",
-                    "title": "Transferencia y continuidad",
-                    "description": (
-                        "Tu equipo mantiene las mejoras con documentacion "
-                        "practica y ownership claro."
-                    ),
-                },
-            ]
-            context["focus_areas"] = [
-                "Productos media y contenido",
-                "Plataformas colaborativas y civicas",
-                "Operaciones de servicios complejos",
-                "Productos IoT con multiples integraciones",
             ]
             context["social_links"] = [
-                {"label": "Casos", "href": "/case-studies/"},
+                {"label": "Casos", "href": reverse("case-studies")},
                 {"label": "Email", "href": "mailto:work@leohakim.dev"},
                 {"label": "Agendar llamada", "href": "https://cal.leohakim.dev/"},
             ]

@@ -5,9 +5,9 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
   {% if LANGUAGE_CODE == 'en' %}
-    Work playbook | leohakim.dev
+    Playbook | leohakim.dev
   {% else %}
-    Playbook de trabajo | leohakim.dev
+    Playbook | leohakim.dev
   {% endif %}
 {% endblock title %}
 {% block content %}
@@ -15,16 +15,16 @@
     <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Playbook</p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        My way of working to deliver sustainable results.
+        How I turn fragile systems into reliable platforms.
       {% else %}
-        Mi forma de trabajar para lograr resultados sostenibles.
+        Cómo transformo sistemas frágiles en plataformas confiables.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        This playbook summarizes my approach in every project: understand context, decide clearly, execute with order, and transfer knowledge to the team.
+        A practical process focused on business risk, technical stability, and continuous improvement.
       {% else %}
-        Este playbook resume el enfoque que aplico en cada proyecto: entender el contexto, decidir con claridad, ejecutar con orden y transferir conocimiento al equipo.
+        Un proceso práctico con foco en riesgo de negocio, estabilidad técnica y mejora continua.
       {% endif %}
     </p>
   </section>
@@ -32,96 +32,75 @@
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          1. Understand before changing
+          1. Understand business and real risks
         {% else %}
-          1. Entender antes de tocar
+          1. Entender el negocio y riesgos reales
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          I begin by understanding business, users, and team reality. Without that context, solutions tend to be expensive and ineffective.
+          We align technical work with what can affect revenue, operations, and customer trust first.
         {% else %}
-          Empiezo por comprender negocio, usuarios y equipo. Sin ese contexto, las soluciones suelen ser caras y poco utiles.
+          Alineamos lo técnico con lo que primero puede afectar ingresos, operación y confianza del cliente.
         {% endif %}
       </p>
     </article>
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          2. Prioritize for impact
+          2. Prioritize what impacts first
         {% else %}
-          2. Priorizar lo que genera impacto
+          2. Priorizar lo que impacta primero
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          We define a clear sequence to solve what reduces risk and improves experience first.
+          We avoid scattered efforts and focus on the smallest set of changes with the highest practical value.
         {% else %}
-          Definimos un orden de trabajo simple para resolver primero lo que mas reduce riesgo y mejora experiencia.
+          Evitamos esfuerzos dispersos y enfocamos el trabajo en el conjunto mínimo de cambios con mayor valor real.
         {% endif %}
       </p>
     </article>
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          3. Implement safely
+          3. Implement with stability in mind
         {% else %}
-          3. Implementar de forma segura
+          3. Implementar con foco en estabilidad
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Changes are delivered in stages with continuous validation to protect operations and team velocity.
+          Delivery happens in controlled stages to protect operations and keep the team moving.
         {% else %}
-          Los cambios se hacen por etapas, con validacion continua, para proteger operacion y equipo.
+          La ejecución se hace por etapas controladas para proteger la operación y sostener el ritmo del equipo.
         {% endif %}
       </p>
     </article>
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          4. Measure and adapt
+          4. Measure and improve continuously
         {% else %}
-          4. Medir y ajustar
+          4. Medir y mejorar continuamente
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          We review real outcomes, learn, and optimize. Improvement is continuous, not a one-time event.
+          We track outcomes, review decisions, and adjust with evidence instead of assumptions.
         {% else %}
-          Revisamos resultados reales, aprendemos y optimizamos. La mejora es continua, no un evento aislado.
+          Revisamos resultados, reevaluamos decisiones y ajustamos con evidencia, no con supuestos.
         {% endif %}
       </p>
     </article>
   </section>
   <section class="mt-8 surface-soft p-7">
-    <h2 class="text-2xl font-semibold text-slate-950">
-      {% if LANGUAGE_CODE == 'en' %}
-        Final objective
-      {% else %}
-        Objetivo final
-      {% endif %}
-    </h2>
-    <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        Your product runs with confidence, your team works with less friction, and your business has a stable base for growth.
-      {% else %}
-        Que tu producto funcione con confianza, que tu equipo trabaje con menos friccion y que el negocio tenga una base estable para crecer.
-      {% endif %}
-    </p>
-    <div class="mt-5 flex flex-wrap gap-3">
+    <div class="flex flex-wrap gap-3">
       <a href="{% url 'contact' %}" class="btn-primary">
         {% if LANGUAGE_CODE == 'en' %}
           Start a conversation
         {% else %}
-          Iniciar conversacion
-        {% endif %}
-      </a>
-      <a href="{% url 'services' %}" class="btn-secondary">
-        {% if LANGUAGE_CODE == 'en' %}
-          View services
-        {% else %}
-          Ver servicios
+          Iniciar conversación
         {% endif %}
       </a>
     </div>

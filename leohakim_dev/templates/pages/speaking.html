@@ -4,23 +4,33 @@
 
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  Speaking | leohakim.dev
+  {% if LANGUAGE_CODE == 'en' %}
+    Speaking | leohakim.dev
+  {% else %}
+    Charlas | leohakim.dev
+  {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Speaking</p>
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Speaking
+      {% else %}
+        Charlas
+      {% endif %}
+    </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        Talks about product, architecture, and decisions that create real impact.
+        Talks about real scalability, technical debt without smoke, and business-aligned architecture.
       {% else %}
-        Charlas sobre producto, arquitectura y decisiones tecnicas que generan impacto real.
+        Charlas sobre escalabilidad real en producción, deuda técnica sin humo y arquitectura alineada al negocio.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        I share practical lessons from real projects, focused on insights that product and technology teams can apply immediately.
+        Available in Spanish and English for conferences, communities, and in-company sessions.
       {% else %}
-        Comparto experiencias practicas de proyectos reales, con enfoque en aprendizajes aplicables para equipos de producto y tecnologia.
+        Disponible en español e inglés para conferencias, comunidades y espacios internos.
       {% endif %}
     </p>
   </section>
@@ -28,80 +38,66 @@
     <article class="surface-card p-6">
       <h2 class="text-lg font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          From technical complexity to business clarity
+          Real scalability in production
         {% else %}
-          De complejidad tecnica a claridad de negocio
+          Escalabilidad real en producción
         {% endif %}
       </h2>
       <p class="mt-3 text-sm text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          How to translate technical decisions into stakeholder-friendly impact.
+          Lessons from high-demand systems where reliability and delivery pace must coexist.
         {% else %}
-          Como traducir decisiones tecnicas a impacto comprensible para stakeholders.
+          Aprendizajes de sistemas exigidos donde la confiabilidad y la velocidad deben convivir.
         {% endif %}
       </p>
     </article>
     <article class="surface-card p-6">
       <h2 class="text-lg font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Success stories without noise
+          Technical debt without smoke
         {% else %}
-          Casos de exito sin humo
+          Deuda técnica sin humo
         {% endif %}
       </h2>
       <p class="mt-3 text-sm text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          How to tell real project stories that build trust with clients and teams.
+          Practical ways to reduce risk and improve platform stability with clear priorities.
         {% else %}
-          Como contar proyectos reales para generar confianza en clientes y equipos.
+          Formas prácticas de bajar riesgo y mejorar estabilidad con prioridades claras.
         {% endif %}
       </p>
     </article>
     <article class="surface-card p-6">
       <h2 class="text-lg font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Technical leadership in changing environments
+          Architecture that supports business
         {% else %}
-          Liderazgo tecnico en entornos de cambio
+          Arquitectura que acompaña al negocio
         {% endif %}
       </h2>
       <p class="mt-3 text-sm text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Practices to sustain quality and pace as products scale.
+          How to align engineering decisions with product goals and operational reality.
         {% else %}
-          Practicas para sostener calidad y ritmo cuando el producto crece rapido.
+          Cómo alinear decisiones de ingeniería con objetivos de producto y realidad operativa.
         {% endif %}
       </p>
     </article>
   </section>
   <section class="mt-8 surface-soft p-7">
-    <h2 class="text-2xl font-semibold text-slate-950">
-      {% if LANGUAGE_CODE == 'en' %}
-        Invitations
-      {% else %}
-        Invitaciones
-      {% endif %}
-    </h2>
-    <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        If you run a community, event, or internal learning space, we can organize a talk tailored to your audience.
-      {% else %}
-        Si organizas una comunidad, evento o espacio interno de aprendizaje, podemos coordinar una charla adaptada a tu audiencia.
-      {% endif %}
-    </p>
     <div class="mt-5 flex flex-wrap gap-3">
       <a href="{% url 'contact' %}" class="btn-primary">
         {% if LANGUAGE_CODE == 'en' %}
           Invite me to speak
         {% else %}
-          Invitar a una charla
+          Invitar a charla
         {% endif %}
       </a>
       <a href="{% url 'case-studies' %}" class="btn-secondary">
         {% if LANGUAGE_CODE == 'en' %}
-          View reference stories
+          View case studies
         {% else %}
-          Ver casos de referencia
+          Ver casos
         {% endif %}
       </a>
     </div>

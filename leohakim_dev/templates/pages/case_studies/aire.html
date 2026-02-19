@@ -5,39 +5,33 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
   {% if LANGUAGE_CODE == 'en' %}
-    Success story: Aire de Santa Fe | leohakim.dev
+    Case study: Aire de Santa Fe | leohakim.dev
   {% else %}
-    Caso de exito: Aire de Santa Fe | leohakim.dev
+    Caso de estudio: Aire de Santa Fe | leohakim.dev
   {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
     <a href="{% url 'case-studies' %}" class="accent-link">
       {% if LANGUAGE_CODE == 'en' %}
-        Back to success stories ->
+        Back to case studies ->
       {% else %}
-        Volver a casos de exito ->
+        Volver a casos de éxito ->
       {% endif %}
     </a>
     <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
       {% if LANGUAGE_CODE == 'en' %}
-        Success story
+        Case study
       {% else %}
-        Caso de exito
+        Caso de estudio
       {% endif %}
     </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Aire de Santa Fe: from fragile operations to a more reliable and organized platform.
-      {% else %}
-        Aire de Santa Fe: de una operacion fragil a una plataforma mas confiable y ordenada.
-      {% endif %}
-    </h1>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">Aire de Santa Fe</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        The product needed to sustain high traffic and improve reading and notification experience without slowing team delivery.
+        High-traffic media platform where backend reliability directly impacted editorial flow and monetization.
       {% else %}
-        Este proyecto necesitaba sostener alto trafico y mejorar la experiencia de lectura y notificaciones sin perder velocidad de trabajo del equipo.
+        Medio digital de alta carga donde la confiabilidad del backend impactaba directamente en el flujo editorial y la monetización.
       {% endif %}
     </p>
   </section>
@@ -45,32 +39,32 @@
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Starting point
+          Context
         {% else %}
-          Situacion inicial
+          Contexto
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Performance varied significantly under demand peaks, affecting users, internal teams, and content campaigns.
+          Digital news product with millions of daily visits and sensitive publishing flows under peak traffic.
         {% else %}
-          Habia variaciones fuertes de rendimiento en momentos de alta demanda. Eso impactaba en usuarios, equipos internos y campanas de contenido.
+          Medio digital con millones de visitas diarias y flujos de publicación sensibles bajo picos de tráfico.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Goal
+          Objective
         {% else %}
           Objetivo
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Build a stable base for publishing, notifications, and clearer decision-making.
+          Stabilize backend behavior, improve performance, and ensure reliable push notifications.
         {% else %}
-          Lograr una base estable para publicar, enviar notificaciones y medir resultados con mayor claridad.
+          Estabilizar el backend, mejorar performance y asegurar notificaciones confiables.
         {% endif %}
       </p>
     </article>
@@ -78,52 +72,52 @@
   <section class="mt-8 surface-card p-7">
     <h2 class="text-2xl font-semibold text-slate-950">
       {% if LANGUAGE_CODE == 'en' %}
-        How we got there
+        Approach
       {% else %}
-        Como se llego al resultado
+        Enfoque
       {% endif %}
     </h2>
     <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Cleaner delivery flow:
+            1. Architecture order:
           {% else %}
-            1. Orden del flujo tecnico:
+            1. Orden de arquitectura:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          content delivery was reorganized to reduce overload and improve consistency.
+          clarified responsibilities across critical backend flows.
         {% else %}
-          se reorganizo la forma en que se servia el contenido para evitar sobrecargas y mejorar consistencia.
+          se clarificaron responsabilidades en los flujos críticos del backend.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Better user communication:
+            2. Smart caching and queues:
           {% else %}
-            2. Mejora de comunicacion con usuarios:
+            2. Cache inteligente y colas de tareas:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          notifications were improved to segment better and learn from each campaign.
+          reduced pressure points during peak demand.
         {% else %}
-          se profesionalizo la gestion de notificaciones para segmentar mejor y aprender de cada envio.
+          se redujeron cuellos de botella en momentos de alta demanda.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. More predictable operation:
+            3. Controlled rollout:
           {% else %}
-            3. Operacion mas previsible:
+            3. Despliegue controlado:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          delivery and monitoring process was reinforced to reduce production surprises.
+          safer delivery process for production updates.
         {% else %}
-          se fortalecio el proceso de entrega y seguimiento para reducir sorpresas en produccion.
+          proceso más seguro para liberar cambios en producción.
         {% endif %}
       </li>
     </ol>
@@ -132,16 +126,16 @@
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Outcome achieved
+          Result
         {% else %}
-          Resultado logrado
+          Resultado
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          The product became more stable, the team operated with greater confidence, and campaign data became clearer for decisions.
+          More predictable system behavior, fewer drops, and smoother editorial operation.
         {% else %}
-          El producto gano estabilidad, el equipo opero con mas confianza y las acciones de contenido pasaron a tener mejor trazabilidad para tomar decisiones.
+          Sistema más predecible, menos caídas y una operación editorial más fluida.
         {% endif %}
       </p>
     </article>
@@ -150,14 +144,14 @@
         {% if LANGUAGE_CODE == 'en' %}
           Business value
         {% else %}
-          Valor para negocio
+          Valor de negocio
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Better user experience, less operational friction, and a stronger base for future growth.
+          Sustained traffic, fewer incidents, and stronger monetization conditions.
         {% else %}
-          Mejor experiencia para usuarios, menor friccion operativa y una base solida para seguir creciendo sin rehacer todo de cero.
+          Más tráfico sostenido, menos incidentes y mejores condiciones para monetización.
         {% endif %}
       </p>
     </article>
@@ -165,24 +159,20 @@
   <section class="mt-8 surface-soft p-7">
     <h2 class="text-2xl font-semibold text-slate-950">
       {% if LANGUAGE_CODE == 'en' %}
-        Need this kind of improvement in your product?
+        Simple stack
       {% else %}
-        Quieres este tipo de mejora en tu producto?
+        Stack simple
       {% endif %}
     </h2>
     <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        I can help you diagnose your current situation and define a realistic action plan.
-      {% else %}
-        Puedo ayudarte a diagnosticar tu situacion actual y definir un plan realista para lograr un resultado similar.
-      {% endif %}
+      Django, Redis, PostgreSQL, Google Cloud, task queues, and smart caching.
     </p>
     <div class="mt-5 flex flex-wrap gap-3">
       <a href="{% url 'contact' %}" class="btn-primary">
         {% if LANGUAGE_CODE == 'en' %}
-          Book a call
+          Start a conversation
         {% else %}
-          Agendar una charla
+          Iniciar conversación
         {% endif %}
       </a>
       <a href="{% url 'services' %}" class="btn-secondary">

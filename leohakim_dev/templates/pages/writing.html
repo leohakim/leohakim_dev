@@ -4,74 +4,54 @@
 
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  Writing | leohakim.dev
+  {% if LANGUAGE_CODE == 'en' %}
+    Writing | leohakim.dev
+  {% else %}
+    Contenido | leohakim.dev
+  {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Writing</p>
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
+      {% if LANGUAGE_CODE == 'en' %}
+        Writing
+      {% else %}
+        Contenido
+      {% endif %}
+    </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        Notes and articles about technical decisions with product and business impact.
+        Practical content about backend, scalability, infrastructure, and technical leadership.
       {% else %}
-        Notas y articulos sobre decisiones tecnicas con impacto en producto y negocio.
+        Contenido práctico sobre backend, escalabilidad, infraestructura y liderazgo técnico.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        Content for teams looking for practical clarity, not empty theory.
+        No hype. Just real delivery experience and practical decisions.
       {% else %}
-        Publicaciones orientadas a equipos que buscan claridad practica, no teoria vacia.
+        Sin hype. Solo experiencia real de entrega y decisiones aplicables.
       {% endif %}
     </p>
   </section>
-  <section class="mt-8 grid gap-5 md:grid-cols-3">
-    <article class="surface-card p-6">
-      <h2 class="text-lg font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          What to publish to build technical authority
-        {% else %}
-          Que publicar para ganar autoridad tecnica
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          A guide to turn real delivery experience into trusted content.
-        {% else %}
-          Guia para convertir experiencia real en contenido util y confiable.
-        {% endif %}
-      </p>
-    </article>
-    <article class="surface-card p-6">
-      <h2 class="text-lg font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          How to tell a success story
-        {% else %}
-          Como contar un caso de exito
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Simple structure: challenge, approach, outcome, and lessons learned.
-        {% else %}
-          Estructura simple: problema, camino, resultado y aprendizajes.
-        {% endif %}
-      </p>
-    </article>
-    <article class="surface-card p-6">
-      <h2 class="text-lg font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Upcoming articles
-        {% else %}
-          Proximos articulos
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          This section will continue growing with new content.
-        {% else %}
-          Esta seccion seguira creciendo con contenido nuevo periodicamente.
-        {% endif %}
-      </p>
-    </article>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Main topics
+      {% else %}
+        Temas principales
+      {% endif %}
+    </h2>
+    <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        <li>- Building reliable systems under real-world pressure.</li>
+        <li>- Making technical debt manageable with clear tradeoffs.</li>
+        <li>- Designing architecture that helps teams and business grow.</li>
+      {% else %}
+        <li>- Construir sistemas confiables bajo exigencia real.</li>
+        <li>- Gestionar deuda técnica con prioridades y tradeoffs claros.</li>
+        <li>- Diseñar arquitectura que ayude a crecer al equipo y al negocio.</li>
+      {% endif %}
+    </ul>
   </section>
 {% endblock content %}

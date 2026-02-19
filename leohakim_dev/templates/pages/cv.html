@@ -5,87 +5,99 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
   {% if LANGUAGE_CODE == 'en' %}
-    One-pager CV | leohakim.dev
+    CV | leohakim.dev
   {% else %}
-    CV resumido | leohakim.dev
+    CV | leohakim.dev
   {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">CV one-pager</p>
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">CV</p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      Leonardo Hakim - Lead Backend Engineer
-    </h1>
-    <p class="mt-4 text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        Professional with 20+ years of experience building digital products, leading technical decisions, and supporting teams in growth stages.
+        Executive summary of experience in critical systems, technical leadership, and modern architecture.
       {% else %}
-        Profesional con 20+ anos de experiencia construyendo productos digitales, liderando decisiones tecnicas y acompanando equipos en contextos de crecimiento.
+        Resumen ejecutivo de experiencia en sistemas críticos, liderazgo técnico y arquitectura moderna.
+      {% endif %}
+    </h1>
+    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        Focused on helping teams stabilize products, modernize backends, and scale with confidence.
+      {% else %}
+        Enfocado en ayudar a equipos a estabilizar productos, modernizar backends y escalar con confianza.
       {% endif %}
     </p>
   </section>
-  <section class="mt-8 grid gap-5 md:grid-cols-2">
+  <section class="mt-8 grid gap-5 md:grid-cols-3">
     <article class="surface-card p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
+      <h2 class="text-lg font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Core strengths
+          Complex projects
         {% else %}
-          Fortalezas principales
+          Proyectos complejos
         {% endif %}
       </h2>
-      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          <li>- Building robust backend products.</li>
-          <li>- Bringing order and clarity to complex systems.</li>
-          <li>- Technical support with business focus.</li>
-          <li>- Translating technical problems into clear decisions.</li>
+          High-traffic platforms, SaaS products, and distributed systems.
         {% else %}
-          <li>- Construccion de productos backend robustos.</li>
-          <li>- Orden y claridad en sistemas complejos.</li>
-          <li>- Acompanamiento tecnico con enfoque de negocio.</li>
-          <li>- Capacidad para traducir problemas tecnicos a decisiones claras.</li>
+          Plataformas de alto tráfico, productos SaaS y sistemas distribuidos.
         {% endif %}
-      </ul>
+      </p>
     </article>
     <article class="surface-card p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
+      <h2 class="text-lg font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Highlighted experience
+          Technical leadership
         {% else %}
-          Experiencia destacada
+          Liderazgo técnico
         {% endif %}
       </h2>
-      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          <li>- Aire de Santa Fe: platform stabilization and operational improvements.</li>
-          <li>- Osoigo / ENACT: integration and scalability in collaborative environments.</li>
-          <li>- Atempora: simplification of complex product rules.</li>
-          <li>- Embever: reliable base for IoT operations.</li>
+          Decision-making support, team alignment, and reliable delivery.
         {% else %}
-          <li>- Aire de Santa Fe: estabilizacion de plataforma y mejora operativa.</li>
-          <li>- Osoigo / ENACT: integracion y escalabilidad en entornos colaborativos.</li>
-          <li>- Atempora: simplificacion de reglas complejas de producto.</li>
-          <li>- Embever: base confiable para operaciones IoT.</li>
+          Soporte en decisiones, alineación de equipos y entrega confiable.
         {% endif %}
-      </ul>
+      </p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-lg font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          Strategic consulting
+        {% else %}
+          Consultoría estratégica
+        {% endif %}
+      </h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          Architecture and platform roadmaps connected to business priorities.
+        {% else %}
+          Hoja de ruta de arquitectura y plataforma conectada con prioridades del negocio.
+        {% endif %}
+      </p>
     </article>
   </section>
   <section class="mt-8 surface-soft p-7">
     <h2 class="text-2xl font-semibold text-slate-950">
       {% if LANGUAGE_CODE == 'en' %}
-        Availability
+        Available for
       {% else %}
-        Disponibilidad
+        Disponible para
       {% endif %}
     </h2>
-    <p class="mt-3 text-sm leading-relaxed text-slate-600">
+    <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        Available for remote collaborations in product projects, platform modernization, and technical leadership.
+        <li>- Complex project delivery.</li>
+        <li>- Technical leadership support.</li>
+        <li>- Strategic engineering consulting.</li>
       {% else %}
-        Disponible para colaboraciones remotas en proyectos de producto, modernizacion de plataformas y liderazgo tecnico.
+        <li>- Proyectos complejos.</li>
+        <li>- Liderazgo técnico.</li>
+        <li>- Consultoría estratégica.</li>
       {% endif %}
-    </p>
-    <div class="mt-5 flex flex-wrap gap-3">
+    </ul>
+    <div class="mt-6 flex flex-wrap gap-3">
       <a href="{% url 'contact' %}" class="btn-primary">
         {% if LANGUAGE_CODE == 'en' %}
           Contact
@@ -95,9 +107,9 @@
       </a>
       <a href="{% url 'case-studies' %}" class="btn-secondary">
         {% if LANGUAGE_CODE == 'en' %}
-          View success stories
+          View case studies
         {% else %}
-          Ver casos de exito
+          Ver casos
         {% endif %}
       </a>
     </div>

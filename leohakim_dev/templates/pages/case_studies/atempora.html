@@ -5,39 +5,33 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% block title %}
   {% if LANGUAGE_CODE == 'en' %}
-    Success story: Atempora | leohakim.dev
+    Case study: Atempora | leohakim.dev
   {% else %}
-    Caso de exito: Atempora | leohakim.dev
+    Caso de estudio: Atempora | leohakim.dev
   {% endif %}
 {% endblock title %}
 {% block content %}
   <section class="surface-card px-7 py-9 sm:px-10">
     <a href="{% url 'case-studies' %}" class="accent-link">
       {% if LANGUAGE_CODE == 'en' %}
-        Back to success stories ->
+        Back to case studies ->
       {% else %}
-        Volver a casos de exito ->
+        Volver a casos de éxito ->
       {% endif %}
     </a>
     <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
       {% if LANGUAGE_CODE == 'en' %}
-        Success story
+        Case study
       {% else %}
-        Caso de exito
+        Caso de estudio
       {% endif %}
     </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Atempora: simplifying complex operations to improve product and management experience.
-      {% else %}
-        Atempora: simplificar una operacion compleja para mejorar experiencia y gestion.
-      {% endif %}
-    </h1>
+    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">Atempora</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        The product combined scheduling, billing, and sensitive business rules. The goal was to bring clarity and sustainability.
+        SaaS product with scheduling, payments, and complex business rules that needed a cleaner operational model.
       {% else %}
-        El producto combinaba agenda, pagos y reglas sensibles de negocio. El objetivo fue ordenar esa complejidad para que el servicio fuera mas claro y sostenible.
+        SaaS con agenda, pagos y reglas de negocio complejas que necesitaba un modelo operativo más claro.
       {% endif %}
     </p>
   </section>
@@ -45,32 +39,32 @@
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Starting point
+          Context
         {% else %}
-          Situacion inicial
+          Contexto
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Multiple overlapping rules affected users and operations: schedules, credits, payments, and policy logic.
+          Product operations were constrained by overlapping rules affecting user experience and team execution.
         {% else %}
-          Habia muchas reglas cruzadas que impactaban en usuarios y equipo operativo: agenda, creditos, pagos y politicas internas.
+          La operación del producto estaba limitada por reglas superpuestas que afectaban experiencia y ejecución del equipo.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Goal
+          Objective
         {% else %}
           Objetivo
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Build clearer product logic that is flexible and maintainable over time.
+          Organize core logic and prepare the platform to scale with predictable operations.
         {% else %}
-          Lograr una logica de producto mas clara, flexible y facil de mantener en el tiempo.
+          Ordenar la lógica central y preparar la plataforma para escalar con operación predecible.
         {% endif %}
       </p>
     </article>
@@ -78,52 +72,52 @@
   <section class="mt-8 surface-card p-7">
     <h2 class="text-2xl font-semibold text-slate-950">
       {% if LANGUAGE_CODE == 'en' %}
-        Work approach
+        Approach
       {% else %}
-        Camino de trabajo
+        Enfoque
       {% endif %}
     </h2>
     <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Prioritize critical rules:
+            1. Rule prioritization:
           {% else %}
-            1. Priorizar reglas criticas:
+            1. Priorización de reglas:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          high-impact flows for users and business were identified first.
+          mapped the highest-impact business and user flows first.
         {% else %}
-          se identificaron los flujos con mayor impacto para usuarios y negocio.
+          se mapearon primero los flujos de mayor impacto para negocio y usuarios.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Organize internal logic:
+            2. Core logic cleanup:
           {% else %}
-            2. Ordenar la logica interna:
+            2. Orden de lógica central:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          key pieces were redesigned to reduce ambiguity and errors.
+          removed ambiguity in critical backend behavior.
         {% else %}
-          se redefinieron piezas clave para reducir ambiguedades y errores.
+          se removieron ambigüedades en comportamientos críticos del backend.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. Prepare for growth:
+            3. Growth-ready structure:
           {% else %}
-            3. Preparar crecimiento:
+            3. Estructura preparada para crecer:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          a stronger base was left in place to add features without breaking the product.
+          left a more maintainable technical base for future features.
         {% else %}
-          se dejo una base mas estable para incorporar mejoras sin romper lo existente.
+          se dejó una base más mantenible para nuevas funcionalidades.
         {% endif %}
       </li>
     </ol>
@@ -132,16 +126,16 @@
     <article class="surface-card p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Outcome achieved
+          Result
         {% else %}
-          Resultado logrado
+          Resultado
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          The product became more robust and predictable, improving user experience and operational clarity.
+          Cleaner logic, better scalability readiness, and a more stable product experience.
         {% else %}
-          El producto quedo mas robusto y predecible, con mejor experiencia para personas usuarias y operaciones mas ordenadas para el equipo.
+          Lógica más ordenada, mejor preparación para escalar y experiencia de producto más estable.
         {% endif %}
       </p>
     </article>
@@ -150,16 +144,28 @@
         {% if LANGUAGE_CODE == 'en' %}
           Business value
         {% else %}
-          Valor para negocio
+          Valor de negocio
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Less operational friction, clearer decision-making, and a better foundation for scale.
+          More predictable operations, less friction, and a stronger base for product growth.
         {% else %}
-          Menos friccion operativa, mas claridad en decisiones y mejor base para escalar el servicio.
+          Operación más predecible, menos fricción y mejor base para crecimiento del producto.
         {% endif %}
       </p>
     </article>
+  </section>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Simple stack
+      {% else %}
+        Stack simple
+      {% endif %}
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">
+      Django, REST APIs, payment integrations, video services, and background queues.
+    </p>
   </section>
 {% endblock content %}

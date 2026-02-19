@@ -61,7 +61,7 @@ def test_home_navigation_labels_follow_selected_language(client):
     assert re.search(r">\s*Contact\s*<", text_en)
 
     assert re.search(r">\s*Inicio\s*<", text_es)
-    assert re.search(r">\s*Casos de exito\s*<", text_es)
+    assert re.search(r">\s*Casos de éxito\s*<", text_es)
     assert re.search(r">\s*Servicios\s*<", text_es)
     assert re.search(r">\s*Contacto\s*<", text_es)
 

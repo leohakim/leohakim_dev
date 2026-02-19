@@ -21,130 +21,73 @@
     </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        If you want a more professional, stable, and trustworthy platform, let's talk.
+        Share your context and what you need to improve.
       {% else %}
-        Si quieres una web o plataforma mas profesional, estable y confiable, conversemos.
+        Cuéntame brevemente tu contexto y qué necesitas mejorar.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        Share your context and goals. I will reply with a clear proposal and practical next steps.
+        I reply within 24 hours.
       {% else %}
-        Cuentame tu contexto y tus objetivos. Te respondere con una propuesta clara de siguientes pasos, sin vueltas.
+        Respondo en menos de 24 horas.
       {% endif %}
     </p>
   </section>
-  <section class="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-    <form class="surface-card space-y-4 p-6" method="post" action="#">
-      {% csrf_token %}
-      <div class="hidden" aria-hidden="true">
-        <label for="hp_url">URL</label>
-        <input id="hp_url"
-               name="hp_url"
-               type="text"
-               tabindex="-1"
-               autocomplete="off" />
-      </div>
-      <div>
-        <label for="name" class="block text-sm font-semibold text-slate-700">
-          {% if LANGUAGE_CODE == 'en' %}
-            Name
-          {% else %}
-            Nombre
-          {% endif %}
-        </label>
-        <input id="name"
-               name="name"
-               type="text"
-               class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-               required
-               aria-required="true" />
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-semibold text-slate-700">Email</label>
-        <input id="email"
-               name="email"
-               type="email"
-               class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-               required
-               aria-required="true" />
-      </div>
-      <div>
-        <label for="message" class="block text-sm font-semibold text-slate-700">
-          {% if LANGUAGE_CODE == 'en' %}
-            Tell me briefly about your project
-          {% else %}
-            Contame brevemente tu proyecto
-          {% endif %}
-        </label>
-        <textarea id="message"
-                  name="message"
-                  rows="6"
-                  class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="{% if LANGUAGE_CODE == 'en' %}Objective, current situation, and main challenge{% else %}Objetivo, situacion actual y principal desafio{% endif %}"></textarea>
-      </div>
-      <p class="text-xs text-slate-500">
-        {% if LANGUAGE_CODE == 'en' %}
-          I will reply with an initial proposal and practical next steps.
-        {% else %}
-          Te respondo con una propuesta inicial y proximos pasos concretos.
-        {% endif %}
-      </p>
-      <button type="submit" class="btn-primary">
-        {% if LANGUAGE_CODE == 'en' %}
-          Send
-        {% else %}
-          Enviar
-        {% endif %}
-      </button>
-    </form>
-    <aside class="surface-soft p-6">
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-7">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Direct contact
+          Preferred contact options
         {% else %}
-          Contacto directo
+          Canales de contacto
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          If you prefer, you can email me directly or book a 30-minute call.
+          Tell me about your product, your current challenge, and what outcome you expect.
         {% else %}
-          Si prefieres, puedes escribirme o agendar una charla de 30 minutos.
+          Contame sobre tu producto, el desafío actual y el resultado que te gustaría lograr.
         {% endif %}
       </p>
-      <div class="mt-5 space-y-3">
-        <a href="https://cal.leohakim.dev/"
-           class="btn-primary w-full justify-center">
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="mailto:work@leohakim.dev?subject=Project%20Inquiry"
+           class="btn-primary">
+          {% if LANGUAGE_CODE == 'en' %}
+            Send message
+          {% else %}
+            Enviar mensaje
+          {% endif %}
+        </a>
+        <a href="https://cal.leohakim.dev/" class="btn-secondary">
           {% if LANGUAGE_CODE == 'en' %}
             Book a call
           {% else %}
             Agendar llamada
           {% endif %}
         </a>
-        <a href="mailto:work@leohakim.dev"
-           class="btn-secondary w-full justify-center">work@leohakim.dev</a>
       </div>
-      <div class="mt-6 border-t border-slate-200 pt-5">
-        <p class="text-sm font-semibold text-slate-900">
-          {% if LANGUAGE_CODE == 'en' %}
-            What you get from the first conversation
-          {% else %}
-            Que recibiras en la primera conversacion
-          {% endif %}
-        </p>
-        <ul class="mt-3 space-y-2 text-sm text-slate-600">
-          {% if LANGUAGE_CODE == 'en' %}
-            <li>- Initial diagnosis of your current situation.</li>
-            <li>- Recommended working approach.</li>
-            <li>- Suggested next steps.</li>
-          {% else %}
-            <li>- Diagnostico inicial de tu situacion.</li>
-            <li>- Recomendacion de enfoque de trabajo.</li>
-            <li>- Estimacion de siguientes pasos.</li>
-          {% endif %}
-        </ul>
-      </div>
-    </aside>
+    </article>
+    <article class="surface-soft p-7">
+      <h2 class="text-xl font-semibold text-slate-900">
+        {% if LANGUAGE_CODE == 'en' %}
+          What we can cover first
+        {% else %}
+          Qué podemos ver primero
+        {% endif %}
+      </h2>
+      <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+        {% if LANGUAGE_CODE == 'en' %}
+          <li>- Current system pain points and main risks.</li>
+          <li>- Priority technical path with practical next steps.</li>
+          <li>- Collaboration format that fits your team.</li>
+        {% else %}
+          <li>- Puntos de dolor actuales y riesgos principales del sistema.</li>
+          <li>- Camino técnico prioritario con siguientes pasos concretos.</li>
+          <li>- Formato de colaboración que mejor encaje con tu equipo.</li>
+        {% endif %}
+      </ul>
+      <p class="mt-6 text-sm font-semibold text-slate-900">work@leohakim.dev</p>
+    </article>
   </section>
 {% endblock content %}
