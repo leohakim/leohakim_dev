@@ -8,14 +8,14 @@ services:
     user: "0:0"
     command: /bin/sh -c "python manage.py collectstatic --noinput && gunicorn --bind=0.0.0.0:8000 --workers=2 config.wsgi"
     volumes:
-      - static_volume:/app/staticfiles
-      - ./db:/app/db
-      - ./media:/app/leohakim_dev/media
+    - static_volume:/app/staticfiles
+    - ./db:/app/db
+    - ./media:/app/leohakim_dev/media
     expose:
-      - "8000"
+    - "8000"
     env_file: .env
     environment:
-      DJANGO_SETTINGS_MODULE: config.settings.base
+      DJANGO_SETTINGS_MODULE: config.settings.production
       DJANGO_DEBUG: "False"
       DJANGO_ALLOWED_HOSTS: "leohakim.dev,www.leohakim.dev,website,nginx,localhost,127.0.0.1"
       DATABASE_URL: "sqlite:////app/db/leohakim_dev.db"
@@ -27,12 +27,12 @@ services:
     build:
       context: ./nginx
     volumes:
-      - static_volume:/usr/src/app/staticfiles:ro
-      - ./media:/usr/src/app/media:ro
+    - static_volume:/usr/src/app/staticfiles:ro
+    - ./media:/usr/src/app/media:ro
     ports:
-      - "8001:80"
+    - "8001:80"
     depends_on:
-      - web
+    - web
     restart: unless-stopped
 
 volumes:
