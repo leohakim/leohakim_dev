@@ -2,6 +2,9 @@ import re
 from http import HTTPStatus
 
 import pytest
+from django.conf import settings
+from django.test import Client
+from django.test import override_settings
 from django.urls import reverse
 
 PUBLIC_ROUTE_NAMES = [
@@ -78,3 +81,30 @@ def test_set_language_switches_rendered_site_language(client):
 
     assert '<html lang="es">' in text
     assert re.search(r">\s*Inicio\s*<", text)
+
+
+@override_settings(
+    ALLOWED_HOSTS=["leohakim.dev", "localhost", "127.0.0.1", "testserver"],
+    CSRF_TRUSTED_ORIGINS=["https://leohakim.dev"],
+)
+def test_set_language_allows_proxy_style_https_origin_with_csrf():
+    client = Client(enforce_csrf_checks=True, headers={"host": "leohakim.dev"})
+    response = client.get(reverse("home"), HTTP_HOST="leohakim.dev")
+    assert response.status_code == HTTPStatus.OK
+
+    csrf_cookie_name = settings.CSRF_COOKIE_NAME
+    csrf_token = response.cookies[csrf_cookie_name].value
+    response = client.post(
+        reverse("set_language"),
+        data={
+            "language": "en",
+            "next": reverse("home"),
+            "csrfmiddlewaretoken": csrf_token,
+        },
+        HTTP_HOST="leohakim.dev",
+        HTTP_ORIGIN="https://leohakim.dev",
+        HTTP_REFERER="https://leohakim.dev/",
+    )
+
+    assert response.status_code == HTTPStatus.FOUND
+    assert response["Location"] == reverse("home")
