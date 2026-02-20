@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: "0:0"
     command: /bin/sh -c "python manage.py collectstatic --noinput && gunicorn --bind=0.0.0.0:8000 --workers=2 config.wsgi"
     volumes:
       - static_volume:/app/staticfiles
