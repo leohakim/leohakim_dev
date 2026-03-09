@@ -16,7 +16,8 @@ def test_public_content_languages_match_django_languages():
 def test_normalize_public_language_supports_variants_and_fallback():
     assert normalize_public_language("en-us") == "en"
     assert normalize_public_language("es-ar") == "es"
-    assert normalize_public_language("it") == "en"
+    assert normalize_public_language("it-it") == "it"
+    assert normalize_public_language("it") == "it"
     assert normalize_public_language(None) == "en"
 
 
@@ -45,9 +46,23 @@ def test_case_study_content_resolves_case_specific_ctas():
     assert case["secondary_cta"]["href"] == reverse("services")
 
 
+def test_case_study_content_supports_italian():
+    case = get_case_study_content("aire", "it")
+
+    assert case["kind"] == "Caso di studio"
+    assert "notifiche push" in case["hero_summary"]
+
+
 def test_site_ui_resolves_navigation_and_footer_links():
     site_ui = get_site_ui("es")
 
     assert site_ui["navigation"]["links"][0]["label"] == "Inicio"
     assert site_ui["navigation"]["links"][0]["href"] == reverse("home")
     assert site_ui["footer"]["links"][1]["href"] == "mailto:work@leohakim.dev"
+
+
+def test_site_ui_supports_italian_labels():
+    site_ui = get_site_ui("it")
+
+    assert site_ui["navigation"]["links"][1]["label"] == "Casi di studio"
+    assert site_ui["navigation"]["primary_cta"]["label"] == "Contatto"

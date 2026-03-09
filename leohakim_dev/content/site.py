@@ -9,7 +9,12 @@ from typing import Any
 
 from django.urls import reverse
 
-SUPPORTED_PUBLIC_LANGUAGES = ("en", "es")
+from leohakim_dev.content.site_it import CASE_STUDIES_IT_OVERRIDES
+from leohakim_dev.content.site_it import PAGES_IT_OVERRIDES
+from leohakim_dev.content.site_it import SITE_UI_IT_OVERRIDES
+
+SUPPORTED_PUBLIC_LANGUAGES = ("en", "es", "it")
+STRUCTURED_CONTENT_LANGUAGES = ("en", "es")
 DEFAULT_PUBLIC_LANGUAGE = "en"
 VISIBLE_CASE_STUDY_SLUGS = ("aire", "osoigo", "atempora", "enact")
 CASE_STUDY_ROUTE_NAMES = {
@@ -35,7 +40,7 @@ class ContentError(ValueError):
 
 def text(**translations: str) -> LocalizedText:
     translation_keys = set(translations)
-    expected_keys = set(SUPPORTED_PUBLIC_LANGUAGES)
+    expected_keys = set(STRUCTURED_CONTENT_LANGUAGES)
     if translation_keys != expected_keys:
         missing = sorted(expected_keys - translation_keys)
         extra = sorted(translation_keys - expected_keys)
@@ -364,11 +369,11 @@ PAGES = {
         "closing_body": text(
             en=(
                 "Available for selected consulting, implementation, and fractional senior "
-                "engagements in Spanish and English."
+                "engagements in Spanish, English, and Italian."
             ),
             es=(
                 "Disponible para colaboraciones seleccionadas de consultoría, "
-                "implementación y acompañamiento senior en español e inglés."
+                "implementación y acompañamiento senior en español, inglés e italiano."
             ),
         ),
         "closing_primary_cta": {
@@ -484,8 +489,8 @@ PAGES = {
                 es="Disponible para colaboraciones seleccionadas de consultoría, implementación y acompañamiento senior.",
             ),
             text(
-                en="Working languages: native Spanish and professional English.",
-                es="Idiomas de trabajo: español nativo e inglés profesional.",
+                en="Working languages: native Spanish, professional English, and proficient Italian.",
+                es="Idiomas de trabajo: español nativo, inglés profesional e italiano fluido.",
             ),
         ],
         "primary_cta": {
@@ -843,8 +848,8 @@ PAGES = {
             es="Charlas sobre backend real, presión de delivery y decisiones de arquitectura que tienen que sobrevivir en producción.",
         ),
         "lead": text(
-            en="Available in Spanish and English for conferences, communities, and in-company sessions.",
-            es="Disponible en español e inglés para conferencias, comunidades y espacios internos.",
+            en="Available in Spanish, English, and Italian for conferences, communities, and in-company sessions.",
+            es="Disponible en español, inglés e italiano para conferencias, comunidades y espacios internos.",
         ),
         "topic_cards": [
             {
@@ -1402,6 +1407,28 @@ def normalize_public_language(language_code: str | None) -> str:
     return DEFAULT_PUBLIC_LANGUAGE
 
 
+def _merge_overrides(base: Any, overrides: Any) -> Any:
+    if isinstance(base, Mapping) and isinstance(overrides, Mapping):
+        merged = dict(base)
+        for key, value in overrides.items():
+            if key in merged:
+                merged[key] = _merge_overrides(merged[key], value)
+            else:
+                merged[key] = value
+        return merged
+    if isinstance(base, list) and isinstance(overrides, list):
+        merged_items = []
+        for index, item in enumerate(base):
+            if index < len(overrides):
+                merged_items.append(_merge_overrides(item, overrides[index]))
+            else:
+                merged_items.append(item)
+        if len(overrides) > len(base):
+            merged_items.extend(overrides[len(base) :])
+        return merged_items
+    return overrides
+
+
 def _resolve_localized_value(value: Any, language_code: str) -> Any:
     if isinstance(value, LocalizedText):
         return value.resolve(language_code)
@@ -1440,7 +1467,14 @@ def _build_case_card(
     *,
     summary_key: str,
 ) -> dict[str, Any]:
-    case = _resolve_localized_value(CASE_STUDIES[case_slug], language_code)
+    if language_code == "it":
+        case = _resolve_localized_value(
+            CASE_STUDIES[case_slug],
+            DEFAULT_PUBLIC_LANGUAGE,
+        )
+        case = _merge_overrides(case, CASE_STUDIES_IT_OVERRIDES[case_slug])
+    else:
+        case = _resolve_localized_value(CASE_STUDIES[case_slug], language_code)
     return {
         "title": case["name"],
         "summary": case[summary_key],
@@ -1450,7 +1484,11 @@ def _build_case_card(
 
 def get_site_ui(language_code: str | None) -> dict[str, Any]:
     language = normalize_public_language(language_code)
-    ui = _resolve_localized_value(SITE_UI, language)
+    if language == "it":
+        ui = _resolve_localized_value(SITE_UI, DEFAULT_PUBLIC_LANGUAGE)
+        ui = _merge_overrides(ui, SITE_UI_IT_OVERRIDES)
+    else:
+        ui = _resolve_localized_value(SITE_UI, language)
     ui = _resolve_links(ui)
     ui["current_language"] = language
     return ui
@@ -1461,7 +1499,11 @@ def get_page_content(page_key: str, language_code: str | None) -> dict[str, Any]
         raise KeyError(f"Unknown page key: {page_key}")
 
     language = normalize_public_language(language_code)
-    page = _resolve_localized_value(PAGES[page_key], language)
+    if language == "it":
+        page = _resolve_localized_value(PAGES[page_key], DEFAULT_PUBLIC_LANGUAGE)
+        page = _merge_overrides(page, PAGES_IT_OVERRIDES[page_key])
+    else:
+        page = _resolve_localized_value(PAGES[page_key], language)
     page = _resolve_links(page)
 
     if page_key == "home":
@@ -1491,7 +1533,14 @@ def get_case_study_content(case_slug: str, language_code: str | None) -> dict[st
         raise KeyError(f"Unknown case study slug: {case_slug}")
 
     language = normalize_public_language(language_code)
-    case = _resolve_localized_value(CASE_STUDIES[case_slug], language)
+    if language == "it":
+        case = _resolve_localized_value(
+            CASE_STUDIES[case_slug],
+            DEFAULT_PUBLIC_LANGUAGE,
+        )
+        case = _merge_overrides(case, CASE_STUDIES_IT_OVERRIDES[case_slug])
+    else:
+        case = _resolve_localized_value(CASE_STUDIES[case_slug], language)
     case = _resolve_links(case)
     case["language_code"] = language
     return case
@@ -1506,6 +1555,13 @@ def _validate_content() -> None:
     for slug in VISIBLE_CASE_STUDY_SLUGS:
         if slug not in CASE_STUDIES:
             raise ContentError(f"Visible case study {slug} is missing from content")
+
+    if set(PAGES_IT_OVERRIDES) != set(PAGES):
+        msg = "Italian page overrides must cover the same top-level pages"
+        raise ContentError(msg)
+    if set(CASE_STUDIES_IT_OVERRIDES) != set(CASE_STUDIES):
+        msg = "Italian case study overrides must cover the same cases"
+        raise ContentError(msg)
 
 
 _validate_content()

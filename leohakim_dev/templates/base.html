@@ -57,6 +57,19 @@
       <script defer src="https://unpkg.com/alpinejs@3.x.x" crossorigin="anonymous"></script>
       <script defer src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
+    {% if site_ui.analytics.google_analytics_id %}
+      <script async
+              src="https://www.googletagmanager.com/gtag/js?id={{ site_ui.analytics.google_analytics_id }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "{{ site_ui.analytics.google_analytics_id }}");
+      </script>
+    {% endif %}
   </head>
   <body class="relative min-h-screen text-slate-900 antialiased {% block bodyclass %}{% endblock bodyclass %}">
     <div class="site-grid pointer-events-none fixed inset-0 -z-20"></div>
