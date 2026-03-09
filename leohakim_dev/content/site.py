@@ -652,6 +652,14 @@ PAGES = {
             en="No hype. Just concrete tradeoffs, lessons from production, and decisions that teams can actually use.",
             es="Sin hype. Solo tradeoffs concretos, aprendizajes de producción y decisiones que un equipo realmente puede usar.",
         ),
+        "positioning_title": text(
+            en="Selective writing, focused on what is worth clarifying",
+            es="Contenido selectivo, enfocado en lo que vale la pena aclarar",
+        ),
+        "positioning_body": text(
+            en="I do not publish for volume. I write when there is a practical decision, tradeoff, or operating lesson that can genuinely help teams building under real constraints.",
+            es="No publico por volumen. Escribo cuando hay una decisión, un tradeoff o un aprendizaje operativo que realmente puede ayudar a equipos que construyen bajo restricciones reales.",
+        ),
         "topics_title": text(en="Main topics", es="Temas principales"),
         "topics": [
             text(
@@ -666,6 +674,32 @@ PAGES = {
                 en="Designing architecture that helps product, operations, and teams grow together.",
                 es="Diseñar arquitectura que ayude a crecer a producto, operación y equipo a la vez.",
             ),
+        ],
+        "format_cards": [
+            {
+                "title": text(en="Production notes", es="Notas de producción"),
+                "body": text(
+                    en="Short, practical write-ups about reliability, delivery friction, and backend decisions that changed day-to-day operations.",
+                    es="Textos breves y prácticos sobre confiabilidad, fricción de delivery y decisiones de backend que cambiaron la operación del día a día.",
+                ),
+            },
+            {
+                "title": text(en="Architecture essays", es="Ensayos de arquitectura"),
+                "body": text(
+                    en="Longer pieces on domain design, backend structure, and how to avoid expensive technical ambiguity as products grow.",
+                    es="Piezas más extensas sobre diseño de dominio, estructura backend y cómo evitar ambigüedad técnica cara cuando el producto crece.",
+                ),
+            },
+            {
+                "title": text(
+                    en="Team decision guides",
+                    es="Guías para decidir en equipo",
+                ),
+                "body": text(
+                    en="Frameworks for prioritizing technical debt, reducing operational risk, and choosing what should be fixed first.",
+                    es="Marcos de trabajo para priorizar deuda técnica, bajar riesgo operativo y decidir qué conviene arreglar primero.",
+                ),
+            },
         ],
     },
     "contact": {
@@ -949,6 +983,36 @@ PAGES = {
             en="Available in Spanish, English, and Italian for conferences, communities, and in-company sessions.",
             es="Disponible en español, inglés e italiano para conferencias, comunidades y espacios internos.",
         ),
+        "formats_title": text(
+            en="Formats that work well",
+            es="Formatos que suelen funcionar bien",
+        ),
+        "format_cards": [
+            {
+                "title": text(en="Conference talks", es="Charlas para conferencias"),
+                "body": text(
+                    en="Practical talks for engineering or product audiences that want substance over trend-driven narratives.",
+                    es="Charlas prácticas para audiencias de ingeniería o producto que buscan sustancia y no narrativa de moda.",
+                ),
+            },
+            {
+                "title": text(en="Community sessions", es="Sesiones para comunidades"),
+                "body": text(
+                    en="Focused sessions around backend reliability, delivery, and architecture tradeoffs grounded in real systems.",
+                    es="Sesiones enfocadas en confiabilidad backend, delivery y tradeoffs de arquitectura basados en sistemas reales.",
+                ),
+            },
+            {
+                "title": text(
+                    en="Internal team talks",
+                    es="Charlas internas para equipos",
+                ),
+                "body": text(
+                    en="Clear, practical sessions for teams that need a stronger shared language around risk, architecture, and delivery.",
+                    es="Espacios claros y prácticos para equipos que necesitan un lenguaje común más sólido sobre riesgo, arquitectura y delivery.",
+                ),
+            },
+        ],
         "topic_cards": [
             {
                 "title": text(
@@ -1689,6 +1753,7 @@ def _build_case_card(
     else:
         case = _resolve_localized_value(CASE_STUDIES[case_slug], language_code)
     return {
+        "kind": case["kind"],
         "title": case["name"],
         "summary": case[summary_key],
         "href": reverse(CASE_STUDY_ROUTE_NAMES[case_slug]),

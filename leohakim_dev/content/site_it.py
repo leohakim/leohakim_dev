@@ -269,11 +269,35 @@ PAGES_IT_OVERRIDES = {
         "lead": (
             "Niente hype. Solo tradeoff concreti, lezioni dalla produzione e decisioni che i team possono davvero usare."
         ),
+        "positioning_title": "Contenuti selettivi, focalizzati su cio' che vale la pena chiarire",
+        "positioning_body": (
+            "Non pubblico per volume. Scrivo quando c'e' una decisione pratica, un tradeoff o una lezione operativa che puo' aiutare davvero team che costruiscono sotto vincoli reali."
+        ),
         "topics_title": "Temi principali",
         "topics": [
             "Rendere i sistemi backend piu' affidabili sotto pressione operativa reale.",
             "Trasformare il debito tecnico in priorita' e tradeoff piu' chiari.",
             "Progettare architetture che facciano crescere insieme prodotto, operations e team.",
+        ],
+        "format_cards": [
+            {
+                "title": "Note dalla produzione",
+                "body": (
+                    "Testi brevi e pratici su affidabilita', attrito nel delivery e decisioni backend che hanno cambiato l'operativita' quotidiana."
+                ),
+            },
+            {
+                "title": "Saggi di architettura",
+                "body": (
+                    "Pezzi piu' estesi su design del dominio, struttura backend e come evitare ambiguita' tecniche costose mentre il prodotto cresce."
+                ),
+            },
+            {
+                "title": "Guide per decidere in team",
+                "body": (
+                    "Framework per dare priorita' al debito tecnico, ridurre il rischio operativo e decidere cosa correggere per primo."
+                ),
+            },
         ],
     },
     "contact": {
@@ -433,6 +457,27 @@ PAGES_IT_OVERRIDES = {
             "Talk su backend reale, pressione di delivery e decisioni di architettura che devono reggere in produzione."
         ),
         "lead": "Disponibile in spagnolo, inglese e italiano per conferenze, community e sessioni interne ai team.",
+        "formats_title": "Formati che funzionano bene",
+        "format_cards": [
+            {
+                "title": "Talk per conferenze",
+                "body": (
+                    "Talk pratici per audience di engineering o prodotto che vogliono sostanza invece di narrativa guidata dalle mode."
+                ),
+            },
+            {
+                "title": "Sessioni per community",
+                "body": (
+                    "Sessioni focalizzate su affidabilita' backend, delivery e tradeoff architetturali ancorati a sistemi reali."
+                ),
+            },
+            {
+                "title": "Talk interni per team",
+                "body": (
+                    "Spazi chiari e pratici per team che hanno bisogno di un linguaggio condiviso piu' forte su rischio, architettura e delivery."
+                ),
+            },
+        ],
         "topic_cards": [
             {
                 "title": "Scalabilita' reale in produzione",

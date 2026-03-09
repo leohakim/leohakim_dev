@@ -36,6 +36,7 @@ def test_home_page_content_resolves_featured_case_links():
         "ENACT",
     ]
     assert page["featured_cases"][0]["href"] == reverse("case-study-aire")
+    assert page["featured_cases"][0]["kind"] == "Caso de estudio"
 
 
 def test_home_page_content_includes_best_fit_items():
@@ -81,6 +82,30 @@ def test_case_study_content_supports_italian():
     assert case["kind"] == "Caso di studio"
     assert "notifiche push" in case["hero_summary"]
     assert case["facts"][0]["label"] == "Settore"
+
+
+def test_writing_page_content_includes_positioning_and_formats():
+    page = get_page_content("writing", "en")
+    expected_titles = [
+        "Production notes",
+        "Architecture essays",
+        "Team decision guides",
+    ]
+
+    assert "Selective writing" in page["positioning_title"]
+    assert [card["title"] for card in page["format_cards"]] == expected_titles
+
+
+def test_speaking_page_content_supports_italian_formats():
+    page = get_page_content("speaking", "it")
+    expected_titles = [
+        "Talk per conferenze",
+        "Sessioni per community",
+        "Talk interni per team",
+    ]
+
+    assert page["formats_title"] == "Formati che funzionano bene"
+    assert [card["title"] for card in page["format_cards"]] == expected_titles
 
 
 def test_site_ui_resolves_navigation_and_footer_links():

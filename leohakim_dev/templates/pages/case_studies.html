@@ -11,6 +11,7 @@
   <section class="mt-10 grid gap-5 md:grid-cols-2">
     {% for case in page.cases %}
       <article class="surface-card flex flex-col gap-4 p-6">
+        <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">{{ case.kind }}</p>
         <h2 class="text-xl font-semibold text-slate-900">{{ case.title }}</h2>
         <p class="text-sm leading-relaxed text-slate-600">{{ case.summary }}</p>
         <a href="{{ case.href }}" class="accent-link mt-auto">{{ site_ui.case_study.card_cta }}</a>
