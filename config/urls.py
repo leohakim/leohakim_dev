@@ -20,34 +20,33 @@ class HomeView(TemplateView):
             {"name": "Osoigo", "url": reverse("case-study-osoigo")},
             {"name": "ENACT", "url": reverse("case-study-enact")},
             {"name": "Atempora", "url": reverse("case-study-atempora")},
-            {"name": "Embever", "url": reverse("case-study-embever")},
         ]
         if is_en:
             context["hero_highlights"] = [
-                "Systems that stay reliable under pressure.",
-                "Technical debt turned into operational strength.",
-                "Engineering decisions that impact revenue and growth.",
+                "Reliable systems for products already under real demand.",
+                "Clearer technical decisions across backend, product, and operations.",
+                "Engineering that helps teams grow without making the platform fragile.",  # noqa: E501
             ]
             context["help_areas"] = [
                 {
-                    "title": "Stabilize fast-growing products",
+                    "title": "Stabilize products that are already feeling pressure",
                     "description": (
-                        "Reduce incidents and improve day-to-day reliability "
-                        "in products under real demand."
+                        "When the backend starts slowing product and operations "
+                        "down, I help restore predictability and reduce risk."
                     ),
                 },
                 {
-                    "title": "Modernize without business disruption",
+                    "title": "Modernize critical backend without blocking delivery",
                     "description": (
-                        "Upgrade critical backend areas while keeping service "
-                        "continuity and delivery pace."
+                        "I improve fragile areas of the system while keeping "
+                        "service continuity and the team moving."
                     ),
                 },
                 {
-                    "title": "Scale with clear architecture",
+                    "title": "Turn complex product rules into workable systems",
                     "description": (
-                        "Build a predictable technical base that supports "
-                        "growth without chaos."
+                        "I design clearer domain and platform decisions so "
+                        "growth does not create chaos later."
                     ),
                 },
             ]
@@ -55,67 +54,67 @@ class HomeView(TemplateView):
                 {
                     "title": "Aire de Santa Fe",
                     "summary": (
-                        "High-traffic media environment improved with more "
-                        "predictable operations."
+                        "Backend, push, and operating foundations for a "
+                        "high-traffic media app that needed more predictable delivery."
                     ),
                     "href": reverse("case-study-aire"),
                 },
                 {
                     "title": "Osoigo",
                     "summary": (
-                        "Civic participation platform stabilized to operate "
-                        "safely at scale."
+                        "Sensitive backend areas reinforced so a live "
+                        "participation platform could keep evolving with less risk."
                     ),
                     "href": reverse("case-study-osoigo"),
                 },
                 {
-                    "title": "ENACT",
-                    "summary": (
-                        "International multi-team project coordinated "
-                        "with safer technical delivery."
-                    ),
-                    "href": reverse("case-study-enact"),
-                },
-                {
                     "title": "Atempora",
                     "summary": (
-                        "Complex SaaS rules and flows reorganized for "
-                        "clearer operations."
+                        "Product architecture for a SaaS with scheduling, "
+                        "payments, and complex rules that could not be improvised."
                     ),
                     "href": reverse("case-study-atempora"),
+                },
+                {
+                    "title": "ENACT",
+                    "summary": (
+                        "Infrastructure and deployment work in a multi-team "
+                        "international environment that needed repeatability."
+                    ),
+                    "href": reverse("case-study-enact"),
                 },
             ]
             context["social_links"] = [
                 {"label": "Case studies", "href": reverse("case-studies")},
                 {"label": "Email", "href": "mailto:work@leohakim.dev"},
-                {"label": "Book intro call", "href": "https://cal.leohakim.dev/"},
+                {"label": "Contact", "href": reverse("contact")},
             ]
         else:
             context["hero_highlights"] = [
-                "Sistemas que dejan de fallar bajo presión.",
-                "Deuda técnica convertida en ventaja operativa.",
-                "Decisiones técnicas con impacto comercial real.",
+                "Sistemas confiables para productos que ya están bajo demanda real.",
+                "Decisiones más claras entre backend, producto y operación.",
+                "Ingeniería que permite crecer sin volver frágil la plataforma.",
             ]
             context["help_areas"] = [
                 {
-                    "title": "Estabilizar productos que crecieron rápido",
+                    "title": "Estabilizar productos que ya sienten la presión",
                     "description": (
-                        "Reducir incidentes y mejorar confiabilidad diaria "
-                        "en productos bajo demanda real."
+                        "Cuando el backend empieza a frenar producto y "
+                        "operación, ayudo a recuperar previsibilidad y bajar riesgo."
                     ),
                 },
                 {
-                    "title": "Modernizar backend sin frenar el negocio",
+                    "title": "Modernizar backend crítico sin frenar la entrega",
                     "description": (
-                        "Actualizar áreas críticas manteniendo continuidad "
-                        "de servicio y ritmo de entrega."
+                        "Mejora de áreas frágiles del sistema manteniendo "
+                        "continuidad de servicio y avance del equipo."
                     ),
                 },
                 {
-                    "title": "Escalar con arquitectura clara y predecible",
+                    "title": "Convertir reglas complejas en sistemas que se pueden operar",  # noqa: E501
                     "description": (
-                        "Construir una base técnica ordenada para crecer "
-                        "sin volver al caos operativo."
+                        "Diseño decisiones de dominio y plataforma más claras "
+                        "para crecer sin volver al caos."
                     ),
                 },
             ]
@@ -123,40 +122,40 @@ class HomeView(TemplateView):
                 {
                     "title": "Aire de Santa Fe",
                     "summary": (
-                        "Entorno media de alto tráfico mejorado con una "
-                        "operación más predecible."
+                        "Backend, push y base operativa para una app de "
+                        "medios de alto tráfico que necesitaba más previsibilidad."
                     ),
                     "href": reverse("case-study-aire"),
                 },
                 {
                     "title": "Osoigo",
                     "summary": (
-                        "Plataforma cívica estabilizada para operar a escala "
-                        "con menor riesgo."
+                        "Refuerzo de áreas sensibles del backend para que "
+                        "una plataforma viva pudiera seguir evolucionando con menos riesgo."  # noqa: E501
                     ),
                     "href": reverse("case-study-osoigo"),
                 },
                 {
-                    "title": "ENACT",
-                    "summary": (
-                        "Proyecto internacional coordinado con "
-                        "entrega técnica más segura."
-                    ),
-                    "href": reverse("case-study-enact"),
-                },
-                {
                     "title": "Atempora",
                     "summary": (
-                        "Reglas y flujos complejos de SaaS ordenados para "
-                        "operar con más claridad."
+                        "Arquitectura de producto para un SaaS con agenda, "
+                        "pagos y reglas complejas que no se podían improvisar."
                     ),
                     "href": reverse("case-study-atempora"),
+                },
+                {
+                    "title": "ENACT",
+                    "summary": (
+                        "Infraestructura y despliegue en un entorno "
+                        "internacional multi-equipo que necesitaba repetibilidad."
+                    ),
+                    "href": reverse("case-study-enact"),
                 },
             ]
             context["social_links"] = [
                 {"label": "Casos", "href": reverse("case-studies")},
                 {"label": "Email", "href": "mailto:work@leohakim.dev"},
-                {"label": "Agendar llamada", "href": "https://cal.leohakim.dev/"},
+                {"label": "Contacto", "href": reverse("contact")},
             ]
         return context
 

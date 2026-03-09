@@ -29,9 +29,9 @@
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">Aire de Santa Fe</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        High-traffic media platform where backend reliability directly impacted editorial flow and monetization.
+        Backend, push notifications, and operating foundations for a high-traffic news app that needed more reliability before it could grow with confidence.
       {% else %}
-        Medio digital de alta carga donde la confiabilidad del backend impactaba directamente en el flujo editorial y la monetización.
+        Backend, notificaciones push y base operativa para una app de noticias de alto tráfico que necesitaba más confiabilidad antes de crecer con seguridad.
       {% endif %}
     </p>
   </section>
@@ -46,25 +46,25 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Digital news product with millions of daily visits and sensitive publishing flows under peak traffic.
+          A news product with millions of visits, editorial peaks, and push distribution needs. The challenge was not just serving endpoints, but creating a backend that could support real traffic, real operations, and future product evolution without too much fragility.
         {% else %}
-          Medio digital con millones de visitas diarias y flujos de publicación sensibles bajo picos de tráfico.
+          Un producto de noticias con millones de visitas, picos editoriales y necesidades reales de distribución por push. El desafío no era solo servir endpoints, sino construir un backend capaz de sostener tráfico real, operación editorial y evolución de producto sin demasiada fragilidad.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Objective
+          My role
         {% else %}
-          Objetivo
+          Mi rol
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Stabilize backend behavior, improve performance, and ensure reliable push notifications.
+          I was directly responsible for backend, API, push flows, the internal panel, part of the deployment setup, and the operational decisions needed to make the system more workable day to day.
         {% else %}
-          Estabilizar el backend, mejorar performance y asegurar notificaciones confiables.
+          Tuve responsabilidad directa sobre backend, API, flujos de push, panel interno, parte del despliegue y las decisiones operativas necesarias para volver el sistema más trabajable en el día a día.
         {% endif %}
       </p>
     </article>
@@ -81,43 +81,43 @@
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Architecture order:
+            1. Decouple sensitive flows:
           {% else %}
-            1. Orden de arquitectura:
+            1. Desacoplar flujos sensibles:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          clarified responsibilities across critical backend flows.
+          I designed backend operations around asynchronous tasks so push and operational work would not overload user-facing flows.
         {% else %}
-          se clarificaron responsabilidades en los flujos críticos del backend.
+          Diseñé la operación del backend alrededor de tareas asíncronas para que el push y otros procesos sensibles no cargaran de más los flujos de cara al usuario.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Smart caching and queues:
+            2. Reduce pressure on the origin:
           {% else %}
-            2. Cache inteligente y colas de tareas:
+            2. Reducir presión sobre el origen:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          reduced pressure points during peak demand.
+          I defined a hybrid caching approach with Firestore for high-demand content and clearer expiration rules for news delivery.
         {% else %}
-          se redujeron cuellos de botella en momentos de alta demanda.
+          Definí una estrategia híbrida de caché con Firestore para contenido de alta consulta y reglas más claras de expiración para la entrega de noticias.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. Controlled rollout:
+            3. Make operations easier to run:
           {% else %}
-            3. Despliegue controlado:
+            3. Hacer la operación más gobernable:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          safer delivery process for production updates.
+          I kept the internal tooling simple and treated push as an operable system, with room for tracing and future metrics instead of one-off sending.
         {% else %}
-          proceso más seguro para liberar cambios en producción.
+          Mantuve las herramientas internas simples y traté el push como un sistema operable, con espacio para trazabilidad y métricas futuras en lugar de simples envíos aislados.
         {% endif %}
       </li>
     </ol>
@@ -133,9 +133,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          More predictable system behavior, fewer drops, and smoother editorial operation.
+          The platform gained a more predictable base for editorial and product operations. Content delivery, internal workflows, and backend evolution started from a much more controlled place.
         {% else %}
-          Sistema más predecible, menos caídas y una operación editorial más fluida.
+          La plataforma ganó una base más predecible para la operación editorial y de producto. La entrega de contenido, los flujos internos y la evolución del backend empezaron a partir de un lugar mucho más controlado.
         {% endif %}
       </p>
     </article>
@@ -149,9 +149,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Sustained traffic, fewer incidents, and stronger monetization conditions.
+          In a media product under real traffic, better backend predictability means less operational friction and a stronger base for engagement, editorial continuity, and future monetization work.
         {% else %}
-          Más tráfico sostenido, menos incidentes y mejores condiciones para monetización.
+          En un producto media con tráfico real, una mayor previsibilidad del backend significa menos fricción operativa y una base más fuerte para engagement, continuidad editorial y trabajo futuro de monetización.
         {% endif %}
       </p>
     </article>
@@ -165,14 +165,25 @@
       {% endif %}
     </h2>
     <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      Django, Redis, PostgreSQL, Google Cloud, task queues, and smart caching.
+      {% if LANGUAGE_CODE == 'en' %}
+        Django and DRF for the API and internal tools, Celery and Redis for background work, PostgreSQL for core data, Firebase for push delivery, and Firestore for cache in high-demand content flows.
+      {% else %}
+        Django y DRF para la API y las herramientas internas, Celery y Redis para trabajo en segundo plano, PostgreSQL para datos centrales, Firebase para la entrega de push y Firestore para caché en flujos de contenido de alta consulta.
+      {% endif %}
+    </p>
+    <p class="mt-3 text-sm leading-relaxed text-slate-500">
+      {% if LANGUAGE_CODE == 'en' %}
+        Some parts, such as deeper metrics and more advanced segmentation, are still evolving and are not presented here as finished work.
+      {% else %}
+        Algunas partes, como métricas más profundas y segmentación más avanzada, siguen en evolución y no se presentan aquí como trabajo cerrado.
+      {% endif %}
     </p>
     <div class="mt-5 flex flex-wrap gap-3">
       <a href="{% url 'contact' %}" class="btn-primary">
         {% if LANGUAGE_CODE == 'en' %}
-          Start a conversation
+          Talk about a similar challenge
         {% else %}
-          Iniciar conversación
+          Hablar de un desafío similar
         {% endif %}
       </a>
       <a href="{% url 'services' %}" class="btn-secondary">

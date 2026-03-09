@@ -21,16 +21,16 @@
     </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        Real systems. Real problems. Measurable outcomes.
+        Real systems. Real constraints. Clear outcomes.
       {% else %}
-        Sistemas reales. Problemas reales. Resultados medibles.
+        Sistemas reales. Restricciones reales. Resultados claros.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        Practical project stories focused on context, technical approach, and business value.
+        Four selected cases that show how I work when backend, operations, and product complexity need to be aligned instead of improvised.
       {% else %}
-        Historias de proyectos reales con foco en contexto, enfoque técnico y valor para negocio.
+        Cuatro casos seleccionados que muestran cómo trabajo cuando backend, operación y complejidad de producto necesitan alinearse en lugar de improvisarse.
       {% endif %}
     </p>
   </section>
@@ -39,9 +39,9 @@
       <h2 class="text-xl font-semibold text-slate-900">Aire de Santa Fe</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          High-traffic media product with a need for predictable operations and resilient backend behavior.
+          Backend, push, and operating foundations for a high-traffic news app that needed more predictable delivery.
         {% else %}
-          Producto media de alta carga con necesidad de operación predecible y backend resiliente.
+          Backend, push y base operativa para una app de noticias de alto tráfico que necesitaba más previsibilidad.
         {% endif %}
       </p>
       <a href="{% url 'case-study-aire' %}" class="accent-link mt-auto">
@@ -56,9 +56,9 @@
       <h2 class="text-xl font-semibold text-slate-900">Osoigo</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Civic participation platform stabilized for scale, faster delivery, and lower operational risk.
+          Sensitive backend work so a live participation platform could keep evolving with less operational risk.
         {% else %}
-          Plataforma cívica estabilizada para escalar, entregar más rápido y reducir riesgo operativo.
+          Trabajo sobre áreas sensibles del backend para que una plataforma viva pudiera seguir evolucionando con menos riesgo operativo.
         {% endif %}
       </p>
       <a href="{% url 'case-study-osoigo' %}" class="accent-link mt-auto">
@@ -70,29 +70,12 @@
       </a>
     </article>
     <article class="surface-card flex flex-col gap-4 p-6">
-      <h2 class="text-xl font-semibold text-slate-900">ENACT</h2>
-      <p class="text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          International multi-team initiative with safer coordination, predictable delivery, and clearer collaboration.
-        {% else %}
-          Iniciativa internacional multi-equipo con coordinación técnica predecible y colaboración más clara.
-        {% endif %}
-      </p>
-      <a href="{% url 'case-study-enact' %}" class="accent-link mt-auto">
-        {% if LANGUAGE_CODE == 'en' %}
-          View full story ->
-        {% else %}
-          Ver historia completa ->
-        {% endif %}
-      </a>
-    </article>
-    <article class="surface-card flex flex-col gap-4 p-6">
       <h2 class="text-xl font-semibold text-slate-900">Atempora</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          SaaS product with complex rules reorganized for better operational clarity and scalable growth.
+          Product architecture for a SaaS with scheduling, payments, and complex rules that could not be improvised.
         {% else %}
-          SaaS con reglas complejas reorganizado para operar con claridad y escalar sin fricción.
+          Arquitectura de producto para un SaaS con agenda, pagos y reglas complejas que no se podían improvisar.
         {% endif %}
       </p>
       <a href="{% url 'case-study-atempora' %}" class="accent-link mt-auto">
@@ -103,16 +86,16 @@
         {% endif %}
       </a>
     </article>
-    <article class="surface-card flex flex-col gap-4 p-6 md:col-span-2">
-      <h2 class="text-xl font-semibold text-slate-900">Embever</h2>
+    <article class="surface-card flex flex-col gap-4 p-6">
+      <h2 class="text-xl font-semibold text-slate-900">ENACT</h2>
       <p class="text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Backend reliability for sensitive IoT processes with better traceability and long-term scalability.
+          Infrastructure and deployment work in a multi-team international environment that needed repeatability.
         {% else %}
-          Backend confiable para procesos IoT sensibles, con mejor trazabilidad y escalabilidad.
+          Trabajo de infraestructura y despliegue en un entorno internacional multi-equipo que necesitaba repetibilidad.
         {% endif %}
       </p>
-      <a href="{% url 'case-study-embever' %}" class="accent-link mt-auto">
+      <a href="{% url 'case-study-enact' %}" class="accent-link mt-auto">
         {% if LANGUAGE_CODE == 'en' %}
           View full story ->
         {% else %}
@@ -120,5 +103,21 @@
         {% endif %}
       </a>
     </article>
+  </section>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">
+      {% if LANGUAGE_CODE == 'en' %}
+        Additional experience
+      {% else %}
+        Experiencia adicional
+      {% endif %}
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">
+      {% if LANGUAGE_CODE == 'en' %}
+        I also have selected backend and cloud experience in IoT-related contexts, but I keep that work more generic publicly when the available detail is limited or sensitive.
+      {% else %}
+        También tengo experiencia adicional en backend y cloud en contextos ligados a IoT, pero prefiero contarla de forma más genérica cuando el detalle disponible es limitado o sensible.
+      {% endif %}
+    </p>
   </section>
 {% endblock content %}

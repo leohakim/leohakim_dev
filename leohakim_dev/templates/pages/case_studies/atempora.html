@@ -21,17 +21,17 @@
     </a>
     <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
       {% if LANGUAGE_CODE == 'en' %}
-        Case study
+        Product architecture case
       {% else %}
-        Caso de estudio
+        Caso de arquitectura de producto
       {% endif %}
     </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">Atempora</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        SaaS product with scheduling, payments, and complex business rules that needed a cleaner operational model.
+        A product architecture case for a SaaS with scheduling, credits, payments, and complex rules that could not be improvised without creating expensive debt later.
       {% else %}
-        SaaS con agenda, pagos y reglas de negocio complejas que necesitaba un modelo operativo más claro.
+        Un caso de arquitectura de producto para un SaaS con agenda, créditos, pagos y reglas complejas que no se podían improvisar sin generar deuda cara después.
       {% endif %}
     </p>
   </section>
@@ -46,25 +46,25 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Product operations were constrained by overlapping rules affecting user experience and team execution.
+          The product combines sessions, credits, payments, cancellations, currencies, settlements, and multi-tenant rules. The risk was ending up with an MVP that looked functional on the surface but was inconsistent underneath.
         {% else %}
-          La operación del producto estaba limitada por reglas superpuestas que afectaban experiencia y ejecución del equipo.
+          El producto combina sesiones, créditos, pagos, cancelaciones, monedas, liquidaciones y reglas multi-tenant. El riesgo era terminar con un MVP que pareciera funcional por fuera pero fuera inconsistente por dentro.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Objective
+          My role
         {% else %}
-          Objetivo
+          Mi rol
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Organize core logic and prepare the platform to scale with predictable operations.
+          As founder and backend/product architect, I focused on designing the domain, the API, and the core rules before the product scaled on top of ambiguous assumptions.
         {% else %}
-          Ordenar la lógica central y preparar la plataforma para escalar con operación predecible.
+          Como fundador y arquitecto de backend/producto, me centré en diseñar el dominio, la API y las reglas centrales antes de que el producto creciera sobre supuestos ambiguos.
         {% endif %}
       </p>
     </article>
@@ -81,43 +81,43 @@
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Rule prioritization:
+            1. Model business rules before screens:
           {% else %}
-            1. Priorización de reglas:
+            1. Modelar reglas de negocio antes que pantallas:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          mapped the highest-impact business and user flows first.
+          The first job was to define what sessions, credits, cancellations, usage rules, and settlements really meant instead of letting the implementation guess.
         {% else %}
-          se mapearon primero los flujos de mayor impacto para negocio y usuarios.
+          El primer trabajo fue definir qué significaban realmente sesiones, créditos, cancelaciones, reglas de uso y liquidaciones en lugar de dejar que la implementación lo adivinara.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Core logic cleanup:
+            2. Separate key concepts on purpose:
           {% else %}
-            2. Orden de lógica central:
+            2. Separar conceptos clave a propósito:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          removed ambiguity in critical backend behavior.
+          Credits were decoupled from money, sessions and slots were modeled explicitly, and multi-tenant plus settlement logic were treated as first-class concerns instead of future patches.
         {% else %}
-          se removieron ambigüedades en comportamientos críticos del backend.
+          Los créditos se desacoplaron del dinero, sesiones y slots se modelaron de forma explícita, y la lógica multi-tenant y de liquidaciones se trató como algo central y no como un parche futuro.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. Growth-ready structure:
+            3. Build the API around real product constraints:
           {% else %}
-            3. Estructura preparada para crecer:
+            3. Construir la API alrededor de restricciones reales del producto:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          left a more maintainable technical base for future features.
+          The goal was not just cleaner code, but a backend structure the product could keep extending without contradictions becoming structural debt.
         {% else %}
-          se dejó una base más mantenible para nuevas funcionalidades.
+          El objetivo no era solo un código más limpio, sino una estructura backend que el producto pudiera seguir extendiendo sin que las contradicciones se convirtieran en deuda estructural.
         {% endif %}
       </li>
     </ol>
@@ -133,9 +133,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Cleaner logic, better scalability readiness, and a more stable product experience.
+          The most important result is clarity. The product now has a much more coherent base for implementation, with fewer dangerous ambiguities in the core rules that matter most.
         {% else %}
-          Lógica más ordenada, mejor preparación para escalar y experiencia de producto más estable.
+          El resultado más importante es la claridad. El producto ahora tiene una base mucho más coherente para implementarse, con menos ambigüedades peligrosas en las reglas centrales que más importan.
         {% endif %}
       </p>
     </article>
@@ -149,9 +149,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          More predictable operations, less friction, and a stronger base for product growth.
+          In a product like this, good architecture is business value. It reduces the chance of expensive rewrites, inconsistent behavior, and avoidable friction once the MVP starts growing.
         {% else %}
-          Operación más predecible, menos fricción y mejor base para crecimiento del producto.
+          En un producto así, una buena arquitectura ya es valor de negocio. Reduce la posibilidad de reescrituras caras, comportamientos inconsistentes y fricción evitable cuando el MVP empiece a crecer.
         {% endif %}
       </p>
     </article>
@@ -165,7 +165,34 @@
       {% endif %}
     </h2>
     <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      Django, REST APIs, payment integrations, video services, and background queues.
+      {% if LANGUAGE_CODE == 'en' %}
+        Django and DRF for the backend and API, PostgreSQL plus queues for the core logic, React for the product interface, and payment/video providers connected to the domain rather than driving it.
+      {% else %}
+        Django y DRF para backend y API, PostgreSQL y colas para la lógica central, React para la interfaz de producto, y proveedores de pago/video conectados al dominio en lugar de definirlo.
+      {% endif %}
     </p>
+    <p class="mt-3 text-sm leading-relaxed text-slate-500">
+      {% if LANGUAGE_CODE == 'en' %}
+        This is presented as a product architecture case and an example of capability, not as a finished commercial success story.
+      {% else %}
+        Esto se presenta como un caso de arquitectura de producto y una prueba de capacidad, no como una success story comercial ya cerrada.
+      {% endif %}
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="{% url 'contact' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Talk about a similar challenge
+        {% else %}
+          Hablar de un desafío similar
+        {% endif %}
+      </a>
+      <a href="{% url 'services' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          View services
+        {% else %}
+          Ver servicios
+        {% endif %}
+      </a>
+    </div>
   </section>
 {% endblock content %}

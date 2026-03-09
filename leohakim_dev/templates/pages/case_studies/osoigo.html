@@ -29,9 +29,9 @@
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">Osoigo</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        Civic participation platform used by governments and organizations with strong reliability requirements.
+        Sensitive backend work for a live participation platform where messaging, permissions, and continuity could not be treated lightly.
       {% else %}
-        Plataforma de participación ciudadana usada por gobiernos y organizaciones con altos requisitos de confiabilidad.
+        Trabajo sobre áreas sensibles del backend de una plataforma participativa viva, donde mensajería, permisos y continuidad no se podían tratar a la ligera.
       {% endif %}
     </p>
   </section>
@@ -46,25 +46,25 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Public participation environment with growing traffic, evolving product requirements, and operational sensitivity.
+          This was a live platform with interaction, messaging, and permission-based flows, where touching the wrong backend pieces could easily increase fragility instead of helping the product move forward.
         {% else %}
-          Entorno de participación pública con crecimiento de tráfico, requisitos cambiantes y alta sensibilidad operativa.
+          Era una plataforma en producción, con interacción, mensajería y flujos basados en permisos, donde tocar ciertas piezas del backend sin criterio suficiente podía aumentar la fragilidad en lugar de ayudar al producto a avanzar.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Objective
+          My role
         {% else %}
-          Objetivo
+          Mi rol
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Increase stability, reduce operational risk, and improve delivery speed for a growing platform.
+          I worked on backend areas tied to conversations, messages, endpoints, signals and emails, asynchronous tasks, and part of the technical-operational layer around deployment and infrastructure.
         {% else %}
-          Mejorar estabilidad, reducir riesgo operativo y acelerar entregas en una plataforma en crecimiento.
+          Trabajé sobre backend en áreas ligadas a conversaciones, mensajes, endpoints, señales y emails, tareas asíncronas y parte de la capa técnico-operativa asociada al despliegue y la infraestructura.
         {% endif %}
       </p>
     </article>
@@ -81,43 +81,43 @@
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Platform hardening:
+            1. Reinforce sensitive backend paths:
           {% else %}
-            1. Refuerzo de plataforma:
+            1. Reforzar recorridos sensibles del backend:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          strengthened backend critical points to improve resilience.
+          I helped strengthen conversation, message, and related backend flows so they could be touched with less risk.
         {% else %}
-          se reforzaron puntos críticos del backend para mejorar resiliencia.
+          Ayudé a reforzar flujos de conversaciones, mensajes y áreas relacionadas para que pudieran evolucionar con menos riesgo.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Delivery flow optimization:
+            2. Reduce ambiguity in sensitive behavior:
           {% else %}
-            2. Optimización del flujo de entrega:
+            2. Reducir ambigüedad en comportamientos sensibles:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          reduced friction in releases and technical coordination.
+          Testing, signals, emails, and asynchronous work all benefited from clearer handling in areas where small changes could have outsized effects.
         {% else %}
-          se redujo fricción en releases y coordinación técnica.
+          Testing, señales, emails y trabajo asíncrono se beneficiaron de un manejo más claro en áreas donde pequeños cambios podían tener efectos desproporcionados.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. Operational reliability improvements:
+            3. Support continuity while the product kept moving:
           {% else %}
-            3. Mejora de confiabilidad operativa:
+            3. Sostener continuidad mientras el producto seguía avanzando:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          improved day-to-day predictability under scale.
+          Part of the work was also technical-operational: helping the platform keep evolving without turning each sensitive change into unnecessary risk.
         {% else %}
-          se mejoró la previsibilidad diaria bajo mayor escala.
+          Parte del aporte también fue técnico-operativo: ayudar a que la plataforma siguiera evolucionando sin volver cada cambio sensible en un riesgo innecesario.
         {% endif %}
       </li>
     </ol>
@@ -133,9 +133,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Higher platform stability, faster delivery cycles, and lower operational risk.
+          The work helped reduce fragility in sensitive areas and made it easier to keep evolving a live system without increasing risk every time key pieces changed.
         {% else %}
-          Mayor estabilidad, entregas más rápidas y menor riesgo operativo.
+          El trabajo ayudó a reducir fragilidad en áreas sensibles y a que fuera más fácil seguir evolucionando un sistema vivo sin aumentar el riesgo cada vez que se tocaban piezas clave.
         {% endif %}
       </p>
     </article>
@@ -149,9 +149,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Better service continuity and stronger confidence for institutional users and stakeholders.
+          On a platform like this, safer evolution matters as much as new features. Lower operational risk protects continuity for both the team and the product.
         {% else %}
-          Mejor continuidad de servicio y mayor confianza para usuarios institucionales y stakeholders.
+          En una plataforma así, evolucionar con más seguridad importa tanto como sacar nuevas funcionalidades. Menor riesgo operativo protege la continuidad tanto del equipo como del producto.
         {% endif %}
       </p>
     </article>
@@ -165,7 +165,34 @@
       {% endif %}
     </h2>
     <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      Django, scalable APIs, CI/CD pipelines, and modern cloud infrastructure.
+      {% if LANGUAGE_CODE == 'en' %}
+        Django and DRF for the backend, PostgreSQL for core data, Celery plus queues for background work, and container-based deployment and runtime tooling to support continuity and safer releases.
+      {% else %}
+        Django y DRF para el backend, PostgreSQL para los datos centrales, Celery y colas para trabajo en segundo plano, y tooling de despliegue y runtime basado en contenedores para sostener continuidad y releases más seguros.
+      {% endif %}
     </p>
+    <p class="mt-3 text-sm leading-relaxed text-slate-500">
+      {% if LANGUAGE_CODE == 'en' %}
+        Some institutional and product details are intentionally kept broad here to avoid exposing sensitive internal context.
+      {% else %}
+        Algunos detalles institucionales y de producto se mantienen intencionalmente amplios para no exponer contexto interno sensible.
+      {% endif %}
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="{% url 'contact' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Talk about a similar challenge
+        {% else %}
+          Hablar de un desafío similar
+        {% endif %}
+      </a>
+      <a href="{% url 'services' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          View services
+        {% else %}
+          Ver servicios
+        {% endif %}
+      </a>
+    </div>
   </section>
 {% endblock content %}

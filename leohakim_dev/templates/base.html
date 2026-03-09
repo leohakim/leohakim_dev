@@ -235,9 +235,9 @@
             <p class="text-lg font-bold text-slate-900">Leonardo Hakim</p>
             <p class="max-w-md text-sm leading-relaxed text-slate-600">
               {% if LANGUAGE_CODE == 'en' %}
-                Backend engineer focused on cloud and reliability. I build robust systems and turn delivery into clear professional positioning.
+                Backend, platform, and cloud consultant working where product, operations, and infrastructure need clearer technical decisions.
               {% else %}
-                Ingeniero backend con foco en cloud y confiabilidad. Construyo sistemas robustos y convierto la entrega técnica en posicionamiento profesional claro.
+                Consultor de backend, plataformas y cloud. Trabajo donde producto, operación e infraestructura necesitan decisiones técnicas más claras.
               {% endif %}
             </p>
             <div class="flex flex-wrap gap-2">
@@ -248,12 +248,11 @@
               {% else %}
                 <a href="mailto:work@leohakim.dev"
                    class="btn-secondary px-4 py-2 text-xs">Email</a>
-                <a href="https://cal.leohakim.dev/"
-                   class="btn-secondary px-4 py-2 text-xs">
+                <a href="{% url 'contact' %}" class="btn-secondary px-4 py-2 text-xs">
                   {% if LANGUAGE_CODE == 'en' %}
-                    Book intro call
+                    Contact
                   {% else %}
-                    Agendar llamada
+                    Contacto
                   {% endif %}
                 </a>
               {% endif %}

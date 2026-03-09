@@ -21,16 +21,16 @@
     </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
       {% if LANGUAGE_CODE == 'en' %}
-        Share your context and what you need to improve.
+        Send a short project brief and I will tell you if I can help.
       {% else %}
-        Cuéntame brevemente tu contexto y qué necesitas mejorar.
+        Envíame un resumen corto de tu proyecto y te diré si puedo ayudarte.
       {% endif %}
     </h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        I reply within 24 hours.
+        Email is the best first step. If it makes sense, we can move to a call afterwards.
       {% else %}
-        Respondo en menos de 24 horas.
+        El email es el mejor primer paso. Si tiene sentido, después pasamos a una llamada.
       {% endif %}
     </p>
   </section>
@@ -45,25 +45,25 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Tell me about your product, your current challenge, and what outcome you expect.
+          The more useful first message usually includes product stage, current technical pain, and what outcome would make the engagement worthwhile.
         {% else %}
-          Contame sobre tu producto, el desafío actual y el resultado que te gustaría lograr.
+          El mejor primer mensaje suele incluir etapa del producto, dolor técnico actual y qué resultado haría valiosa la colaboración.
         {% endif %}
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="mailto:work@leohakim.dev?subject=Project%20Inquiry"
            class="btn-primary">
           {% if LANGUAGE_CODE == 'en' %}
-            Send message
+            Write by email
           {% else %}
-            Enviar mensaje
+            Escribir por email
           {% endif %}
         </a>
         <a href="https://cal.leohakim.dev/" class="btn-secondary">
           {% if LANGUAGE_CODE == 'en' %}
-            Book a call
+            Optional intro call
           {% else %}
-            Agendar llamada
+            Llamada inicial opcional
           {% endif %}
         </a>
       </div>
@@ -78,13 +78,13 @@
       </h2>
       <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          <li>- Current system pain points and main risks.</li>
-          <li>- Priority technical path with practical next steps.</li>
-          <li>- Collaboration format that fits your team.</li>
+          <li>- What is fragile today in backend, infrastructure, or delivery.</li>
+          <li>- What has become harder to trust as the product grows.</li>
+          <li>- What kind of support you need: audit, implementation, or ongoing senior help.</li>
         {% else %}
-          <li>- Puntos de dolor actuales y riesgos principales del sistema.</li>
-          <li>- Camino técnico prioritario con siguientes pasos concretos.</li>
-          <li>- Formato de colaboración que mejor encaje con tu equipo.</li>
+          <li>- Qué está frágil hoy en backend, infraestructura o delivery.</li>
+          <li>- Qué se volvió más difícil de confiar a medida que el producto creció.</li>
+          <li>- Qué tipo de ayuda necesitas: auditoría, implementación o acompañamiento senior.</li>
         {% endif %}
       </ul>
       <p class="mt-6 text-sm font-semibold text-slate-900">work@leohakim.dev</p>

@@ -21,17 +21,17 @@
     </a>
     <p class="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
       {% if LANGUAGE_CODE == 'en' %}
-        Case study
+        Technical case
       {% else %}
-        Caso de estudio
+        Caso técnico
       {% endif %}
     </p>
     <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">ENACT</h1>
     <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
       {% if LANGUAGE_CODE == 'en' %}
-        European multi-team project with distributed infrastructure and coordination challenges.
+        Infrastructure, deployment, and runtime coordination work in a multi-team international environment that needed repeatability more than improvisation.
       {% else %}
-        Proyecto europeo multi-equipo con infraestructura distribuida y desafíos de coordinación técnica.
+        Trabajo de infraestructura, despliegue y coordinación de runtime en un entorno internacional multi-equipo que necesitaba repetibilidad más que improvisación.
       {% endif %}
     </p>
   </section>
@@ -46,25 +46,25 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          International initiative involving multiple technical teams, shared environments, and strict delivery expectations.
+          This was a shared technical environment with distributed ownership, multiple teams, and sensitive deployment pieces such as ingress, TLS, secrets, and service exposure.
         {% else %}
-          Iniciativa internacional con múltiples equipos técnicos, entornos compartidos y alta exigencia de entrega.
+          Era un entorno técnico compartido, con ownership distribuido, múltiples equipos y piezas sensibles de despliegue como ingress, TLS, secretos y exposición de servicios.
         {% endif %}
       </p>
     </article>
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">
         {% if LANGUAGE_CODE == 'en' %}
-          Objective
+          My role
         {% else %}
-          Objetivo
+          Mi rol
         {% endif %}
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Build predictable technical coordination, safer rollouts, and clearer collaboration between teams.
+          My contribution focused on infrastructure, deployments, technical integration, and runtime documentation so teams could work with a more repeatable and less informal operational base.
         {% else %}
-          Lograr coordinación técnica predecible, despliegues seguros y colaboración clara entre equipos.
+          Mi aporte se centró en infraestructura, despliegues, integración técnica y documentación de runtime para que los equipos trabajaran con una base operativa más repetible y menos informal.
         {% endif %}
       </p>
     </article>
@@ -81,43 +81,43 @@
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            1. Shared technical alignment:
+            1. Make configuration repeatable:
           {% else %}
-            1. Alineación técnica compartida:
+            1. Volver repetible la configuración:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          established common rules for infrastructure and delivery.
+          I worked with declarative manifests and configuration so deployment did not depend so heavily on tacit knowledge.
         {% else %}
-          se definieron reglas comunes para infraestructura y entrega.
+          Trabajé con manifests y configuración declarativa para que el despliegue no dependiera tanto de conocimiento tácito.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            2. Safer integration cycles:
+            2. Standardize sensitive infrastructure pieces:
           {% else %}
-            2. Ciclos de integración más seguros:
+            2. Estandarizar piezas sensibles de infraestructura:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          progressive technical checkpoints reduced delivery uncertainty.
+          TLS, ingress, namespaces, secrets, and service exposure needed consistent handling to reduce avoidable friction between teams.
         {% else %}
-          checkpoints progresivos redujeron incertidumbre de entrega.
+          TLS, ingress, namespaces, secretos y exposición de servicios necesitaban un tratamiento consistente para reducir fricción evitable entre equipos.
         {% endif %}
       </li>
       <li>
         <span class="font-semibold text-slate-900">
           {% if LANGUAGE_CODE == 'en' %}
-            3. Collaboration hygiene:
+            3. Lower reliance on informal coordination:
           {% else %}
-            3. Higiene de colaboración:
+            3. Bajar la dependencia de coordinación informal:
           {% endif %}
         </span>
         {% if LANGUAGE_CODE == 'en' %}
-          clear documentation and ownership across teams.
+          Documentation and runtime guidance helped make integration and deployment work more predictable across organizations.
         {% else %}
-          documentación y ownership claros entre equipos.
+          La documentación y la guía de runtime ayudaron a volver más predecible el trabajo de integración y despliegue entre organizaciones.
         {% endif %}
       </li>
     </ol>
@@ -133,9 +133,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          More predictable technical coordination, safer deployment flow, and clearer cross-team execution.
+          The environment gained predictability. Deployment and integration work relied less on ad hoc coordination and more on repeatable technical decisions.
         {% else %}
-          Coordinación técnica más predecible, despliegues más seguros y ejecución más clara entre equipos.
+          El entorno ganó previsibilidad. El despliegue y la integración dependieron menos de coordinación ad hoc y más de decisiones técnicas repetibles.
         {% endif %}
       </p>
     </article>
@@ -149,9 +149,9 @@
       </h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600">
         {% if LANGUAGE_CODE == 'en' %}
-          Better institutional confidence and stronger foundations for ongoing collaboration phases.
+          In a multi-partner setting, lowering friction and reducing avoidable deployment risk is already meaningful business value because it protects continuity across shared work.
         {% else %}
-          Mayor confianza institucional y mejores bases para fases futuras de colaboración.
+          En un entorno multi-partner, bajar fricción y reducir riesgo evitable de despliegue ya es valor de negocio porque protege la continuidad del trabajo compartido.
         {% endif %}
       </p>
     </article>
@@ -165,7 +165,34 @@
       {% endif %}
     </h2>
     <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      Kubernetes, hybrid cloud, automation pipelines, and observability tooling.
+      {% if LANGUAGE_CODE == 'en' %}
+        Kubernetes, declarative deployment configuration, ingress and TLS tooling, runtime documentation, and the practical work needed to make shared environments easier to operate.
+      {% else %}
+        Kubernetes, configuración declarativa de despliegue, tooling de ingress y TLS, documentación de runtime y el trabajo práctico necesario para volver más operables los entornos compartidos.
+      {% endif %}
     </p>
+    <p class="mt-3 text-sm leading-relaxed text-slate-500">
+      {% if LANGUAGE_CODE == 'en' %}
+        This is intentionally presented as a technical case. Internal architecture and partner-level details are kept broad on purpose.
+      {% else %}
+        Esto se presenta intencionalmente como un caso técnico. La arquitectura interna y los detalles a nivel partner se mantienen amplios a propósito.
+      {% endif %}
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="{% url 'contact' %}" class="btn-primary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Talk about a similar challenge
+        {% else %}
+          Hablar de un desafío similar
+        {% endif %}
+      </a>
+      <a href="{% url 'case-studies' %}" class="btn-secondary">
+        {% if LANGUAGE_CODE == 'en' %}
+          Back to case studies
+        {% else %}
+          Volver a casos
+        {% endif %}
+      </a>
+    </div>
   </section>
 {% endblock content %}
