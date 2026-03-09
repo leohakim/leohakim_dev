@@ -248,6 +248,25 @@ PAGES = {
             "label": text(en="See real case studies", es="Ver casos reales"),
             "route_name": "case-studies",
         },
+        "ideal_for_label": text(en="Best fit", es="Ideal para"),
+        "ideal_for_intro": text(
+            en="The strongest fit tends to look like this:",
+            es="El caso de estudio ideal suele verse así:",
+        ),
+        "ideal_for_items": [
+            text(
+                en="Growth-stage SaaS with a backend that already feels fragile.",
+                es="SaaS en crecimiento con un backend que ya se siente frágil.",
+            ),
+            text(
+                en="Media and live platforms with real traffic or operational peaks.",
+                es="Medios y plataformas en producción con tráfico real o picos operativos.",
+            ),
+            text(
+                en="Teams that need strong seniority before building a larger engineering layer.",
+                es="Equipos que necesitan seniority fuerte antes de agrandar la estructura técnica.",
+            ),
+        ],
         "portrait_alt": text(
             en="Portrait of Leonardo Hakim",
             es="Retrato de Leonardo Hakim",
@@ -409,11 +428,11 @@ PAGES = {
         ),
         "lead": text(
             en=(
-                "I have over 10 years of software engineering experience, with a strong "
+                "I have over 15 years of software engineering experience, with a strong "
                 "focus on backend, platforms, infrastructure, and the operational side of real products."
             ),
             es=(
-                "Tengo más de 10 años de experiencia en ingeniería de software, con foco "
+                "Tengo más de 15 años de experiencia en ingeniería de software, con foco "
                 "fuerte en backend, plataformas, infraestructura y la operación real de productos digitales."
             ),
         ),
@@ -699,6 +718,43 @@ PAGES = {
             ],
             "email": "work@leohakim.dev",
         },
+        "brief_prompts_title": text(
+            en="A useful first brief usually answers three things",
+            es="Un primer mensaje útil suele responder tres cosas",
+        ),
+        "brief_prompts_intro": text(
+            en="You do not need a polished document. A short message with these three points is enough to start well.",
+            es="No hace falta un documento pulido. Un mensaje corto con estos tres puntos alcanza para empezar bien.",
+        ),
+        "brief_prompts": [
+            {
+                "title": text(en="Product stage", es="Etapa del producto"),
+                "body": text(
+                    en="What already exists today, who depends on it, and how much pressure it is under.",
+                    es="Qué existe hoy, quién depende de eso y cuánta presión real tiene encima.",
+                ),
+            },
+            {
+                "title": text(
+                    en="What is breaking or slowing down",
+                    es="Qué está fallando o frenando",
+                ),
+                "body": text(
+                    en="Backend, delivery, infrastructure, domain complexity, or areas the team no longer trusts.",
+                    es="Backend, delivery, infraestructura, complejidad de dominio o áreas en las que el equipo ya no confía.",
+                ),
+            },
+            {
+                "title": text(
+                    en="What outcome would make it worth solving",
+                    es="Qué resultado haría que valga resolverlo",
+                ),
+                "body": text(
+                    en="The operational, product, or business change you expect if the engagement goes well.",
+                    es="El cambio operativo, de producto o de negocio que esperas si la colaboración sale bien.",
+                ),
+            },
+        ],
     },
     "cv": {
         "meta": {
@@ -714,9 +770,23 @@ PAGES = {
             es="Resumen ejecutivo de trabajo en backend, plataformas e infraestructura para productos que necesitan confiabilidad bajo presión real.",
         ),
         "lead": text(
-            en="Over 10 years of software engineering experience, with work across high-traffic media, live platforms, complex SaaS, and multi-team technical environments.",
-            es="Más de 10 años de experiencia en ingeniería de software, con trabajo en media de alto tráfico, plataformas en producción, SaaS complejos y entornos técnicos multi-equipo.",
+            en="Over 15 years of software engineering experience, with work across high-traffic media, live platforms, complex SaaS, and multi-team technical environments.",
+            es="Más de 15 años de experiencia en ingeniería de software, con trabajo en media de alto tráfico, plataformas en producción, SaaS complejos y entornos técnicos multi-equipo.",
         ),
+        "snapshot_items": [
+            text(
+                en="15+ years in software engineering",
+                es="15+ años en ingeniería de software",
+            ),
+            text(
+                en="Backend, platform, and infrastructure work under real operational pressure",
+                es="Trabajo en backend, plataforma e infraestructura bajo presión operativa real",
+            ),
+            text(
+                en="Spanish, English, and Italian for day-to-day collaboration",
+                es="Español, inglés e italiano para colaboración diaria",
+            ),
+        ],
         "focus_cards": [
             {
                 "title": text(
@@ -746,6 +816,34 @@ PAGES = {
                 ),
             },
         ],
+        "best_fit_title": text(
+            en="Where I tend to add the most value",
+            es="Dónde suelo aportar más valor",
+        ),
+        "best_fit_items": [
+            text(
+                en="Growth-stage SaaS that need stronger backend and delivery decisions before scaling harder.",
+                es="SaaS en crecimiento que necesitan mejores decisiones de backend y delivery antes de escalar más.",
+            ),
+            text(
+                en="Media and live platforms where traffic, editorial pressure, or continuity already matter.",
+                es="Medios y plataformas en producción donde el tráfico, la presión editorial o la continuidad ya importan.",
+            ),
+            text(
+                en="Teams that need a senior external reference to decide, execute, and reduce technical risk.",
+                es="Equipos que necesitan una referencia senior externa para decidir, ejecutar y bajar riesgo técnico.",
+            ),
+        ],
+        "versions_panel": {
+            "title": text(
+                en="Tailored CV versions available",
+                es="Versiones de CV disponibles",
+            ),
+            "body": text(
+                en="I also keep focused CV versions for backend leadership, media products, fintech, and broader platform work when a more specific profile is useful.",
+                es="También mantengo versiones más enfocadas para liderazgo backend, productos media, fintech y trabajo de plataforma cuando conviene mostrar un perfil más específico.",
+            ),
+        },
         "availability_title": text(en="Available for", es="Disponible para"),
         "availability_items": [
             text(
@@ -951,6 +1049,29 @@ CASE_STUDIES = {
             en="Backend, push, and operating foundations for a high-traffic news app that needed more predictable delivery.",
             es="Backend, push y base operativa para una app de noticias de alto tráfico que necesitaba más previsibilidad.",
         ),
+        "facts": [
+            {
+                "label": text(en="Sector", es="Sector"),
+                "value": text(
+                    en="High-traffic digital media",
+                    es="Medio digital de alto tráfico",
+                ),
+            },
+            {
+                "label": text(en="Role", es="Rol"),
+                "value": text(
+                    en="Backend, API, push, and internal operations lead",
+                    es="Responsable de backend, API, push y operación interna",
+                ),
+            },
+            {
+                "label": text(en="Primary focus", es="Foco principal"),
+                "value": text(
+                    en="Reliability, editorial delivery, and push operations",
+                    es="Confiabilidad, entrega editorial y operación de push",
+                ),
+            },
+        ],
         "context": text(
             en="A news product with millions of visits, editorial peaks, and push distribution needs. The challenge was not just serving endpoints, but creating a backend that could support real traffic, real operations, and future product evolution without too much fragility.",
             es="Un producto de noticias con millones de visitas, picos editoriales y necesidades reales de distribución por push. El desafío no era solo servir endpoints, sino construir un backend capaz de sostener tráfico real, operación editorial y evolución de producto sin demasiada fragilidad.",
@@ -1045,6 +1166,29 @@ CASE_STUDIES = {
             en="Sensitive backend work so a live participation platform could keep evolving with less operational risk.",
             es="Trabajo sobre áreas sensibles del backend para que una plataforma viva pudiera seguir evolucionando con menos riesgo operativo.",
         ),
+        "facts": [
+            {
+                "label": text(en="Sector", es="Sector"),
+                "value": text(
+                    en="Participation platform with sensitive interaction flows",
+                    es="Plataforma participativa con flujos sensibles de interacción",
+                ),
+            },
+            {
+                "label": text(en="Role", es="Rol"),
+                "value": text(
+                    en="Backend work on conversations, messages, and async flows",
+                    es="Trabajo backend sobre conversaciones, mensajes y asincronía",
+                ),
+            },
+            {
+                "label": text(en="Primary focus", es="Foco principal"),
+                "value": text(
+                    en="Safer evolution of live backend areas under operational risk",
+                    es="Evolución más segura de áreas vivas del backend bajo riesgo operativo",
+                ),
+            },
+        ],
         "context": text(
             en="This was a live platform with interaction, messaging, and permission-based flows, where touching the wrong backend pieces could easily increase fragility instead of helping the product move forward.",
             es="Era una plataforma en producción, con interacción, mensajería y flujos basados en permisos, donde tocar ciertas piezas del backend sin criterio suficiente podía aumentar la fragilidad en lugar de ayudar al producto a avanzar.",
@@ -1139,6 +1283,29 @@ CASE_STUDIES = {
             en="Infrastructure and deployment work in a multi-team international environment that needed repeatability.",
             es="Trabajo de infraestructura y despliegue en un entorno internacional multi-equipo que necesitaba repetibilidad.",
         ),
+        "facts": [
+            {
+                "label": text(en="Sector", es="Sector"),
+                "value": text(
+                    en="International multi-team technical environment",
+                    es="Entorno técnico internacional multi-equipo",
+                ),
+            },
+            {
+                "label": text(en="Role", es="Rol"),
+                "value": text(
+                    en="Infrastructure, deployment, and integration support",
+                    es="Soporte de infraestructura, despliegue e integración",
+                ),
+            },
+            {
+                "label": text(en="Primary focus", es="Foco principal"),
+                "value": text(
+                    en="Repeatable runtime and lower coordination friction",
+                    es="Runtime repetible y menor fricción de coordinación",
+                ),
+            },
+        ],
         "context": text(
             en="This was a shared technical environment with distributed ownership, multiple teams, and sensitive deployment pieces such as ingress, TLS, secrets, and service exposure.",
             es="Era un entorno técnico compartido, con ownership distribuido, múltiples equipos y piezas sensibles de despliegue como ingress, TLS, secretos y exposición de servicios.",
@@ -1236,6 +1403,29 @@ CASE_STUDIES = {
             en="Product architecture for a SaaS with scheduling, payments, and complex rules that could not be improvised.",
             es="Arquitectura de producto para un SaaS con agenda, pagos y reglas complejas que no se podían improvisar.",
         ),
+        "facts": [
+            {
+                "label": text(en="Sector", es="Sector"),
+                "value": text(
+                    en="SaaS for sessions, credits, and payments",
+                    es="SaaS de sesiones, créditos y pagos",
+                ),
+            },
+            {
+                "label": text(en="Role", es="Rol"),
+                "value": text(
+                    en="Founder and backend/product architect",
+                    es="Fundador y arquitecto de backend/producto",
+                ),
+            },
+            {
+                "label": text(en="Primary focus", es="Foco principal"),
+                "value": text(
+                    en="Domain design before structural debt appears",
+                    es="Diseño de dominio antes de que aparezca deuda estructural",
+                ),
+            },
+        ],
         "context": text(
             en="The product combines sessions, credits, payments, cancellations, currencies, settlements, and multi-tenant rules. The risk was ending up with an MVP that looked functional on the surface but was inconsistent underneath.",
             es="El producto combina sesiones, créditos, pagos, cancelaciones, monedas, liquidaciones y reglas multi-tenant. El riesgo era terminar con un MVP que pareciera funcional por fuera pero fuera inconsistente por dentro.",
@@ -1330,6 +1520,29 @@ CASE_STUDIES = {
             en="Backend and asynchronous work in a cloud and IoT-related context where operational trust mattered.",
             es="Trabajo de backend y asincronía en un contexto ligado a cloud e IoT donde la confianza operativa importaba.",
         ),
+        "facts": [
+            {
+                "label": text(en="Sector", es="Sector"),
+                "value": text(
+                    en="Cloud and IoT-related backend context",
+                    es="Contexto backend ligado a cloud e IoT",
+                ),
+            },
+            {
+                "label": text(en="Role", es="Rol"),
+                "value": text(
+                    en="Backend work and asynchronous processes",
+                    es="Trabajo backend y procesos asíncronos",
+                ),
+            },
+            {
+                "label": text(en="Primary focus", es="Foco principal"),
+                "value": text(
+                    en="Reliability and traceability in sensitive flows",
+                    es="Confiabilidad y trazabilidad en flujos sensibles",
+                ),
+            },
+        ],
         "context": text(
             en="The project involved backend services and sensitive flows where observability, operational trust, and asynchronous processing were important to day-to-day work.",
             es="El trabajo involucró servicios backend y flujos sensibles donde la observabilidad, la confianza operativa y el procesamiento asíncrono eran importantes para el día a día.",

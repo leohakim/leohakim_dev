@@ -38,6 +38,24 @@ def test_home_page_content_resolves_featured_case_links():
     assert page["featured_cases"][0]["href"] == reverse("case-study-aire")
 
 
+def test_home_page_content_includes_best_fit_items():
+    page = get_page_content("home", "en")
+    expected_best_fit_items = [
+        "Growth-stage SaaS",
+        "Media and live platforms",
+        "Teams that need strong seniority",
+    ]
+
+    assert page["ideal_for_label"] == "Best fit"
+    assert len(page["ideal_for_items"]) == len(expected_best_fit_items)
+    for expected, current in zip(
+        expected_best_fit_items,
+        page["ideal_for_items"],
+        strict=True,
+    ):
+        assert expected in current
+
+
 def test_case_study_content_resolves_case_specific_ctas():
     case = get_case_study_content("atempora", "en")
 
@@ -46,11 +64,23 @@ def test_case_study_content_resolves_case_specific_ctas():
     assert case["secondary_cta"]["href"] == reverse("services")
 
 
+def test_case_study_content_includes_factual_summary_cards():
+    case = get_case_study_content("aire", "es")
+
+    assert [fact["label"] for fact in case["facts"]] == [
+        "Sector",
+        "Rol",
+        "Foco principal",
+    ]
+    assert "alto tráfico" in case["facts"][0]["value"]
+
+
 def test_case_study_content_supports_italian():
     case = get_case_study_content("aire", "it")
 
     assert case["kind"] == "Caso di studio"
     assert "notifiche push" in case["hero_summary"]
+    assert case["facts"][0]["label"] == "Settore"
 
 
 def test_site_ui_resolves_navigation_and_footer_links():

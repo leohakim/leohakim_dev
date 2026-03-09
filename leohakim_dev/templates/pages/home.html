@@ -36,6 +36,15 @@
           <a href="{{ page.primary_cta.href }}" class="btn-primary">{{ page.primary_cta.label }}</a>
           <a href="{{ page.secondary_cta.href }}" class="btn-secondary">{{ page.secondary_cta.label }}</a>
         </div>
+        <div class="surface-soft max-w-3xl p-5">
+          <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">{{ page.ideal_for_label }}</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ page.ideal_for_intro }}</p>
+          <div class="mt-4 flex flex-wrap gap-2.5">
+            {% for item in page.ideal_for_items %}
+              <span class="inline-flex rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700">{{ item }}</span>
+            {% endfor %}
+          </div>
+        </div>
       </div>
       <aside class="mx-auto w-full max-w-md">
         <div class="surface-soft overflow-hidden p-3">

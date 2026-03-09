@@ -163,7 +163,7 @@ PAGES_IT_OVERRIDES = {
             "Lavoro dove backend, prodotto, operations e infrastruttura devono smettere di tirare in direzioni diverse."
         ),
         "lead": (
-            "Ho piu' di 10 anni di esperienza in ingegneria del software, con un forte focus su backend, piattaforme, infrastruttura e sul lato operativo dei prodotti reali."
+            "Ho piu' di 15 anni di esperienza in ingegneria del software, con un forte focus su backend, piattaforme, infrastruttura e sul lato operativo dei prodotti reali."
         ),
         "supporting": (
             "Il mio valore non sta solo nello scrivere codice backend. Sta nell'aiutare i team a prendere decisioni piu' chiare quando debito tecnico, sistemi fragili, regole di prodotto complesse o pressione di delivery iniziano a rallentare tutto."
@@ -336,10 +336,10 @@ PAGES_IT_OVERRIDES = {
             "Sintesi esecutiva del lavoro su backend, piattaforme e infrastruttura per prodotti che hanno bisogno di affidabilita' sotto pressione reale."
         ),
         "lead": (
-            "Piu' di 10 anni di esperienza in ingegneria del software, con lavoro su media ad alto traffico, piattaforme live, SaaS complessi e contesti tecnici multi-team."
+            "Piu' di 15 anni di esperienza in ingegneria del software, con lavoro su media ad alto traffico, piattaforme live, SaaS complessi e contesti tecnici multi-team."
         ),
         "snapshot_items": [
-            "10+ anni in ingegneria del software",
+            "15+ anni in ingegneria del software",
             "Lavoro su backend, piattaforma e infrastruttura sotto pressione operativa reale",
             "Spagnolo, inglese e italiano per la collaborazione quotidiana",
         ],

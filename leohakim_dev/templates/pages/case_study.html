@@ -9,6 +9,14 @@
 {% block content %}
   {% url 'case-studies' as case_studies_url %}
   {% include "components/page_hero.html" with back_link_href=case_studies_url back_link_label=site_ui.case_study.back_link eyebrow=case.kind title=case.name lead=case.hero_summary %}
+  <section class="mt-8 grid gap-4 md:grid-cols-3">
+    {% for fact in case.facts %}
+      <article class="surface-soft p-5">
+        <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">{{ fact.label }}</p>
+        <p class="mt-2 text-sm font-semibold leading-relaxed text-slate-900">{{ fact.value }}</p>
+      </article>
+    {% endfor %}
+  </section>
   <section class="mt-8 grid gap-5 md:grid-cols-2">
     <article class="surface-soft p-6">
       <h2 class="text-xl font-semibold text-slate-900">{{ site_ui.case_study.context_label }}</h2>
