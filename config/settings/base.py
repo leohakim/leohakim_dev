@@ -191,6 +191,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
+                "leohakim_dev.context_processors.site_ui",
                 "leohakim_dev.users.context_processors.allauth_settings",
             ],
         },

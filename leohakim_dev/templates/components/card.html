@@ -1,7 +1,4 @@
 {# Props: title, body (safe HTML), items (optional list), href (optional), chips (optional list) #}
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 <article class="surface-card group relative flex h-full flex-col gap-4 p-6 reveal-up transition hover:-translate-y-0.5">
   {% if title %}<h3 class="text-lg font-semibold tracking-tight text-slate-900">{{ title }}</h3>{% endif %}
   {% if chips %}
@@ -26,11 +23,7 @@
   {% if href %}
     <a class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-800"
        href="{{ href }}">
-      {% if LANGUAGE_CODE == 'en' %}
-        Read more
-      {% else %}
-        Ver mas
-      {% endif %}
+      {{ site_ui.common.read_more }}
       ->
     </a>
   {% endif %}

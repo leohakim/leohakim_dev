@@ -1,105 +1,25 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% if LANGUAGE_CODE == 'en' %}
-    Speaking | leohakim.dev
-  {% else %}
-    Charlas | leohakim.dev
-  {% endif %}
+  {{ page.meta.title }}
 {% endblock title %}
+{% block meta_description %}
+  {{ page.meta.description }}
+{% endblock meta_description %}
 {% block content %}
-  <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-      {% if LANGUAGE_CODE == 'en' %}
-        Speaking
-      {% else %}
-        Charlas
-      {% endif %}
-    </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Talks about real-world backend, delivery pressure, and architecture decisions that have to survive production.
-      {% else %}
-        Charlas sobre backend real, presión de delivery y decisiones de arquitectura que tienen que sobrevivir en producción.
-      {% endif %}
-    </h1>
-    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        Available in Spanish and English for conferences, communities, and in-company sessions.
-      {% else %}
-        Disponible en español e inglés para conferencias, comunidades y espacios internos.
-      {% endif %}
-    </p>
-  </section>
+  {% include "components/page_hero.html" with eyebrow=page.eyebrow title=page.title lead=page.lead %}
   <section class="mt-8 grid gap-5 md:grid-cols-3">
-    <article class="surface-card p-6">
-      <h2 class="text-lg font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Real scalability in production
-        {% else %}
-          Escalabilidad real en producción
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Lessons from systems where reliability, delivery speed, and operational pressure have to coexist.
-        {% else %}
-          Aprendizajes de sistemas donde confiabilidad, velocidad de entrega y presión operativa tienen que convivir.
-        {% endif %}
-      </p>
-    </article>
-    <article class="surface-card p-6">
-      <h2 class="text-lg font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Technical debt without smoke
-        {% else %}
-          Deuda técnica sin humo
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Practical ways to reduce fragility and make technical debt manageable without empty narratives.
-        {% else %}
-          Formas prácticas de bajar fragilidad y volver manejable la deuda técnica sin relatos vacíos.
-        {% endif %}
-      </p>
-    </article>
-    <article class="surface-card p-6">
-      <h2 class="text-lg font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Architecture that supports business
-        {% else %}
-          Arquitectura que acompaña al negocio
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          How to connect engineering decisions with product constraints, operations, and business priorities.
-        {% else %}
-          Cómo conectar decisiones de ingeniería con restricciones de producto, operación y prioridades del negocio.
-        {% endif %}
-      </p>
-    </article>
+    {% for card in page.topic_cards %}
+      <article class="surface-card p-6">
+        <h2 class="text-lg font-semibold text-slate-900">{{ card.title }}</h2>
+        <p class="mt-3 text-sm text-slate-600">{{ card.body }}</p>
+      </article>
+    {% endfor %}
   </section>
   <section class="mt-8 surface-soft p-7">
     <div class="mt-5 flex flex-wrap gap-3">
-      <a href="{% url 'contact' %}" class="btn-primary">
-        {% if LANGUAGE_CODE == 'en' %}
-          Invite me to speak
-        {% else %}
-          Invitar a charla
-        {% endif %}
-      </a>
-      <a href="{% url 'case-studies' %}" class="btn-secondary">
-        {% if LANGUAGE_CODE == 'en' %}
-          View case studies
-        {% else %}
-          Ver casos
-        {% endif %}
-      </a>
+      <a href="{{ page.primary_cta.href }}" class="btn-primary">{{ page.primary_cta.label }}</a>
+      <a href="{{ page.secondary_cta.href }}" class="btn-secondary">{{ page.secondary_cta.label }}</a>
     </div>
   </section>
 {% endblock content %}

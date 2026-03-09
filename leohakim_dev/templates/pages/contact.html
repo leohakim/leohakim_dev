@@ -1,93 +1,29 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% if LANGUAGE_CODE == 'en' %}
-    Contact | leohakim.dev
-  {% else %}
-    Contacto | leohakim.dev
-  {% endif %}
+  {{ page.meta.title }}
 {% endblock title %}
+{% block meta_description %}
+  {{ page.meta.description }}
+{% endblock meta_description %}
 {% block content %}
-  <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-      {% if LANGUAGE_CODE == 'en' %}
-        Contact
-      {% else %}
-        Contacto
-      {% endif %}
-    </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Send a short project brief and I will tell you if I can help.
-      {% else %}
-        Envíame un resumen corto de tu proyecto y te diré si puedo ayudarte.
-      {% endif %}
-    </h1>
-    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        Email is the best first step. If it makes sense, we can move to a call afterwards.
-      {% else %}
-        El email es el mejor primer paso. Si tiene sentido, después pasamos a una llamada.
-      {% endif %}
-    </p>
-  </section>
+  {% include "components/page_hero.html" with eyebrow=page.eyebrow title=page.title lead=page.lead %}
   <section class="mt-8 grid gap-5 md:grid-cols-2">
     <article class="surface-card p-7">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Preferred contact options
-        {% else %}
-          Canales de contacto
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          The more useful first message usually includes product stage, current technical pain, and what outcome would make the engagement worthwhile.
-        {% else %}
-          El mejor primer mensaje suele incluir etapa del producto, dolor técnico actual y qué resultado haría valiosa la colaboración.
-        {% endif %}
-      </p>
+      <h2 class="text-xl font-semibold text-slate-900">{{ page.primary_panel.title }}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ page.primary_panel.body }}</p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a href="mailto:work@leohakim.dev?subject=Project%20Inquiry"
-           class="btn-primary">
-          {% if LANGUAGE_CODE == 'en' %}
-            Write by email
-          {% else %}
-            Escribir por email
-          {% endif %}
-        </a>
-        <a href="https://cal.leohakim.dev/" class="btn-secondary">
-          {% if LANGUAGE_CODE == 'en' %}
-            Optional intro call
-          {% else %}
-            Llamada inicial opcional
-          {% endif %}
-        </a>
+        <a href="{{ page.primary_panel.primary_cta.href }}" class="btn-primary">{{ page.primary_panel.primary_cta.label }}</a>
+        <a href="{{ page.primary_panel.secondary_cta.href }}"
+           class="btn-secondary">{{ page.primary_panel.secondary_cta.label }}</a>
       </div>
     </article>
     <article class="surface-soft p-7">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          What we can cover first
-        {% else %}
-          Qué podemos ver primero
-        {% endif %}
-      </h2>
+      <h2 class="text-xl font-semibold text-slate-900">{{ page.secondary_panel.title }}</h2>
       <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          <li>- What is fragile today in backend, infrastructure, or delivery.</li>
-          <li>- What has become harder to trust as the product grows.</li>
-          <li>- What kind of support you need: audit, implementation, or ongoing senior help.</li>
-        {% else %}
-          <li>- Qué está frágil hoy en backend, infraestructura o delivery.</li>
-          <li>- Qué se volvió más difícil de confiar a medida que el producto creció.</li>
-          <li>- Qué tipo de ayuda necesitas: auditoría, implementación o acompañamiento senior.</li>
-        {% endif %}
+        {% for item in page.secondary_panel.items %}<li>- {{ item }}</li>{% endfor %}
       </ul>
-      <p class="mt-6 text-sm font-semibold text-slate-900">work@leohakim.dev</p>
+      <p class="mt-6 text-sm font-semibold text-slate-900">{{ page.secondary_panel.email }}</p>
     </article>
   </section>
 {% endblock content %}

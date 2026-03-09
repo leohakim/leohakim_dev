@@ -1,134 +1,29 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% if LANGUAGE_CODE == 'en' %}
-    About Leonardo Hakim | leohakim.dev
-  {% else %}
-    Sobre Leonardo Hakim | leohakim.dev
-  {% endif %}
+  {{ page.meta.title }}
 {% endblock title %}
+{% block meta_description %}
+  {{ page.meta.description }}
+{% endblock meta_description %}
 {% block content %}
-  <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-      {% if LANGUAGE_CODE == 'en' %}
-        About
-      {% else %}
-        Sobre mí
-      {% endif %}
-    </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        I work where backend, product, operations, and infrastructure need to stop pulling in different directions.
-      {% else %}
-        Trabajo donde backend, producto, operación e infraestructura necesitan dejar de tirar para lados distintos.
-      {% endif %}
-    </h1>
-    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        I have over 10 years of software engineering experience, with a strong focus on backend, platforms, infrastructure, and the operational side of real products.
-      {% else %}
-        Tengo más de 10 años de experiencia en ingeniería de software, con foco fuerte en backend, plataformas, infraestructura y la operación real de productos digitales.
-      {% endif %}
-    </p>
-    <p class="mt-4 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        My value is not only in building backend code. It is in helping teams make clearer decisions when technical debt, fragile systems, complex product rules, or delivery pressure start slowing everything down.
-      {% else %}
-        Mi valor no está solo en escribir backend. Está en ayudar a equipos a tomar mejores decisiones cuando la deuda técnica, la fragilidad operativa, la complejidad de producto o la presión de entrega empiezan a frenar todo.
-      {% endif %}
-    </p>
-  </section>
+  {% include "components/page_hero.html" with eyebrow=page.eyebrow title=page.title lead=page.lead supporting=page.supporting %}
   <section class="mt-10 grid gap-5 lg:grid-cols-3">
-    <article class="surface-soft p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Reliable systems
-        {% else %}
-          Sistemas confiables
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          I work best when a product can no longer depend on improvisation and needs a safer technical base.
-        {% else %}
-          Trabajo mejor cuando un producto ya no puede depender de la improvisación y necesita una base técnica más segura.
-        {% endif %}
-      </p>
-    </article>
-    <article class="surface-soft p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Complex product logic
-        {% else %}
-          Lógica de producto compleja
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          I help turn messy business rules into backend structures teams can actually build and operate.
-        {% else %}
-          Ayudo a convertir reglas de negocio desordenadas en estructuras backend que el equipo realmente pueda construir y operar.
-        {% endif %}
-      </p>
-    </article>
-    <article class="surface-soft p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Delivery and infrastructure
-        {% else %}
-          Delivery e infraestructura
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          I also work on the operational layer: deployment, runtime decisions, and the systems teams rely on to move with confidence.
-        {% else %}
-          También trabajo sobre la capa operativa: despliegue, decisiones de runtime y sistemas de apoyo para que el equipo avance con más confianza.
-        {% endif %}
-      </p>
-    </article>
+    {% for card in page.focus_cards %}
+      <article class="surface-soft p-6">
+        <h2 class="text-xl font-semibold text-slate-900">{{ card.title }}</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ card.body }}</p>
+      </article>
+    {% endfor %}
   </section>
   <section class="mt-10 surface-card px-7 py-8 sm:px-10">
-    <h2 class="text-2xl font-semibold text-slate-950">
-      {% if LANGUAGE_CODE == 'en' %}
-        How I collaborate
-      {% else %}
-        Cómo colaboro
-      {% endif %}
-    </h2>
+    <h2 class="text-2xl font-semibold text-slate-950">{{ page.collaboration_title }}</h2>
     <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        <li>Direct communication with both technical and non-technical stakeholders.</li>
-        <li>Priority on reducing risk before chasing optimization for its own sake.</li>
-        <li>Clear tradeoffs, realistic execution, and strong ownership.</li>
-        <li>Available for selected consulting, implementation, and fractional senior engagements.</li>
-        <li>Working languages: native Spanish and professional English.</li>
-      {% else %}
-        <li>Comunicación directa con perfiles técnicos y no técnicos.</li>
-        <li>Prioridad en bajar riesgo antes de perseguir optimización por sí sola.</li>
-        <li>Tradeoffs claros, ejecución realista y ownership fuerte.</li>
-        <li>Disponible para colaboraciones seleccionadas de consultoría, implementación y acompañamiento senior.</li>
-        <li>Idiomas de trabajo: español nativo e inglés profesional.</li>
-      {% endif %}
+      {% for item in page.collaboration_points %}<li>{{ item }}</li>{% endfor %}
     </ul>
     <div class="mt-6 flex flex-wrap gap-3">
-      <a href="{% url 'case-studies' %}" class="btn-primary">
-        {% if LANGUAGE_CODE == 'en' %}
-          View real case studies
-        {% else %}
-          Ver casos reales
-        {% endif %}
-      </a>
-      <a href="{% url 'contact' %}" class="btn-secondary">
-        {% if LANGUAGE_CODE == 'en' %}
-          Let's talk about your project
-        {% else %}
-          Hablemos de tu proyecto
-        {% endif %}
-      </a>
+      <a href="{{ page.primary_cta.href }}" class="btn-primary">{{ page.primary_cta.label }}</a>
+      <a href="{{ page.secondary_cta.href }}" class="btn-secondary">{{ page.secondary_cta.label }}</a>
     </div>
   </section>
 {% endblock content %}

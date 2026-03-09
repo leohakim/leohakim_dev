@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ case.meta.title }}
+{% endblock title %}
+{% block meta_description %}
+  {{ case.meta.description }}
+{% endblock meta_description %}
+{% block content %}
+  {% url 'case-studies' as case_studies_url %}
+  {% include "components/page_hero.html" with back_link_href=case_studies_url back_link_label=site_ui.case_study.back_link eyebrow=case.kind title=case.name lead=case.hero_summary %}
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">{{ site_ui.case_study.context_label }}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ case.context }}</p>
+    </article>
+    <article class="surface-soft p-6">
+      <h2 class="text-xl font-semibold text-slate-900">{{ site_ui.case_study.role_label }}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ case.role }}</p>
+    </article>
+  </section>
+  <section class="mt-8 surface-card p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">{{ site_ui.case_study.approach_label }}</h2>
+    <ol class="mt-5 space-y-4 text-sm leading-relaxed text-slate-600">
+      {% for step in case.approach %}
+        <li>
+          <span class="font-semibold text-slate-900">{{ step.title }}</span>
+          {{ step.body }}
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-2">
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">{{ site_ui.case_study.result_label }}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ case.result }}</p>
+    </article>
+    <article class="surface-card p-6">
+      <h2 class="text-xl font-semibold text-slate-900">{{ site_ui.case_study.business_value_label }}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ case.business_value }}</p>
+    </article>
+  </section>
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">{{ site_ui.case_study.simple_stack_label }}</h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ case.simple_stack }}</p>
+    <p class="mt-3 text-sm leading-relaxed text-slate-500">{{ case.note }}</p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="{{ case.primary_cta.href }}" class="btn-primary">{{ case.primary_cta.label }}</a>
+      <a href="{{ case.secondary_cta.href }}" class="btn-secondary">{{ case.secondary_cta.label }}</a>
+    </div>
+  </section>
+{% endblock content %}
