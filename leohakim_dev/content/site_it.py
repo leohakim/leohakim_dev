@@ -95,6 +95,13 @@ PAGES_IT_OVERRIDES = {
         ),
         "primary_cta": {"label": "Scrivimi via email"},
         "secondary_cta": {"label": "Vedi casi reali"},
+        "ideal_for_label": "Ideale per",
+        "ideal_for_intro": "Il profilo giusto di solito assomiglia a questo:",
+        "ideal_for_items": [
+            "SaaS in crescita con un backend che inizia gia' a sentirsi fragile.",
+            "Media e piattaforme live con traffico reale o picchi operativi.",
+            "Team che hanno bisogno di seniority forte prima di allargare di piu' la struttura tecnica.",
+        ],
         "portrait_alt": "Ritratto di Leonardo Hakim",
         "hero_list_title": "Perche' i team mi coinvolgono",
         "hero_highlights": [
@@ -293,6 +300,30 @@ PAGES_IT_OVERRIDES = {
                 "Che tipo di supporto ti serve: audit, implementazione o supporto senior continuativo.",
             ],
         },
+        "brief_prompts_title": "Un primo messaggio utile di solito risponde a tre cose",
+        "brief_prompts_intro": (
+            "Non serve un documento perfetto. Basta un messaggio breve con questi tre punti per iniziare bene."
+        ),
+        "brief_prompts": [
+            {
+                "title": "Fase del prodotto",
+                "body": (
+                    "Cosa esiste gia' oggi, chi ne dipende e quanta pressione reale sta sostenendo."
+                ),
+            },
+            {
+                "title": "Cosa si sta rompendo o rallentando",
+                "body": (
+                    "Backend, delivery, infrastruttura, complessita' di dominio o aree di cui il team non si fida piu'."
+                ),
+            },
+            {
+                "title": "Quale risultato renderebbe utile affrontarlo",
+                "body": (
+                    "Il cambiamento operativo, di prodotto o di business che ti aspetti se la collaborazione va bene."
+                ),
+            },
+        ],
     },
     "cv": {
         "meta": {
@@ -307,6 +338,11 @@ PAGES_IT_OVERRIDES = {
         "lead": (
             "Piu' di 10 anni di esperienza in ingegneria del software, con lavoro su media ad alto traffico, piattaforme live, SaaS complessi e contesti tecnici multi-team."
         ),
+        "snapshot_items": [
+            "10+ anni in ingegneria del software",
+            "Lavoro su backend, piattaforma e infrastruttura sotto pressione operativa reale",
+            "Spagnolo, inglese e italiano per la collaborazione quotidiana",
+        ],
         "focus_cards": [
             {
                 "title": "Affidabilita' e stabilizzazione",
@@ -327,6 +363,18 @@ PAGES_IT_OVERRIDES = {
                 ),
             },
         ],
+        "best_fit_title": "Dove tendo a dare piu' valore",
+        "best_fit_items": [
+            "SaaS in crescita che hanno bisogno di decisioni migliori su backend e delivery prima di scalare di piu'.",
+            "Media e piattaforme live dove traffico, pressione editoriale o continuita' sono gia' rilevanti.",
+            "Team che hanno bisogno di un riferimento senior esterno per decidere, eseguire e ridurre il rischio tecnico.",
+        ],
+        "versions_panel": {
+            "title": "Versioni di CV piu' mirate disponibili",
+            "body": (
+                "Mantengo anche versioni piu' focalizzate per leadership backend, prodotti media, fintech e lavoro di piattaforma quando serve mostrare un profilo piu' specifico."
+            ),
+        },
         "availability_title": "Disponibile per",
         "availability_items": [
             "Consulenza tecnica per prodotti fragili o difficili da scalare.",
@@ -445,6 +493,20 @@ CASE_STUDIES_IT_OVERRIDES = {
         "index_summary": (
             "Backend, push e base operativa per un'app di notizie ad alto traffico che aveva bisogno di delivery piu' prevedibile."
         ),
+        "facts": [
+            {
+                "label": "Settore",
+                "value": "Media digitale ad alto traffico",
+            },
+            {
+                "label": "Ruolo",
+                "value": "Responsabile di backend, API, push e operations interne",
+            },
+            {
+                "label": "Focus principale",
+                "value": "Affidabilita', delivery editoriale e operations push",
+            },
+        ],
         "context": (
             "Un prodotto di notizie con milioni di visite, picchi editoriali e necessità reali di distribuzione via push. La sfida non era solo servire endpoint, ma costruire un backend capace di sostenere traffico reale, operations editoriali ed evoluzione del prodotto senza troppa fragilita'."
         ),
@@ -503,6 +565,20 @@ CASE_STUDIES_IT_OVERRIDES = {
         "index_summary": (
             "Lavoro su aree sensibili del backend per permettere a una piattaforma live di continuare a evolvere con meno rischio operativo."
         ),
+        "facts": [
+            {
+                "label": "Settore",
+                "value": "Piattaforma partecipativa con flussi sensibili di interazione",
+            },
+            {
+                "label": "Ruolo",
+                "value": "Lavoro backend su conversazioni, messaggi e processi asincroni",
+            },
+            {
+                "label": "Focus principale",
+                "value": "Evoluzione piu' sicura di aree vive del backend sotto rischio operativo",
+            },
+        ],
         "context": (
             "Era una piattaforma in produzione con interazione, messaggistica e flussi basati sui permessi, dove toccare i pezzi sbagliati del backend poteva aumentare facilmente la fragilita' invece di aiutare il prodotto ad avanzare."
         ),
@@ -561,6 +637,20 @@ CASE_STUDIES_IT_OVERRIDES = {
         "index_summary": (
             "Lavoro su infrastruttura e deploy in un contesto internazionale multi-team che aveva bisogno di ripetibilita'."
         ),
+        "facts": [
+            {
+                "label": "Settore",
+                "value": "Ambiente tecnico internazionale multi-team",
+            },
+            {
+                "label": "Ruolo",
+                "value": "Supporto su infrastruttura, deploy e integrazione",
+            },
+            {
+                "label": "Focus principale",
+                "value": "Runtime ripetibile e meno attrito di coordinamento",
+            },
+        ],
         "context": (
             "Era un ambiente tecnico condiviso, con ownership distribuito, piu' team e componenti di deploy sensibili come ingress, TLS, secrets ed esposizione dei servizi."
         ),
@@ -619,6 +709,20 @@ CASE_STUDIES_IT_OVERRIDES = {
         "index_summary": (
             "Architettura di prodotto per un SaaS con agenda, pagamenti e regole complesse che non si potevano improvvisare."
         ),
+        "facts": [
+            {
+                "label": "Settore",
+                "value": "SaaS per sessioni, crediti e pagamenti",
+            },
+            {
+                "label": "Ruolo",
+                "value": "Founder e architetto di backend/prodotto",
+            },
+            {
+                "label": "Focus principale",
+                "value": "Disegno del dominio prima che compaia debito strutturale",
+            },
+        ],
         "context": (
             "Il prodotto combina sessioni, crediti, pagamenti, cancellazioni, valute, liquidazioni e regole multi-tenant. Il rischio era finire con un MVP apparentemente funzionale in superficie ma incoerente sotto."
         ),
@@ -677,6 +781,20 @@ CASE_STUDIES_IT_OVERRIDES = {
         "index_summary": (
             "Lavoro backend e asincrono in un contesto cloud e IoT dove la fiducia operativa contava."
         ),
+        "facts": [
+            {
+                "label": "Settore",
+                "value": "Contesto backend legato a cloud e IoT",
+            },
+            {
+                "label": "Ruolo",
+                "value": "Lavoro backend e processi asincroni",
+            },
+            {
+                "label": "Focus principale",
+                "value": "Affidabilita' e tracciabilita' in flussi sensibili",
+            },
+        ],
         "context": (
             "Il progetto coinvolgeva servizi backend e flussi sensibili dove osservabilita', fiducia operativa e processamento asincrono erano rilevanti nel lavoro quotidiano."
         ),
