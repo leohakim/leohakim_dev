@@ -1,152 +1,30 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% if LANGUAGE_CODE == 'en' %}
-    Services | leohakim.dev
-  {% else %}
-    Servicios | leohakim.dev
-  {% endif %}
+  {{ page.meta.title }}
 {% endblock title %}
+{% block meta_description %}
+  {{ page.meta.description }}
+{% endblock meta_description %}
 {% block content %}
-  <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-      {% if LANGUAGE_CODE == 'en' %}
-        Services
-      {% else %}
-        Servicios
-      {% endif %}
-    </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Senior technical support for teams that need clearer decisions, safer systems, and less fragile delivery.
-      {% else %}
-        Soporte técnico senior para equipos que necesitan decisiones más claras, sistemas más seguros y delivery menos frágil.
-      {% endif %}
-    </h1>
-    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        Best fit for products already in motion: SaaS, media, platforms with live traffic, or systems where backend and operations are starting to hurt product delivery.
-      {% else %}
-        Especialmente útil en productos que ya están en marcha: SaaS, media, plataformas con tráfico real o sistemas donde backend y operación empiezan a frenar al producto.
-      {% endif %}
-    </p>
-  </section>
+  {% include "components/page_hero.html" with eyebrow=page.eyebrow title=page.title lead=page.lead %}
   <section class="mt-10 grid gap-5 lg:grid-cols-3">
-    <article class="surface-card p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Technical assessment and prioritization
-        {% else %}
-          Diagnóstico y priorización técnica
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          A clear view of what is fragile, what is slowing the team down, and what should be addressed first.
-        {% else %}
-          Una lectura clara de qué está frágil, qué está frenando al equipo y qué conviene resolver primero.
-        {% endif %}
-      </p>
-      <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          <li>- Architecture and system health review.</li>
-          <li>- Technical debt and operational risk map.</li>
-          <li>- Practical next steps tied to business impact.</li>
-        {% else %}
-          <li>- Estado real del sistema y de la arquitectura.</li>
-          <li>- Mapa de deuda técnica y riesgo operativo.</li>
-          <li>- Siguientes pasos concretos conectados al impacto de negocio.</li>
-        {% endif %}
-      </ul>
-    </article>
-    <article class="surface-card p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Stabilization and implementation
-        {% else %}
-          Estabilización e implementación
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Backend, infrastructure, and delivery work focused on making the platform safer to run and easier to evolve.
-        {% else %}
-          Trabajo sobre backend, infraestructura y entrega para que la plataforma sea más segura de operar y más clara de evolucionar.
-        {% endif %}
-      </p>
-      <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          <li>- Critical backend refactoring and architecture hardening.</li>
-          <li>- Reliability, performance, and operational improvements.</li>
-          <li>- Safer rollout and better delivery practices.</li>
-        {% else %}
-          <li>- Refactorización crítica de backend y hardening de arquitectura.</li>
-          <li>- Mejoras de confiabilidad, performance y operación.</li>
-          <li>- Entrega más controlada para reducir riesgo técnico.</li>
-        {% endif %}
-      </ul>
-    </article>
-    <article class="surface-card p-6">
-      <h2 class="text-xl font-semibold text-slate-900">
-        {% if LANGUAGE_CODE == 'en' %}
-          Senior fractional support
-        {% else %}
-          Acompañamiento senior fractional
-        {% endif %}
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          A strong external senior profile for teams that need help deciding, aligning, and executing without adding unnecessary management layers.
-        {% else %}
-          Un perfil senior externo para equipos que necesitan ayuda para decidir, alinear y ejecutar sin sumar capas innecesarias de gestión.
-        {% endif %}
-      </p>
-      <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          <li>- Technical leadership support and decision follow-through.</li>
-          <li>- Architecture, delivery, and operational guidance.</li>
-          <li>- Team enablement so improvements last beyond the engagement.</li>
-        {% else %}
-          <li>- Soporte de liderazgo técnico y seguimiento de decisiones.</li>
-          <li>- Guía sobre arquitectura, delivery y operación.</li>
-          <li>- Enablement del equipo para que las mejoras se sostengan en el tiempo.</li>
-        {% endif %}
-      </ul>
-    </article>
+    {% for card in page.service_cards %}
+      <article class="surface-card p-6">
+        <h2 class="text-xl font-semibold text-slate-900">{{ card.title }}</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ card.body }}</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-600">
+          {% for bullet in card.bullets %}<li>- {{ bullet }}</li>{% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
   </section>
   <section class="mt-10 surface-soft p-7">
-    <h2 class="text-2xl font-semibold text-slate-950">
-      {% if LANGUAGE_CODE == 'en' %}
-        Engagement models
-      {% else %}
-        Modalidades
-      {% endif %}
-    </h2>
-    <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        Consulting, high-value implementation, temporary technical leadership, or fractional senior support depending on the problem and the stage of the product.
-      {% else %}
-        Consultoría, implementación de alto valor, liderazgo técnico temporal o acompañamiento senior fractional según el problema y la etapa del producto.
-      {% endif %}
-    </p>
+    <h2 class="text-2xl font-semibold text-slate-950">{{ page.engagement_title }}</h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ page.engagement_body }}</p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <a href="{% url 'contact' %}" class="btn-primary">
-        {% if LANGUAGE_CODE == 'en' %}
-          Start by email
-        {% else %}
-          Escribir por email
-        {% endif %}
-      </a>
-      <a href="{% url 'case-studies' %}" class="btn-secondary">
-        {% if LANGUAGE_CODE == 'en' %}
-          View success stories
-        {% else %}
-          Ver casos de éxito
-        {% endif %}
-      </a>
+      <a href="{{ page.primary_cta.href }}" class="btn-primary">{{ page.primary_cta.label }}</a>
+      <a href="{{ page.secondary_cta.href }}" class="btn-secondary">{{ page.secondary_cta.label }}</a>
     </div>
   </section>
 {% endblock content %}

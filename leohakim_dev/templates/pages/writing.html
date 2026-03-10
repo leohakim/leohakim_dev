@@ -1,57 +1,29 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% if LANGUAGE_CODE == 'en' %}
-    Writing | leohakim.dev
-  {% else %}
-    Contenido | leohakim.dev
-  {% endif %}
+  {{ page.meta.title }}
 {% endblock title %}
+{% block meta_description %}
+  {{ page.meta.description }}
+{% endblock meta_description %}
 {% block content %}
-  <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-      {% if LANGUAGE_CODE == 'en' %}
-        Writing
-      {% else %}
-        Contenido
-      {% endif %}
-    </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Practical writing about backend, delivery, product architecture, and operating real systems.
-      {% else %}
-        Contenido práctico sobre backend, delivery, arquitectura de producto y operación de sistemas reales.
-      {% endif %}
-    </h1>
-    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        No hype. Just concrete tradeoffs, lessons from production, and decisions that teams can actually use.
-      {% else %}
-        Sin hype. Solo tradeoffs concretos, aprendizajes de producción y decisiones que un equipo realmente puede usar.
-      {% endif %}
-    </p>
+  {% include "components/page_hero.html" with eyebrow=page.eyebrow title=page.title lead=page.lead %}
+  <section class="mt-8 surface-soft p-7">
+    <h2 class="text-2xl font-semibold text-slate-950">{{ page.positioning_title }}</h2>
+    <p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">{{ page.positioning_body }}</p>
   </section>
   <section class="mt-8 surface-soft p-7">
-    <h2 class="text-2xl font-semibold text-slate-950">
-      {% if LANGUAGE_CODE == 'en' %}
-        Main topics
-      {% else %}
-        Temas principales
-      {% endif %}
-    </h2>
+    <h2 class="text-2xl font-semibold text-slate-950">{{ page.topics_title }}</h2>
     <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        <li>- Making backend systems easier to trust under real operational pressure.</li>
-        <li>- Turning technical debt into clearer priorities and tradeoffs.</li>
-        <li>- Designing architecture that helps product, operations, and teams grow together.</li>
-      {% else %}
-        <li>- Volver más confiables sistemas backend bajo presión operativa real.</li>
-        <li>- Convertir deuda técnica en prioridades y tradeoffs más claros.</li>
-        <li>- Diseñar arquitectura que ayude a crecer a producto, operación y equipo a la vez.</li>
-      {% endif %}
+      {% for topic in page.topics %}<li>- {{ topic }}</li>{% endfor %}
     </ul>
+  </section>
+  <section class="mt-8 grid gap-5 md:grid-cols-3">
+    {% for card in page.format_cards %}
+      <article class="surface-card p-6">
+        <h2 class="text-lg font-semibold text-slate-900">{{ card.title }}</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ card.body }}</p>
+      </article>
+    {% endfor %}
   </section>
 {% endblock content %}

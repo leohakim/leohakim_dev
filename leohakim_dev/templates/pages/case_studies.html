@@ -1,123 +1,25 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% get_current_language as LANGUAGE_CODE %}
 {% block title %}
-  {% if LANGUAGE_CODE == 'en' %}
-    Success stories | leohakim.dev
-  {% else %}
-    Casos de éxito | leohakim.dev
-  {% endif %}
+  {{ page.meta.title }}
 {% endblock title %}
+{% block meta_description %}
+  {{ page.meta.description }}
+{% endblock meta_description %}
 {% block content %}
-  <section class="surface-card px-7 py-9 sm:px-10">
-    <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-      {% if LANGUAGE_CODE == 'en' %}
-        Case studies
-      {% else %}
-        Casos de éxito
-      {% endif %}
-    </p>
-    <h1 class="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
-      {% if LANGUAGE_CODE == 'en' %}
-        Real systems. Real constraints. Clear outcomes.
-      {% else %}
-        Sistemas reales. Restricciones reales. Resultados claros.
-      {% endif %}
-    </h1>
-    <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        Four selected cases that show how I work when backend, operations, and product complexity need to be aligned instead of improvised.
-      {% else %}
-        Cuatro casos seleccionados que muestran cómo trabajo cuando backend, operación y complejidad de producto necesitan alinearse en lugar de improvisarse.
-      {% endif %}
-    </p>
-  </section>
+  {% include "components/page_hero.html" with eyebrow=page.eyebrow title=page.title lead=page.lead %}
   <section class="mt-10 grid gap-5 md:grid-cols-2">
-    <article class="surface-card flex flex-col gap-4 p-6">
-      <h2 class="text-xl font-semibold text-slate-900">Aire de Santa Fe</h2>
-      <p class="text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Backend, push, and operating foundations for a high-traffic news app that needed more predictable delivery.
-        {% else %}
-          Backend, push y base operativa para una app de noticias de alto tráfico que necesitaba más previsibilidad.
-        {% endif %}
-      </p>
-      <a href="{% url 'case-study-aire' %}" class="accent-link mt-auto">
-        {% if LANGUAGE_CODE == 'en' %}
-          View full story ->
-        {% else %}
-          Ver historia completa ->
-        {% endif %}
-      </a>
-    </article>
-    <article class="surface-card flex flex-col gap-4 p-6">
-      <h2 class="text-xl font-semibold text-slate-900">Osoigo</h2>
-      <p class="text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Sensitive backend work so a live participation platform could keep evolving with less operational risk.
-        {% else %}
-          Trabajo sobre áreas sensibles del backend para que una plataforma viva pudiera seguir evolucionando con menos riesgo operativo.
-        {% endif %}
-      </p>
-      <a href="{% url 'case-study-osoigo' %}" class="accent-link mt-auto">
-        {% if LANGUAGE_CODE == 'en' %}
-          View full story ->
-        {% else %}
-          Ver historia completa ->
-        {% endif %}
-      </a>
-    </article>
-    <article class="surface-card flex flex-col gap-4 p-6">
-      <h2 class="text-xl font-semibold text-slate-900">Atempora</h2>
-      <p class="text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Product architecture for a SaaS with scheduling, payments, and complex rules that could not be improvised.
-        {% else %}
-          Arquitectura de producto para un SaaS con agenda, pagos y reglas complejas que no se podían improvisar.
-        {% endif %}
-      </p>
-      <a href="{% url 'case-study-atempora' %}" class="accent-link mt-auto">
-        {% if LANGUAGE_CODE == 'en' %}
-          View full story ->
-        {% else %}
-          Ver historia completa ->
-        {% endif %}
-      </a>
-    </article>
-    <article class="surface-card flex flex-col gap-4 p-6">
-      <h2 class="text-xl font-semibold text-slate-900">ENACT</h2>
-      <p class="text-sm leading-relaxed text-slate-600">
-        {% if LANGUAGE_CODE == 'en' %}
-          Infrastructure and deployment work in a multi-team international environment that needed repeatability.
-        {% else %}
-          Trabajo de infraestructura y despliegue en un entorno internacional multi-equipo que necesitaba repetibilidad.
-        {% endif %}
-      </p>
-      <a href="{% url 'case-study-enact' %}" class="accent-link mt-auto">
-        {% if LANGUAGE_CODE == 'en' %}
-          View full story ->
-        {% else %}
-          Ver historia completa ->
-        {% endif %}
-      </a>
-    </article>
+    {% for case in page.cases %}
+      <article class="surface-card flex flex-col gap-4 p-6">
+        <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">{{ case.kind }}</p>
+        <h2 class="text-xl font-semibold text-slate-900">{{ case.title }}</h2>
+        <p class="text-sm leading-relaxed text-slate-600">{{ case.summary }}</p>
+        <a href="{{ case.href }}" class="accent-link mt-auto">{{ site_ui.case_study.card_cta }}</a>
+      </article>
+    {% endfor %}
   </section>
   <section class="mt-8 surface-soft p-7">
-    <h2 class="text-2xl font-semibold text-slate-950">
-      {% if LANGUAGE_CODE == 'en' %}
-        Additional experience
-      {% else %}
-        Experiencia adicional
-      {% endif %}
-    </h2>
-    <p class="mt-3 text-sm leading-relaxed text-slate-600">
-      {% if LANGUAGE_CODE == 'en' %}
-        I also have selected backend and cloud experience in IoT-related contexts, but I keep that work more generic publicly when the available detail is limited or sensitive.
-      {% else %}
-        También tengo experiencia adicional en backend y cloud en contextos ligados a IoT, pero prefiero contarla de forma más genérica cuando el detalle disponible es limitado o sensible.
-      {% endif %}
-    </p>
+    <h2 class="text-2xl font-semibold text-slate-950">{{ page.additional_experience_title }}</h2>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ page.additional_experience_body }}</p>
   </section>
 {% endblock content %}

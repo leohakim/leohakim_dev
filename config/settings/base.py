@@ -33,6 +33,7 @@ LANGUAGE_CODE = "en"
 LANGUAGES = [
     ("en", _("English")),
     ("es", _("Spanish")),
+    ("it", _("Italian")),
 ]
 LANGUAGE_COOKIE_NAME = "leohakim_dev_lang"
 LANGUAGE_COOKIE_SAMESITE = "Lax"
@@ -191,6 +192,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
+                "leohakim_dev.context_processors.site_ui",
                 "leohakim_dev.users.context_processors.allauth_settings",
             ],
         },
@@ -227,6 +229,7 @@ EMAIL_BACKEND = env(
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-timeout
 EMAIL_TIMEOUT = 5
+GOOGLE_ANALYTICS_ID = env("GOOGLE_ANALYTICS_ID", default="G-CJ6DNTLT42")
 
 # ADMIN
 # ------------------------------------------------------------------------------

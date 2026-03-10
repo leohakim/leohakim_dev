@@ -1,39 +1,34 @@
 {% load static i18n %}
 
 <!DOCTYPE html>
-{% get_current_language as LANGUAGE_CODE %}
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ site_ui.current_language }}">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
       {% block title %}
-        {% if LANGUAGE_CODE == 'en' %}
-          Leo Hakim | Backend & Cloud Engineer
-        {% else %}
-          Leo Hakim | Ingeniería Backend y Cloud
-        {% endif %}
+        {% firstof page.meta.title case.meta.title site_ui.meta.title %}
       {% endblock title %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-          content="{% block meta_description %}{% if LANGUAGE_CODE == 'en' %}Personal website of Leonardo Hakim: backend engineering, cloud architecture, and client-ready success stories.{% else %}Sitio profesional de Leonardo Hakim: ingeniería backend, arquitectura cloud y casos de éxito para clientes.{% endif %}{% endblock meta_description %}" />
+          content="{% block meta_description %}{% firstof page.meta.description case.meta.description site_ui.meta.description %}{% endblock meta_description %}" />
     <meta name="author" content="Leonardo Hakim" />
     <meta name="theme-color" content="#1d4ed8" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="leohakim.dev" />
     <meta property="og:title"
-          content="{% block og_title %}{% if LANGUAGE_CODE == 'en' %}Leo Hakim | Backend & Cloud Engineer{% else %}Leo Hakim | Ingeniería Backend y Cloud{% endif %}{% endblock og_title %}" />
+          content="{% block og_title %}{% firstof page.meta.og_title page.meta.title case.meta.og_title case.meta.title site_ui.meta.og_title %}{% endblock og_title %}" />
     <meta property="og:description"
-          content="{% block og_description %}{% if LANGUAGE_CODE == 'en' %}Success stories and services focused on reliable product delivery and business outcomes.{% else %}Casos de éxito y servicios enfocados en entrega confiable e impacto de negocio.{% endif %}{% endblock og_description %}" />
+          content="{% block og_description %}{% firstof page.meta.og_description page.meta.description case.meta.og_description case.meta.description site_ui.meta.og_description %}{% endblock og_description %}" />
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
     <meta property="og:image"
           content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/home_photo.png' %}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title"
-          content="{% block twitter_title %}{% if LANGUAGE_CODE == 'en' %}Leo Hakim | Backend & Cloud Engineer{% else %}Leo Hakim | Ingeniería Backend y Cloud{% endif %}{% endblock twitter_title %}" />
+          content="{% block twitter_title %}{% firstof page.meta.twitter_title page.meta.og_title page.meta.title case.meta.twitter_title case.meta.og_title case.meta.title site_ui.meta.twitter_title %}{% endblock twitter_title %}" />
     <meta name="twitter:description"
-          content="{% block twitter_description %}{% if LANGUAGE_CODE == 'en' %}Backend and cloud engineering profile with clear success stories and delivery experience.{% else %}Perfil de ingeniería backend y cloud con casos de éxito claros y experiencia real de entrega.{% endif %}{% endblock twitter_description %}" />
+          content="{% block twitter_description %}{% firstof page.meta.twitter_description page.meta.og_description page.meta.description case.meta.twitter_description case.meta.og_description case.meta.description site_ui.meta.twitter_description %}{% endblock twitter_description %}" />
     <meta name="twitter:image"
           content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/home_photo.png' %}" />
     <link rel="icon"
@@ -62,6 +57,19 @@
       <script defer src="https://unpkg.com/alpinejs@3.x.x" crossorigin="anonymous"></script>
       <script defer src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
+    {% if site_ui.analytics.google_analytics_id %}
+      <script async
+              src="https://www.googletagmanager.com/gtag/js?id={{ site_ui.analytics.google_analytics_id }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "{{ site_ui.analytics.google_analytics_id }}");
+      </script>
+    {% endif %}
   </head>
   <body class="relative min-h-screen text-slate-900 antialiased {% block bodyclass %}{% endblock bodyclass %}">
     <div class="site-grid pointer-events-none fixed inset-0 -z-20"></div>
@@ -73,77 +81,30 @@
         <div class="brand-divider h-1 w-full"></div>
         <nav x-data="{ open: false }"
              class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-             aria-label="Primary">
+             aria-label="{{ site_ui.navigation.aria_label }}">
           <div class="flex items-center justify-between py-4">
             <a class="inline-flex items-center gap-3 text-slate-900"
                href="{% url 'home' %}">
               <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-orange-500 font-extrabold text-white shadow-lg shadow-blue-900/20">LH</span>
               <span class="leading-tight">
-                <span class="block text-sm font-bold tracking-[0.1em]">LEONARDO HAKIM</span>
-                <span class="block text-xs font-medium text-slate-500">
-                  {% if LANGUAGE_CODE == 'en' %}
-                    Backend . Cloud . Reliability
-                  {% else %}
-                    Backend . Cloud . Confianza
-                  {% endif %}
-                </span>
+                <span class="block text-sm font-bold tracking-[0.1em]">{{ site_ui.brand.name }}</span>
+                <span class="block text-xs font-medium text-slate-500">{{ site_ui.brand.subtitle }}</span>
               </span>
             </a>
             <div class="hidden items-center gap-2 text-sm font-semibold md:flex">
-              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                 href="{% url 'home' %}">
-                {% if LANGUAGE_CODE == 'en' %}
-                  Home
-                {% else %}
-                  Inicio
-                {% endif %}
-              </a>
-              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                 href="{% url 'case-studies' %}">
-                {% if LANGUAGE_CODE == 'en' %}
-                  Case Studies
-                {% else %}
-                  Casos de éxito
-                {% endif %}
-              </a>
-              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                 href="{% url 'services' %}">
-                {% if LANGUAGE_CODE == 'en' %}
-                  Services
-                {% else %}
-                  Servicios
-                {% endif %}
-              </a>
-              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                 href="{% url 'writing' %}">
-                {% if LANGUAGE_CODE == 'en' %}
-                  Writing
-                {% else %}
-                  Contenido
-                {% endif %}
-              </a>
-              <a class="rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                 href="{% url 'about' %}">
-                {% if LANGUAGE_CODE == 'en' %}
-                  About
-                {% else %}
-                  Sobre mí
-                {% endif %}
-              </a>
-              <a class="btn-primary" href="{% url 'contact' %}">
-                {% if LANGUAGE_CODE == 'en' %}
-                  Contact
-                {% else %}
-                  Contacto
-                {% endif %}
-              </a>
+              {% for item in site_ui.navigation.links %}
+                <a class="{% if request.path == item.href %}bg-blue-50 text-blue-800{% else %}text-slate-600 hover:bg-slate-100 hover:text-slate-900{% endif %} rounded-full px-3 py-2 transition"
+                   {% if request.path == item.href %}aria-current="page"{% endif %}
+                   href="{{ item.href }}">{{ item.label }}</a>
+              {% endfor %}
+              <a class="btn-primary" href="{{ site_ui.navigation.primary_cta.href }}">{{ site_ui.navigation.primary_cta.label }}</a>
               {% include "components/language_switcher.html" %}
             </div>
             <button type="button"
                     class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-700 md:hidden"
                     @click="open = !open"
                     :aria-expanded="open.toString()"
-                    aria-label="{% if LANGUAGE_CODE == 'en' %}Toggle navigation{% else %}Abrir menú{% endif %}">
+                    aria-label="{{ site_ui.navigation.toggle_label }}">
               <svg xmlns="http://www.w3.org/2000/svg"
                    viewBox="0 0 24 24"
                    fill="none"
@@ -157,53 +118,13 @@
           <div x-show="open"
                x-transition
                class="space-y-2 border-t border-slate-200 pb-4 pt-3 md:hidden">
-            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-               href="{% url 'home' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Home
-              {% else %}
-                Inicio
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-               href="{% url 'case-studies' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Case Studies
-              {% else %}
-                Casos de éxito
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-               href="{% url 'services' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Services
-              {% else %}
-                Servicios
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-               href="{% url 'writing' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Writing
-              {% else %}
-                Contenido
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-               href="{% url 'about' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                About
-              {% else %}
-                Sobre mí
-              {% endif %}
-            </a>
-            <a class="btn-primary w-full justify-center" href="{% url 'contact' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Contact
-              {% else %}
-                Contacto
-              {% endif %}
-            </a>
+            {% for item in site_ui.navigation.links %}
+              <a class="{% if request.path == item.href %}bg-blue-50 text-blue-800{% else %}text-slate-700 hover:bg-slate-100{% endif %} block rounded-xl px-3 py-2 text-sm font-semibold"
+                 {% if request.path == item.href %}aria-current="page"{% endif %}
+                 href="{{ item.href }}">{{ item.label }}</a>
+            {% endfor %}
+            <a class="btn-primary w-full justify-center"
+               href="{{ site_ui.navigation.primary_cta.href }}">{{ site_ui.navigation.primary_cta.label }}</a>
             <div class="pt-1">{% include "components/language_switcher.html" %}</div>
           </div>
         </nav>
@@ -218,126 +139,40 @@
         {% endif %}
         {% block main %}
           {% block content %}
-            <p class="text-sm text-slate-600">
-              {% if LANGUAGE_CODE == 'en' %}
-                Use this document as a way to quick start any new project.
-              {% else %}
-                Usa este documento como punto de partida para tu proyecto.
-              {% endif %}
-            </p>
+            <p class="text-sm text-slate-600">{{ site_ui.default_content_message }}</p>
           {% endblock content %}
         {% endblock main %}
       </main>
-      {% now "Y" as current_year %}
       <footer class="border-t border-slate-200 bg-white/95 py-12">
         <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(0,0.8fr)] lg:px-8">
           <div class="space-y-4">
             <p class="text-lg font-bold text-slate-900">Leonardo Hakim</p>
-            <p class="max-w-md text-sm leading-relaxed text-slate-600">
-              {% if LANGUAGE_CODE == 'en' %}
-                Backend, platform, and cloud consultant working where product, operations, and infrastructure need clearer technical decisions.
-              {% else %}
-                Consultor de backend, plataformas y cloud. Trabajo donde producto, operación e infraestructura necesitan decisiones técnicas más claras.
-              {% endif %}
-            </p>
+            <p class="max-w-md text-sm leading-relaxed text-slate-600">{{ site_ui.footer.summary }}</p>
             <div class="flex flex-wrap gap-2">
-              {% if social_links %}
-                {% for link in social_links %}
-                  <a href="{{ link.href }}" class="btn-secondary px-4 py-2 text-xs">{{ link.label }}</a>
-                {% endfor %}
-              {% else %}
-                <a href="mailto:work@leohakim.dev"
-                   class="btn-secondary px-4 py-2 text-xs">Email</a>
-                <a href="{% url 'contact' %}" class="btn-secondary px-4 py-2 text-xs">
-                  {% if LANGUAGE_CODE == 'en' %}
-                    Contact
-                  {% else %}
-                    Contacto
-                  {% endif %}
-                </a>
-              {% endif %}
+              {% for link in site_ui.footer.links %}
+                <a href="{{ link.href }}" class="btn-secondary px-4 py-2 text-xs">{{ link.label }}</a>
+              {% endfor %}
             </div>
           </div>
-          <div class="space-y-3 text-sm font-semibold text-slate-600">
-            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
-               href="{% url 'case-studies' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Case Studies
-              {% else %}
-                Casos de éxito
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
-               href="{% url 'services' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Services
-              {% else %}
-                Servicios
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
-               href="{% url 'speaking' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Speaking
-              {% else %}
-                Charlas
-              {% endif %}
-            </a>
-            <a class="block rounded-xl px-3 py-2 transition hover:bg-slate-100 hover:text-slate-900"
-               href="{% url 'contact' %}">
-              {% if LANGUAGE_CODE == 'en' %}
-                Contact
-              {% else %}
-                Contacto
-              {% endif %}
-            </a>
+          <div class="space-y-3">
+            <p class="text-sm font-semibold text-slate-900">{{ site_ui.footer.navigation_title }}</p>
+            {% for item in site_ui.navigation.links %}
+              <a class="block text-sm text-slate-600 transition hover:text-slate-900"
+                 href="{{ item.href }}">{{ item.label }}</a>
+            {% endfor %}
           </div>
-          <div class="surface-soft p-5">
-            <p class="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-              {% if LANGUAGE_CODE == 'en' %}
-                Availability
-              {% else %}
-                Disponibilidad
-              {% endif %}
-            </p>
-            <p class="mt-2 text-sm font-semibold text-slate-900">
-              {% if LANGUAGE_CODE == 'en' %}
-                Open to remote consulting and technical leadership engagements.
-              {% else %}
-                Disponible para consultoría remota y colaboraciones de liderazgo técnico.
-              {% endif %}
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <a href="{% url 'cv' %}" class="btn-primary px-4 py-2 text-xs">
-                {% if LANGUAGE_CODE == 'en' %}
-                  CV one-pager
-                {% else %}
-                  CV resumido
-                {% endif %}
-              </a>
-              <a href="{% url 'playbook' %}" class="btn-secondary px-4 py-2 text-xs">
-                {% if LANGUAGE_CODE == 'en' %}
-                  Playbook
-                {% else %}
-                  Método de trabajo
-                {% endif %}
-              </a>
-            </div>
+          <div class="space-y-3">
+            <p class="text-sm font-semibold text-slate-900">{{ site_ui.footer.contact_title }}</p>
+            {% for link in site_ui.footer.links %}
+              <a class="block text-sm text-slate-600 transition hover:text-slate-900"
+                 href="{{ link.href }}">{{ link.label }}</a>
+            {% endfor %}
           </div>
         </div>
-        <div class="mx-auto mt-8 max-w-7xl px-4 text-xs text-slate-500 sm:px-6 lg:px-8">
-          Copyright {{ current_year }} Leonardo Hakim.
-          {% if LANGUAGE_CODE == 'en' %}
-            All rights reserved.
-          {% else %}
-            Todos los derechos reservados.
-          {% endif %}
+        <div class="mx-auto mt-8 max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8">
+          {{ site_ui.footer.copyright_text }}
         </div>
       </footer>
     {% endblock body %}
-    {% block modal %}
-    {% endblock modal %}
-    {% block inline_javascript %}
-    {% endblock inline_javascript %}
   </body>
 </html>
