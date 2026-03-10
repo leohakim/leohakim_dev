@@ -250,8 +250,8 @@ PAGES = {
         },
         "ideal_for_label": text(en="Best fit", es="Ideal para"),
         "ideal_for_intro": text(
-            en="The strongest fit tends to look like this:",
-            es="El caso de estudio ideal suele verse así:",
+            en="Best fit if the product is already live and the technical base needs stronger decisions:",
+            es="Encaja mejor si el producto ya está en marcha y la base técnica necesita decisiones más sólidas:",
         ),
         "ideal_for_items": [
             text(
@@ -428,24 +428,24 @@ PAGES = {
         ),
         "lead": text(
             en=(
-                "I have over 15 years of software engineering experience, with a strong "
-                "focus on backend, platforms, infrastructure, and the operational side of real products."
+                "I am a backend and platform engineer with 15+ years of experience "
+                "designing and operating production systems with Python and Django."
             ),
             es=(
-                "Tengo más de 15 años de experiencia en ingeniería de software, con foco "
-                "fuerte en backend, plataformas, infraestructura y la operación real de productos digitales."
+                "Soy ingeniero backend y de plataformas con más de 15 años de experiencia "
+                "diseñando y operando sistemas en producción con Python y Django."
             ),
         ),
         "supporting": text(
             en=(
-                "My value is not only in building backend code. It is in helping teams make "
-                "clearer decisions when technical debt, fragile systems, complex product rules, "
-                "or delivery pressure start slowing everything down."
+                "My value is not only in backend implementation. It is in helping teams "
+                "stabilize live systems, clarify technical decisions, and connect backend, "
+                "product, operations, and infrastructure before fragility starts slowing everything down."
             ),
             es=(
-                "Mi valor no está solo en escribir backend. Está en ayudar a equipos a tomar "
-                "mejores decisiones cuando la deuda técnica, la fragilidad operativa, la complejidad "
-                "de producto o la presión de entrega empiezan a frenar todo."
+                "Mi valor no está solo en implementar backend. Está en ayudar a equipos a "
+                "estabilizar sistemas vivos, aclarar decisiones técnicas y conectar backend, "
+                "producto, operación e infraestructura antes de que la fragilidad empiece a frenar todo."
             ),
         ),
         "focus_cards": [
@@ -804,93 +804,107 @@ PAGES = {
             es="Resumen ejecutivo de trabajo en backend, plataformas e infraestructura para productos que necesitan confiabilidad bajo presión real.",
         ),
         "lead": text(
-            en="Over 15 years of software engineering experience, with work across high-traffic media, live platforms, complex SaaS, and multi-team technical environments.",
-            es="Más de 15 años de experiencia en ingeniería de software, con trabajo en media de alto tráfico, plataformas en producción, SaaS complejos y entornos técnicos multi-equipo.",
+            en="Backend and platform engineer with 15+ years of experience building and operating production systems across media, live platforms, complex SaaS, and multi-team environments.",
+            es="Ingeniero backend y de plataformas con más de 15 años de experiencia construyendo y operando sistemas en producción en media, plataformas vivas, SaaS complejos y entornos multi-equipo.",
         ),
         "snapshot_items": [
             text(
-                en="15+ years in software engineering",
-                es="15+ años en ingeniería de software",
+                en="15+ years building production systems with Python and Django",
+                es="15+ años construyendo sistemas en producción con Python y Django",
             ),
             text(
-                en="Backend, platform, and infrastructure work under real operational pressure",
-                es="Trabajo en backend, plataforma e infraestructura bajo presión operativa real",
+                en="Backend, async workflows, cloud infrastructure, and reliability",
+                es="Backend, asincronía, infraestructura cloud y confiabilidad",
             ),
             text(
-                en="Spanish, English, and Italian for day-to-day collaboration",
-                es="Español, inglés e italiano para colaboración diaria",
+                en="Remote / Hybrid · Spanish, English, and Italian",
+                es="Remoto / Híbrido · Español, inglés e italiano",
             ),
         ],
         "focus_cards": [
             {
                 "title": text(
-                    en="Reliability and stabilization",
-                    es="Confiabilidad y estabilización",
+                    en="Backend engineering",
+                    es="Ingeniería backend",
                 ),
                 "body": text(
-                    en="I work on systems that already have real load, operational pressure, or technical fragility.",
-                    es="Trabajo sobre sistemas que ya tienen carga real, presión operativa o fragilidad técnica.",
-                ),
-            },
-            {
-                "title": text(en="Product architecture", es="Arquitectura de producto"),
-                "body": text(
-                    en="I help turn complex rules and messy flows into backend structures teams can build without chaos.",
-                    es="Ayudo a convertir reglas complejas y flujos desordenados en estructuras backend que el equipo pueda construir sin caos.",
+                    en="Python, Django, DRF, API design, and domain modeling for systems that are already in production.",
+                    es="Python, Django, DRF, diseño de APIs y modelado de dominio para sistemas que ya están en producción.",
                 ),
             },
             {
                 "title": text(
-                    en="Delivery and infrastructure",
-                    es="Delivery e infraestructura",
+                    en="Distributed systems",
+                    es="Sistemas distribuidos",
                 ),
                 "body": text(
-                    en="Backend work connected to deployment, runtime, and operational decisions, not isolated from them.",
-                    es="Trabajo de backend conectado con despliegue, runtime y operación, no aislado de esas capas.",
+                    en="Celery, Redis, asynchronous processing, and messaging workflows where reliability and delivery matter.",
+                    es="Celery, Redis, procesamiento asíncrono y flujos de mensajería donde importan la confiabilidad y la entrega.",
+                ),
+            },
+            {
+                "title": text(
+                    en="Cloud and operational engineering",
+                    es="Cloud e ingeniería operativa",
+                ),
+                "body": text(
+                    en="Docker, Kubernetes, CI/CD, GCP, Firebase, production debugging, and delivery work tied to runtime reality.",
+                    es="Docker, Kubernetes, CI/CD, GCP, Firebase, debugging en producción y delivery conectado con la realidad operativa.",
                 ),
             },
         ],
         "best_fit_title": text(
-            en="Where I tend to add the most value",
-            es="Dónde suelo aportar más valor",
+            en="Recent experience",
+            es="Experiencia reciente",
         ),
         "best_fit_items": [
             text(
-                en="Growth-stage SaaS that need stronger backend and delivery decisions before scaling harder.",
-                es="SaaS en crecimiento que necesitan mejores decisiones de backend y delivery antes de escalar más.",
+                en="Osoigo SL — Senior Backend Engineer / Technical Team Lead (2023 - Present)",
+                es="Osoigo SL — Senior Backend Engineer / Technical Team Lead (2023 - Actualidad)",
             ),
             text(
-                en="Media and live platforms where traffic, editorial pressure, or continuity already matter.",
-                es="Medios y plataformas en producción donde el tráfico, la presión editorial o la continuidad ya importan.",
+                en="Embever GmbH — Software Engineer (2022 - 2023)",
+                es="Embever GmbH — Software Engineer (2022 - 2023)",
             ),
             text(
-                en="Teams that need a senior external reference to decide, execute, and reduce technical risk.",
-                es="Equipos que necesitan una referencia senior externa para decidir, ejecutar y bajar riesgo técnico.",
+                en="HICS Capital — Backend Engineer (2020 - 2021)",
+                es="HICS Capital — Backend Engineer (2020 - 2021)",
             ),
         ],
         "versions_panel": {
             "title": text(
-                en="Tailored CV versions available",
-                es="Versiones de CV disponibles",
+                en="Selected project",
+                es="Proyecto destacado",
             ),
             "body": text(
-                en="I also keep focused CV versions for backend leadership, media products, fintech, and broader platform work when a more specific profile is useful.",
-                es="También mantengo versiones más enfocadas para liderazgo backend, productos media, fintech y trabajo de plataforma cuando conviene mostrar un perfil más específico.",
+                en="Aire de Santa Fe — Backend services for a high-traffic media mobile application, with work on content delivery, push notifications, asynchronous processing, editorial tooling, and cloud coordination.",
+                es="Aire de Santa Fe — Servicios backend para una aplicación móvil de medios de alto tráfico, con trabajo sobre entrega de contenido, push notifications, asincronía, herramientas editoriales y coordinación cloud.",
             ),
         },
-        "availability_title": text(en="Available for", es="Disponible para"),
+        "availability_title": text(
+            en="Education and languages",
+            es="Formación e idiomas",
+        ),
         "availability_items": [
             text(
-                en="Technical consulting for fragile or hard-to-scale products.",
-                es="Consultoría técnica para productos frágiles o difíciles de escalar.",
+                en="MSc Software Development — Escuela IT, Spain",
+                es="MSc Software Development — Escuela IT, España",
             ),
             text(
-                en="High-value implementation in backend, platform, and delivery work.",
-                es="Implementación de alto valor en backend, plataforma y delivery.",
+                en="BSc Informatics Engineering — Universidad Nacional del Litoral, Argentina",
+                es="Ingeniería en Informática — Universidad Nacional del Litoral, Argentina",
             ),
             text(
-                en="Temporary technical leadership or fractional senior support.",
-                es="Liderazgo técnico temporal o acompañamiento senior fractional.",
+                en="Spanish — Native",
+                es="Español — Nativo",
+            ),
+            text(
+                en="English — Professional working proficiency",
+                es="Inglés — Nivel profesional de trabajo",
+            ),
+            text(
+                en="Italian — Professional working proficiency",
+                es="Italiano — Nivel profesional de trabajo",
             ),
         ],
         "primary_cta": {

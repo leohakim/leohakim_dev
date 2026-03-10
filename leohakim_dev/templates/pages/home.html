@@ -41,7 +41,7 @@
           <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ page.ideal_for_intro }}</p>
           <div class="mt-4 flex flex-wrap gap-2.5">
             {% for item in page.ideal_for_items %}
-              <span class="inline-flex rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700">{{ item }}</span>
+              <span class="inline-flex rounded-full border border-slate-200 bg-white px-3 py-1.5 mt-2 text-sm font-medium text-slate-700">{{ item }}</span>
             {% endfor %}
           </div>
         </div>
@@ -68,8 +68,8 @@
   </section>
   <section class="mt-8">
     <div class="surface-soft px-6 py-5 sm:px-7">
-      <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">{{ page.selected_work_label }}</p>
-      <div class="mt-4 flex flex-wrap gap-3">
+      <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 px-4 mt-3">{{ page.selected_work_label }}</p>
+      <div class="mt-4 flex flex-wrap gap-3 p-3">
         {% for logo in page.trust_logos %}
           <a href="{{ logo.href }}"
              class="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700">

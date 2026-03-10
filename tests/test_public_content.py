@@ -57,6 +57,18 @@ def test_home_page_content_includes_best_fit_items():
         assert expected in current
 
 
+def test_cv_page_content_matches_latest_profile_version():
+    page = get_page_content("cv", "en")
+
+    assert "15+ years of experience" in page["lead"]
+    assert page["snapshot_items"][0] == (
+        "15+ years building production systems with Python and Django"
+    )
+    assert page["best_fit_title"] == "Recent experience"
+    assert page["versions_panel"]["title"] == "Selected project"
+    assert page["availability_title"] == "Education and languages"
+
+
 def test_case_study_content_resolves_case_specific_ctas():
     case = get_case_study_content("atempora", "en")
 

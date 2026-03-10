@@ -96,7 +96,9 @@ PAGES_IT_OVERRIDES = {
         "primary_cta": {"label": "Scrivimi via email"},
         "secondary_cta": {"label": "Vedi casi reali"},
         "ideal_for_label": "Ideale per",
-        "ideal_for_intro": "Il profilo giusto di solito assomiglia a questo:",
+        "ideal_for_intro": (
+            "Funziona meglio se il prodotto e' gia' attivo e la base tecnica ha bisogno di decisioni piu' solide:"
+        ),
         "ideal_for_items": [
             "SaaS in crescita con un backend che inizia gia' a sentirsi fragile.",
             "Media e piattaforme live con traffico reale o picchi operativi.",
@@ -163,10 +165,10 @@ PAGES_IT_OVERRIDES = {
             "Lavoro dove backend, prodotto, operations e infrastruttura devono smettere di tirare in direzioni diverse."
         ),
         "lead": (
-            "Ho piu' di 15 anni di esperienza in ingegneria del software, con un forte focus su backend, piattaforme, infrastruttura e sul lato operativo dei prodotti reali."
+            "Sono un ingegnere backend e di piattaforma con oltre 15 anni di esperienza nella progettazione e gestione di sistemi in produzione con Python e Django."
         ),
         "supporting": (
-            "Il mio valore non sta solo nello scrivere codice backend. Sta nell'aiutare i team a prendere decisioni piu' chiare quando debito tecnico, sistemi fragili, regole di prodotto complesse o pressione di delivery iniziano a rallentare tutto."
+            "Il mio valore non sta solo nell'implementazione backend. Sta nell'aiutare i team a stabilizzare sistemi vivi, chiarire decisioni tecniche e collegare backend, prodotto, operations e infrastruttura prima che la fragilita' inizi a rallentare tutto."
         ),
         "focus_cards": [
             {
@@ -360,50 +362,52 @@ PAGES_IT_OVERRIDES = {
             "Sintesi esecutiva del lavoro su backend, piattaforme e infrastruttura per prodotti che hanno bisogno di affidabilita' sotto pressione reale."
         ),
         "lead": (
-            "Piu' di 15 anni di esperienza in ingegneria del software, con lavoro su media ad alto traffico, piattaforme live, SaaS complessi e contesti tecnici multi-team."
+            "Ingegnere backend e di piattaforma con oltre 15 anni di esperienza nella costruzione e gestione di sistemi in produzione tra media, piattaforme live, SaaS complessi e contesti multi-team."
         ),
         "snapshot_items": [
-            "15+ anni in ingegneria del software",
-            "Lavoro su backend, piattaforma e infrastruttura sotto pressione operativa reale",
-            "Spagnolo, inglese e italiano per la collaborazione quotidiana",
+            "15+ anni costruendo sistemi in produzione con Python e Django",
+            "Backend, asincronia, infrastruttura cloud e affidabilita'",
+            "Remoto / Ibrido · Spagnolo, inglese e italiano",
         ],
         "focus_cards": [
             {
-                "title": "Affidabilita' e stabilizzazione",
+                "title": "Ingegneria backend",
                 "body": (
-                    "Lavoro su sistemi che hanno gia' carico reale, pressione operativa o fragilita' tecnica."
+                    "Python, Django, DRF, design di API e modellazione del dominio per sistemi gia' in produzione."
                 ),
             },
             {
-                "title": "Architettura di prodotto",
+                "title": "Sistemi distribuiti",
                 "body": (
-                    "Aiuto a trasformare regole complesse e flussi disordinati in strutture backend che i team possano costruire senza caos."
+                    "Celery, Redis, processamento asincrono e workflow di messaggistica dove affidabilita' e delivery contano."
                 ),
             },
             {
-                "title": "Delivery e infrastruttura",
+                "title": "Cloud e ingegneria operativa",
                 "body": (
-                    "Lavoro backend connesso a deployment, runtime e decisioni operative, non isolato da questi livelli."
+                    "Docker, Kubernetes, CI/CD, GCP, Firebase, debugging in produzione e delivery collegato alla realta' del runtime."
                 ),
             },
         ],
-        "best_fit_title": "Dove tendo a dare piu' valore",
+        "best_fit_title": "Esperienza recente",
         "best_fit_items": [
-            "SaaS in crescita che hanno bisogno di decisioni migliori su backend e delivery prima di scalare di piu'.",
-            "Media e piattaforme live dove traffico, pressione editoriale o continuita' sono gia' rilevanti.",
-            "Team che hanno bisogno di un riferimento senior esterno per decidere, eseguire e ridurre il rischio tecnico.",
+            "Osoigo SL — Senior Backend Engineer / Technical Team Lead (2023 - Oggi)",
+            "Embever GmbH — Software Engineer (2022 - 2023)",
+            "HICS Capital — Backend Engineer (2020 - 2021)",
         ],
         "versions_panel": {
-            "title": "Versioni di CV piu' mirate disponibili",
+            "title": "Progetto selezionato",
             "body": (
-                "Mantengo anche versioni piu' focalizzate per leadership backend, prodotti media, fintech e lavoro di piattaforma quando serve mostrare un profilo piu' specifico."
+                "Aire de Santa Fe — Servizi backend per un'applicazione mobile media ad alto traffico, con lavoro su delivery dei contenuti, notifiche push, asincronia, strumenti editoriali e coordinamento cloud."
             ),
         },
-        "availability_title": "Disponibile per",
+        "availability_title": "Formazione e lingue",
         "availability_items": [
-            "Consulenza tecnica per prodotti fragili o difficili da scalare.",
-            "Implementazione ad alto valore su backend, piattaforma e delivery.",
-            "Leadership tecnica temporanea o supporto senior fractional.",
+            "MSc Software Development — Escuela IT, Spagna",
+            "Ingegneria Informatica — Universidad Nacional del Litoral, Argentina",
+            "Spagnolo — Madrelingua",
+            "Inglese — Livello professionale di lavoro",
+            "Italiano — Livello professionale di lavoro",
         ],
         "primary_cta": {"label": "Contatto"},
         "secondary_cta": {"label": "Vedi i casi"},
